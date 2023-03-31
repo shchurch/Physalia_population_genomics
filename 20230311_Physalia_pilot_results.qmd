@@ -45,14 +45,21 @@ We first mapped to the 2021 assembly of an Atlantic genome, done by Zack lewis.
 
 Mapping statistics were evaluated with `samtools flagstat`.
 
-```{r}
+```{r mapstat-atl}
 #| echo: false
 reads_info <- read.delim("results/Atlantic/pilot_reads_info.tsv",header=T,stringsAsFactors=F)
-kable(reads_info) %>%
+kable(reads_info,format.args = list(big.mark = ",")) %>%
   kable_styling(font_size = 12)
 ```
 
 We also mapped to the 2023 assembly of a Pacfic genome, done by Ozren and Alex.
+
+```{r mapstat-pac}
+#| echo: false
+reads_info <- read.delim("results/mapped_to_Pacific/pilot_reads_info.tsv",header=T,stringsAsFactors=F)
+kable(reads_info,format.args = list(big.mark = ",")) %>%
+  kable_styling(font_size = 12)
+```
 
 # `picard`
 
