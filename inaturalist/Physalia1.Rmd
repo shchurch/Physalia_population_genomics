@@ -1,0 +1,299 @@
+---
+title: "iNaturalist Data Analysis"
+output: html_document
+date: "2023-11-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{R Load Data}
+river_res <- read.csv("river_res.csv")
+sam_res <- read.csv("sam_res.csv")
+nam_res <- read.csv("nam_res.csv")
+nz_res <- read.csv("nz_res.csv")
+bz_res <- read.csv("bz_res.csv")
+batch2_res <- read.csv("batch2_res.csv")
+batch3_res <- read.csv("batch3_res.csv")
+```
+
+Relevant libraries are invoked.
+
+```{r Libraries}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(gapminder)
+library(gganimate)
+library(gifski)
+#library(dummies)
+library(tidyverse)
+library(viridis)
+library(maps)
+library(arules)
+library(clustMixType)
+library(lubridate)
+```
+
+First, I will examine the timing of sightings of size zero specimen, which are assumed to be babies. The first attempt will make an animated map showing the appearence of size zero specimen over the course of the year. 
+
+Each data set is combined into a single data frame with only the values from the "body_size" column extracted.
+```{r DF}
+offset <- 60
+mapWorld <- map_data('world', wrap=c(offset, offset+360), ylim=c(-55,75))
+theme_set(theme_classic())
+all_results_babies <- bind_rows(river_res,sam_res,nam_res,nz_res,bz_res,batch2_res,batch3_res) %>% mutate(lon_off = ifelse(longitude < offset, longitude + 360, longitude), trait = body_size) %>% select(id,trait,lon_off,longitude,latitude,place_country_name,observed_on)
+summary(all_results_babies)
+```
+
+First a static map of size zero specimen is created.
+
+```{r Map 0}
+g2 <- ggplot() + geom_polygon(data = mapWorld, aes(x=long, y = lat, group = group), fill = "light gray") + geom_point(data = all_results_babies,aes(x = lon_off, y = latitude), color = "black", alpha = 0.5, size = 1, pch = 16) + geom_point(data = all_results_babies %>% filter(trait == "0"), aes(x = lon_off, y = latitude, group = id), color = "dark orange", alpha = 1, size = 3, pch = 16) + theme(axis.text.x = element_blank(), axis.text.y = element_blank()) + ylab("") + xlab("")
+g2
+```
+
+Now I will examine the time dependence of the appearance of babies. First, I need to extract only the month from the date string.
+
+```{r Month Date}
+all_results_babies$observed_on <- substr(all_results_babies$observed_on, 6, 7)
+```
+
+I will animate the data to observe the trend over time.
+
+```{r Animation}
+p2 <- ggplot() + geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") + geom_point(data = all_results_babies %>% filter(trait == "0"), aes(x = lon_off, y = latitude, group = id), color = "dark orange", alpha = 1, size = 3, pch = 16) + theme(axis.text.x = element_blank(), axis.text.y = element_blank()) + ylab("") + xlab("") + labs(title = 'Month: {closest_state}') + transition_states(observed_on, transition_length = 2, state_length = 2) + ease_aes('linear')
+animate(p2)
+```
+
+Now I want to see the trend in appearances in a more quantitative way.
+
+First I want to split the data into the Northern and Southern Hemisphere after doing some data cleaning.
+
+```{r Hemisphere Split}
+all_results_babies <- all_results_babies %>% mutate(hemisphere = ifelse(latitude >= 0 & !is.na(latitude), "Northern", ifelse(latitude < 0 & !is.na(latitude), "Southern", NA)))
+summary(all_results_babies)
+```
+
+Now looking at the trend.
+
+```{r Trends}
+ggplot(all_results_babies %>% filter(trait == "0"), aes(x = as.factor(observed_on))) + geom_line(stat = "count", aes(group = 1), color = "blue") + geom_point(stat = "count", aes(y = ..count..), color = "red") + labs(x = "Month", t = "Number of Occurences", title = "Distribution of Size 0 Specimen Over the Year") + facet_wrap(~ hemisphere, scales = "free_y") + theme_minimal()
+```
+
+Now I am going to do some Association Rules Mining. First lets put all of the data into a single data frame.
+
+```{r Preprocessing}
+all_results <- bind_rows(river_res, sam_res, nam_res, nz_res, bz_res, batch2_res, batch3_res) %>% mutate(lon_off = ifelse(longitude < offset, longitude + 360, longitude)) %>% select(id, body_size, handedness, tentacle_number, crest_height, thumb_ratio, pink_purple, clear, body_color, gap, gonodendra, latitude, longitude, observed_on, place_country_name, image_type)
+```
+
+Now the whole data frame needs to be converted to binary for the association rule mining to work best.
+```{r Binary}
+all_results <- all_results %>% mutate(body_color_Y = ifelse(body_color == "Y", 1, 0))
+all_results <- all_results %>% mutate(body_color_R = ifelse(body_color == "R", 1, 0))
+all_results <- all_results %>% mutate(handedness_bi = ifelse(handedness == "L", 1, 0))
+all_results <- all_results %>% mutate(body_size0 = ifelse(body_size == "0", 1, 0))
+all_results <- all_results %>% mutate(body_size1 = ifelse(body_size == "1", 1, 0))
+all_results <- all_results %>% mutate(body_size2 = ifelse(body_size == "2", 1, 0))
+all_results <- all_results %>% mutate(body_size3 = ifelse(body_size == "3", 1, 0))
+all_results <- all_results %>% mutate(crest_heightL = ifelse(crest_height == "L", 1, 0))
+all_results <- all_results %>% mutate(crest_heightM = ifelse(crest_height == "M", 1, 0))
+all_results <- all_results %>% mutate(crest_heightH = ifelse(crest_height == "H", 1, 0))
+all_results <- all_results %>% mutate(thumb_ratioS = ifelse(thumb_ratio == "S", 1, 0))
+all_results <- all_results %>% mutate(thumb_ratioM = ifelse(thumb_ratio == "M", 1, 0))
+all_results <- all_results %>% mutate(thumb_ratioL = ifelse(thumb_ratio == "L", 1, 0))
+all_results <- all_results %>% mutate(pink_bi = ifelse(pink_purple == "Y", 1, 0))
+all_results <- all_results %>% mutate(clear_bi = ifelse(clear == "Y", 1, 0))
+all_results <- all_results %>% mutate(gap_bi = ifelse(gap == "Y", 1, 0))
+all_results <- all_results %>% mutate(gono_bi = ifelse(gonodendra == "Y", 1, 0))
+all_results <- all_results %>% mutate(gonodendra = ifelse(gonodendra == "Y", 1, 0))
+all_results_binary <- all_results %>%
+  select(body_color_Y, body_color_R, handedness_bi, body_size0, body_size1, body_size2, body_size3, crest_heightL, crest_heightM, crest_heightH, thumb_ratioS, thumb_ratioM, thumb_ratioL, pink_bi, clear_bi, gap_bi)
+summary(all_results_binary)
+```
+
+After having some difficulty with initial trials, the non-discrete variables are removed for now.
+
+```{r Discrete}
+binary_traits <- all_results_binary %>% select(body_color_Y, body_color_R, pink_bi, gap_bi, clear_bi)
+binary_traits[is.na(binary_traits)] <- 0
+binary_traits_logical <- binary_traits == 1
+```
+
+The rules are then mined.
+
+```{r Rules}
+#transactions <- as(binary_traits_logical, "transactions")
+rules <- apriori(binary_traits_logical, parameter = list(supp = 0.005, conf = 0.5, target = "rules"))
+inspect(rules)
+```
+
+Now we are going to try to find some further patterns using K-Prototypes Clustering. First we want to clean up our all_results data frame. First we'll get rid of all any duplicates. Then we'll get rid of all poor quality images, any taken from the ventral direction, and any whose body size is zero.
+
+```{r Clean Up}
+nrow(all_results)
+all_results <- all_results[!duplicated(all_results$id),]
+all_results_clean <- all_results[all_results$image_type != 'P' & all_results$image_type != 'V' & all_results$body_size != '0', ]
+DT::datatable(all_results_clean)
+```
+
+Now we will create a data frame containing just the information we would like to be analyzed by the K-Prototypes algorithm.
+
+```{r K-Proto DF}
+all_results_clean <- all_results_clean %>%
+  mutate(crest_height = case_when(
+    crest_height == "H" ~ 3,
+    crest_height == "M" ~ 2,
+    crest_height == "L" ~ 1,))
+all_results_clean <- all_results_clean %>%
+  mutate(thumb_ratio = case_when(
+    thumb_ratio == "L" ~ 3,
+    thumb_ratio == "M" ~ 2,
+    thumb_ratio == "S" ~ 1,))
+kproto_clean <- all_results_clean %>%
+  select(id, body_size, crest_height, thumb_ratio, body_color_Y, body_color_R, pink_bi, clear_bi, gap_bi)
+kproto_clean <- kproto_clean %>% 
+                mutate(body_color_Y = ifelse(is.na(body_color_Y), 0, body_color_Y), body_color_R = ifelse(is.na(body_color_R), 0, body_color_R), pink_bi = ifelse(is.na(pink_bi), 0, pink_bi), clear_bi = ifelse(is.na(clear_bi), 0, clear_bi), gap_bi = ifelse(is.na(gap_bi), 0, gap_bi)) %>% filter(!is.na(body_size) & !is.na(crest_height) & !is.na(thumb_ratio))
+nrow(kproto_clean)
+DT::datatable(kproto_clean)
+kproto_clean_noid <- kproto_clean[, -which(names(kproto_clean) == "id")]
+kproto_clean_noid$body_color_Y <- as.factor(kproto_clean$body_color_Y)
+kproto_clean_noid$body_color_R <- as.factor(kproto_clean$body_color_R)
+kproto_clean_noid$pink_bi <- as.factor(kproto_clean$pink_bi)
+kproto_clean_noid$clear_bi <- as.factor(kproto_clean$clear_bi)
+kproto_clean_noid$gap_bi <- as.factor(kproto_clean$gap_bi)
+```
+
+```{r K-Proto}
+set.seed(321)
+kproto_results <- kproto(kproto_clean_noid, k = 3, lambda = 1)
+nrow(kproto_clean_noid)
+clusters_ids <- data.frame(id = kproto_clean$id, cluster = kproto_results$cluster)
+kproto_coordinates <- merge(clusters_ids, all_results[, c("id","latitude","longitude")], by = "id", all.x = TRUE)
+kproto_coordinates$longitude <- ifelse(kproto_coordinates$longitude < offset, kproto_coordinates$longitude + 360, kproto_coordinates$longitude)
+KPrototypes_Cluster_Map <- ggplot() + geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") + geom_point(data = kproto_coordinates, aes(x = longitude, y = latitude, color = as.factor(cluster)), alpha = 1, size = 1, pch = 16) + ggtitle("K-Prototype Clustering of Physalis Morphological from iNaturalist")  +  theme(axis.text.x = element_blank(), axis.text.y = element_blank()) + ylab("") + xlab("") + labs(color = "Cluster") + theme(legend.position = "right") + scale_color_manual(values = c("green", "blue", "red"))
+print(KPrototypes_Cluster_Map)
+```
+
+Mapping Traits
+
+```{r Traits}
+all_results <- all_results %>%
+  mutate(crest_height = case_when(
+    crest_height == "H" ~ 3,
+    crest_height == "M" ~ 2,
+    crest_height == "L" ~ 1,))
+all_results <- all_results %>%
+  mutate(thumb_ratio = case_when(
+    thumb_ratio == "L" ~ 3,
+    thumb_ratio == "M" ~ 2,
+    thumb_ratio == "S" ~ 1,))
+
+all_results$longitude <- ifelse(all_results$longitude < offset, all_results$longitude + 360, all_results$longitude)
+Body_Size_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(body_size)), alpha = 0.5, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_size_continuous(range = c(0.25,2)) + labs(title = "Relative Body Size of Observations") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Body_Size_Map)
+
+Crest_Height_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(crest_height)), alpha = 0.5, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_size_continuous(range = c(0.25,2)) + labs(title = "Relative Crest Height of Observations") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Crest_Height_Map)
+
+Thumb_Ratio_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(thumb_ratio)), alpha = 0.5, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_size_continuous(range = c(0.25,2)) + labs(title = "Relative Thumb Ratio of Observations") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Thumb_Ratio_Map)
+
+
+Pink_Purple_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, color = pink_purple), alpha = 0.5, pch = 16, size = 1) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_color_manual(values = c("Y" = "deeppink", "B" ="deeppink", "S" = "gray", " " = "gray")) + labs(title = "Observations with Pink Coloration on Float") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+
+print(Pink_Purple_Map)
+
+Yellow_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "dark gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, color = body_color), alpha = 1, pch = 16, size = 1) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_color_manual(values = c("Y" = "yellow2", "R" = "lightgray", " " = "lightgray")) + labs(title = "Observations with Yellow-tipped Zooids") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none") 
+
+print(Yellow_Map)
+
+Red_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, color = body_color), alpha = 1, pch = 16, size = 1) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_color_manual(values = c("R" = "red", "Y" = "lightgray", " " = "lightgray")) + labs(title = "Observations with Red Coloration on Body") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Red_Map)
+
+Gap_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, color = gap), alpha = 1, pch = 16, size = 1) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_color_manual(values = c("Y" = "blue", " " = "lightgray")) + labs(title = "Observations with Gap Between Growth Zones") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Gap_Map)
+
+Clear_Map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = all_results, aes(x = longitude, y = latitude, color = clear), alpha = 1, pch = 16, size = 1) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + scale_color_manual(values = c("Y" = "blueviolet", " " = "lightgray")) + labs(title = "Observations with Very Clear Float") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
+print(Clear_Map)
+
+
+
+all_results <- all_results %>% mutate(month = month(ymd(observed_on)))
+all_results$month <- as.numeric(all_results$month)
+yellow_data <- all_results %>% filter(body_color == "Y")
+red_data <- all_results %>% filter(body_color == "R")
+gap_data <- all_results %>% filter(gap == "Y")
+clear_data <- all_results %>% filter(clear == "Y")
+pink_data <- all_results %>% filter(pink_purple == "Y" | pink_purple == "B")
+month_names <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+yellow_data$month_name <- factor(month_names[yellow_data$month], levels = month_names, ordered = TRUE)
+red_data$month_name <- factor(month_names[red_data$month], levels = month_names, ordered = TRUE)
+gap_data$month_name <- factor(month_names[gap_data$month], levels = month_names, ordered = TRUE)
+clear_data$month_name <- factor(month_names[clear_data$month], levels = month_names, ordered = TRUE)
+pink_data$month_name <- factor(month_names[pink_data$month], levels = month_names, ordered = TRUE)
+
+yellow_data$longitude <- ifelse(yellow_data$longitude < offset, yellow_data$longitude + 360, yellow_data$longitude)
+Yellow_Map_Animated <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "dark gray") +
+geom_point(data = yellow_data, aes(x = longitude, y = latitude), color = "yellow3", alpha = 1, pch = 16, size = 3) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + transition_states(states = as.factor(yellow_data$month_name), transition_length = 1, state_length = 3) + labs(title = "Yellow-tipped Zooids Over Time: {closest_state}") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+animate(Yellow_Map_Animated, nframes = 12, fps = 0.5, width = 800, height = 600)
+
+Red_Map_Animated <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "dark gray") +
+geom_point(data = red_data, aes(x = longitude, y = latitude), color = "red", alpha = 1, pch = 16, size = 3) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + transition_states(states = as.factor(red_data$month_name), transition_length = 1, state_length = 3) + labs(title = "Red Coloration Over Time: {closest_state}") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+animate(Red_Map_Animated, nframes = 12, fps = 0.5, width = 800, height = 600)
+
+Gap_Map_Animated <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "dark gray") +
+geom_point(data = gap_data, aes(x = longitude, y = latitude), color = "blue", alpha = 1, pch = 16, size = 3) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + transition_states(states = as.factor(gap_data$month_name), transition_length = 1, state_length = 3) + labs(title = "Gap Between Growth Zones Over Time: {closest_state}") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+animate(Gap_Map_Animated, nframes = 12, fps = 0.5, width = 800, height = 600)
+
+Clear_Map_Animated <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "dark gray") +
+geom_point(data = clear_data, aes(x = longitude, y = latitude), color = "blueviolet", alpha = 1, pch = 16, size = 3) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + transition_states(states = as.factor(clear_data$month_name), transition_length = 1, state_length = 3) + labs(title = "Clear Floats Over Time: {closest_state}") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+animate(Clear_Map_Animated, nframes = 12, fps = 0.5, width = 800, height = 600)
+```
