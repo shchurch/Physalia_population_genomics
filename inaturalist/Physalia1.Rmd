@@ -135,7 +135,7 @@ Now we are going to try to find some further patterns using K-Prototypes Cluster
 
 ```{r Clean Up}
 nrow(all_results)
-all_results <- all_results[!duplicated(all_results$id),]
+#all_results <- all_results[!duplicated(all_results$id),]
 all_results_clean <- all_results[all_results$image_type != 'P' & all_results$image_type != 'V' & all_results$body_size != '0', ]
 DT::datatable(all_results_clean)
 ```
@@ -182,16 +182,16 @@ Mapping Traits
 
 ```{r Traits}
 all_results <- all_results %>%
-  mutate(crest_height = case_when(
+  mutate(crest_height_numeric = case_when(
     crest_height == "H" ~ 3,
     crest_height == "M" ~ 2,
     crest_height == "L" ~ 1,))
 all_results <- all_results %>%
-  mutate(thumb_ratio = case_when(
+  mutate(thumb_ratio_numeric = case_when(
     thumb_ratio == "L" ~ 3,
     thumb_ratio == "M" ~ 2,
     thumb_ratio == "S" ~ 1,))
-
+ 
 all_results$longitude <- ifelse(all_results$longitude < offset, all_results$longitude + 360, all_results$longitude)
 Body_Size_Map <- ggplot() +
 geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
@@ -202,14 +202,14 @@ print(Body_Size_Map)
 
 Crest_Height_Map <- ggplot() +
 geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
-geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(crest_height)), alpha = 0.5, pch = 16) +
+geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(crest_height_numeric)), alpha = 0.5, pch = 16) +
 theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
 ylab("") + xlab("") + scale_size_continuous(range = c(0.25,2)) + labs(title = "Relative Crest Height of Observations") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
 print(Crest_Height_Map)
 
 Thumb_Ratio_Map <- ggplot() +
 geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
-geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(thumb_ratio)), alpha = 0.5, pch = 16) +
+geom_point(data = all_results, aes(x = longitude, y = latitude, size = as.numeric(thumb_ratio_numeric)), alpha = 0.5, pch = 16) +
 theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
 ylab("") + xlab("") + scale_size_continuous(range = c(0.25,2)) + labs(title = "Relative Thumb Ratio of Observations") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"), legend.position = "none")  
 print(Thumb_Ratio_Map)
@@ -296,4 +296,77 @@ geom_point(data = clear_data, aes(x = longitude, y = latitude), color = "bluevio
 theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
 ylab("") + xlab("") + transition_states(states = as.factor(clear_data$month_name), transition_length = 1, state_length = 3) + labs(title = "Clear Floats Over Time: {closest_state}") + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
 animate(Clear_Map_Animated, nframes = 12, fps = 0.5, width = 800, height = 600)
+```
+
+Creating Range Maps
+```{R range maps}
+physalis_confident_conditions <- with(all_results,
+(crest_height == 'H' & tentacle_number == 'M' & thumb_ratio == 'S') | (body_color == 'R'))
+physalis_exclude_conditions <- with(all_results,
+body_color == 'Y' | clear == 'Y' | gap == 'Y' | thumb_ratio == 'L')
+
+physalis_subset <- all_results[physalis_confident_conditions & !physalis_exclude_conditions, ]
+
+Physalis_map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = physalis_subset, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. physalis") * " Conditions")) + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+print(Physalis_map)
+
+physalis_outlier_exclude <- list(144843720, 66751785, 39066937, 178834303, 37567271, 104944966)
+
+physalis_subset_checked <- physalis_subset[!physalis_subset$id %in% physalis_outlier_exclude, ]
+
+Physalis_map_checked <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = physalis_subset_checked, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. physalis") * " Conditions After Interrogation of Outliers")) + theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5, color = "black"))
+print(Physalis_map_checked)
+
+megalista_confident_conditions <- with(all_results, thumb_ratio == 'L' & crest_height == 'M' | crest_height == 'H' & pink_purple == 'Y' & gap == 'Y')
+megalista_exclude_conditions <- with(all_results, tentacle_number == 'M' | body_color == 'Y' | body_color == 'R' | thumb_ratio == 'S')
+megalista_subset <- all_results[megalista_confident_conditions & !megalista_exclude_conditions, ]
+
+Megalista_map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = megalista_subset, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. megalista") * " Conditions")) + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+print(Megalista_map)
+
+megalista_outlier_exclude <- list(156146507, 63856161, 10295555, 37455118, 130847034, 91612883, 180592174, 133415946, 76871679, 35827010, 130847034, 126925882)
+
+megalista_subset_checked <- megalista_subset[!megalista_subset$id %in% megalista_outlier_exclude, ]
+
+Megalista_map_checked <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = megalista_subset_checked, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. megalista") * " Conditions After Interrogation of Outliers")) + theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5, color = "black"))
+print(Megalista_map_checked)
+
+utriculus_confident_conditions <- with(all_results, (body_color == 'Y') | (gap == 'Y' & clear == 'Y' & thumb_ratio == 'S' & crest_height == 'L'))
+utriculus_exclude_conditions <- with(all_results, body_color == 'R' | thumb_ratio == 'L' | tentacle_number == 'M')
+
+utriculus_subset <- all_results[utriculus_confident_conditions & !utriculus_exclude_conditions, ]
+
+Utriculus_map <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = utriculus_subset, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. physalis") * " Conditions")) + theme(plot.title = element_text(size = 20, face = "bold", hjust = 0.5, color = "black"))
+print(Utriculus_map)
+
+utriculus_outliers_exclude <- list(35947063, 57788881, 64984868)
+utriculus_subset_checked <- utriculus_subset[!utriculus_subset$id %in% utriculus_outliers_exclude, ]
+
+Utriculus_map_checked <- ggplot() +
+geom_polygon(data = mapWorld, aes(x = long, y = lat, group = group), fill = "light gray") +
+geom_point(data = utriculus_subset_checked, aes(x = longitude, y = latitude), alpha = 0.5, size = 1, pch = 16) +
+theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+ylab("") + xlab("") + labs(title = expression("Observations Meeting " * italic("P. utriculus") * " Conditions After Interrogation of Outliers")) + theme(plot.title = element_text(size = 10, face = "bold", hjust = 0.5, color = "black"))
+print(Utriculus_map_checked)
+
 ```
