@@ -1,0 +1,329 @@
+---
+title: "_Physalia_ global population genomics: Fig. 2"
+format:
+  html:
+    embed-resources: true
+theme: cosmo
+---
+
+Samuel H. Church
+
+Initiated: March, 2023
+
+```{r init}
+#| include: false
+
+library(gridExtra)
+library(ggplot2)
+#library(RcppCNPy)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(ggtree)
+library(ggrepel)
+library(maps)
+library(ape)
+library(phytools)
+library(viridis)
+
+theme_set(theme_classic())
+```
+
+```{r setup}
+#| echo: false
+metadata <- read.delim("../data/metadata.tsv",header=T,stringsAsFactors=F) %>% filter(status %in% c("sequenced","sequenced elsewhere"))
+
+sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
+  mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
+  separate(lat_long,into=c("lat","long"),sep=", ")
+locations <- sample_info %>% pull(location) %>% unique()
+
+cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+names(cols) <- c("A","B1","B2","C1","C2")
+
+anchor_samples <- data.frame(cluster = c("C2","C1","B2","B1","A"), 
+  ID = c("YPM-IZ-110468","KM5632","YPM-IZ-110877","OA-Bluebottle","YPM-IZ-110876"))
+
+```
+
+```{r admix-assignments}
+dir <- "../results/all_samples/"
+name <- "main_run"
+bam_list <- paste0(dir,"subset_bam.filelist")
+
+n <- 5
+
+admix_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
+apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+left_join(.,sample_info,by="ID")
+
+q <- read.delim(paste0(dir,name,".admix.",n,".Q"),header=F,sep=" ")  %>% 
+    mutate(ID = admix_info$ID, 
+      location = admix_info$location, 
+      ocean = admix_info$ocean,
+      label = paste(location,ID,sep=":")) %>% 
+    tidyr::pivot_longer(cols=starts_with("V"),names_to="PC") %>%
+    group_by(label) %>% 
+    mutate(likely_assignment = PC[which.max(value)],
+           assignment_prob = max(value))
+    
+cluster_IDs <- left_join(anchor_samples,q %>% distinct(ID,likely_assignment),by="ID") %>% select(cluster,likely_assignment)
+q <- left_join(q,cluster_IDs,by="likely_assignment") %>% 
+  arrange(match(cluster,c("A","B1","B2","C2","C1")), desc(assignment_prob)) %>% 
+  ungroup()
+
+label_order <- levels(q %>% mutate(id = forcats::fct_inorder(factor(label))) %>% pull(id))
+assignments <- q %>% distinct(ID,cluster,likely_assignment)
+```
+
+```{r mito}
+
+mito_tree <- read.tree("../results/iqtree/go_mito_aligned.fasta.treefile")
+mito_tree$tip.label <- gsub("(.*)_mito_path1","\\1",mito_tree$tip.label)
+mito_tree$tip.label <- gsub("_R_(.*)","\\1",mito_tree$tip.label)
+mito_tree$tip.label <- gsub("(.*)\\.1","\\1",mito_tree$tip.label)
+new_mito_tree <- phytools::midpoint.root(mito_tree)
+
+sd <- sample_info %>% mutate(seq = ID, label2 = paste(ID,location,sep=":")) %>% select(seq,label2,location) %>% 
+  left_join(.,assignments %>% rename(seq = ID),by="seq") %>% mutate(label2 = paste(cluster,location,sep=":"))
+sd <- bind_rows(sd,data.frame(seq = c("KT809335.1","KT809328.1"),label2=c("R. eysenhardtii","NCBI specimen"),ocean=c(NA,NA)))
+
+node1 <- getMRCA(new_mito_tree,assignments %>% filter(cluster == "A") %>% pull(ID))
+node2 <- getMRCA(new_mito_tree,assignments %>% filter(cluster %in% c("B1","B2")) %>% pull(ID))
+
+p <- ggtree(new_mito_tree,size=1)
+pdf("../figures/panels/mitochondrial_tree_assign.pdf",height=16,width=12,useDingbats=F)
+print(flip(p, node1, node2) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5,position=position_nudge(x = 0.0125)) + 
+  #geom_text2(aes(label=label, subset = !is.na(as.numeric(label)))) +
+  #geom_tiplab(aes(label=label2),size=1.5,hjust=-0.15) + 
+  xlim(c(0,1.25)) +   
+  scale_color_manual(values=cols))
+dev.off()
+
+pdf("../figures/panels/mitochondrial_tree_assign_bootstrap.pdf",height=14,width=12,useDingbats=F)
+print(flip(p, node1, node2) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5,position=position_nudge(x = 0.0125)) + 
+  geom_text2(aes(label=label, subset = !is.na(as.numeric(label))),hjust=1) +
+  geom_tiplab(aes(label=label2),size=1.5,hjust=-0.35) + 
+  xlim(c(0,1.5)) +   
+  scale_color_manual(values=cols))
+dev.off()
+```
+
+```{r SNP}
+
+snp_tree <- compute.brlen(read.nexus("../results/svdq/all_filtered.tre"),1)
+snp_tree$tip.label <- gsub("_","-",snp_tree$tip.label)
+
+node1 <- getMRCA(snp_tree,assignments %>% filter(cluster == "C1") %>% pull(ID))
+new_snp_tree <- phytools::reroot(snp_tree,node1,position=0.5)
+
+node2 <- getMRCA(new_snp_tree,assignments %>% filter(cluster == "A") %>% pull(ID))
+node3 <- getMRCA(new_snp_tree,assignments %>% filter(cluster %in% c("B1","B2")) %>% pull(ID))
+
+max_edge <- max(nodeHeights(new_snp_tree)) 
+
+p <- ggtree(new_snp_tree,size=1)
+pdf("../figures/panels/SNP_tree_assign.pdf",height=16,width=12,useDingbats=F)
+print(flip(p,node2,node3) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5) + 
+  #geom_text2(aes(label=label, subset = !is.na(as.numeric(label)))) +
+  #geom_tiplab(aes(label=label2),size=1.5,hjust=-0.15) + 
+	xlim(c(0,max_edge+(max_edge*0.1))) + 	
+  scale_color_manual(values=cols))
+dev.off()
+
+pdf("../figures/panels/mitochondrial_tree_assign_bootstrap.pdf",height=16,width=12,useDingbats=F)
+print(flip(p, node1, node2) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5) + 
+  geom_text2(aes(label=label, subset = !is.na(as.numeric(label)))) +
+  geom_tiplab(aes(label=label2),size=1.5,hjust=-0.15) + 
+  xlim(c(0,1.5)) +   
+  scale_color_manual(values=cols))
+dev.off()
+```
+
+```{r genetrees}
+genes <- c("CO1","ITS")
+
+NCBI_data <- read.delim("../data/NCBI_data.tsv",header=T,stringsAsFactors=F) %>% 
+		mutate(ocean = ifelse(grepl("Rhizo",organism),NA,ifelse(ocean == "",NA,ocean))) %>%
+		mutate(country = ifelse(grepl("Rhizo",organism),organism,country)) %>%
+		mutate(seq = accession, label2 = paste("NCBI",accession,country,sep=":"), ocean=ocean) %>% select(seq,label2,ocean) %>% 
+		rbind(.,sample_info %>% mutate(seq = ID, label2 = paste(ID,location,sep=":")) %>% select(seq,label2,ocean))
+
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
+
+plot_tree <- function(gene_name){
+	
+	tree <- read.tree(paste0("../results/iqtree/",gene_name,".aln.fa.treefile"))
+	tree$tip.label <- gsub("^.*\\|(.*?)\\_.*","\\1",tree$tip.label)
+	tree$tip.label <- gsub("_rc$","",tree$tip.label)
+
+	R_node <- MRCA(tree,c(grep("AY937377.1",tree$tip.label),grep("GQ120038.1",tree$tip.label)))
+	new_tree <- phytools::reroot(tree,R_node,position=0.5*tree$edge.length[which(tree$edge[,2]==R_node)])
+
+#	new_tree <- phytools::midpoint.root(tree)
+
+	p <- ggtree(tree)
+
+	max_edge <- max(nodeHeights(tree)) 
+
+	pdf(file=paste0("../figures/panels/plot_",gene_name,".pdf"),width=8,height=12)
+	print(p %<+% NCBI_data + 
+		geom_tippoint(aes(color=ocean),size=2) + 
+		geom_tiplab(aes(label = label2), size=1.5,hjust=-0.15) + 
+		xlim(c(0,max_edge+(max_edge*0.25))) + 	
+		scale_color_manual(values = colors) )
+	dev.off()
+}
+
+lapply(genes,plot_tree)
+```
+
+```{r admix-map}
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+# set up the globe and projection
+LeftBound = -90
+world <- ne_countries(scale = "medium", returnclass = "sf") %>% st_set_crs(4326)
+robinson = paste("+proj=robin +lon_0=",LeftBound," +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs",sep="")
+world2 = world %>% st_break_antimeridian(lon_0 = LeftBound) %>% st_transform(crs = robinson)
+
+si <- sample_info %>% filter(ID %in% assignments$ID) %>% 
+  mutate(lat = as.numeric(lat), lon = as.numeric(long)) %>% 
+  left_join(.,assignments,by="ID") %>% 
+  mutate(lat = round(lat,0), lon = round(lon,0)) %>% group_by(lat,lon,cluster) %>% tally()
+
+transpoint = st_as_sf(si,coords=c("lon","lat"),crs=4326)
+dtran = st_transform(transpoint,robinson)
+
+g1 <- ggplot(data=world2) + geom_sf(fill = "light gray", colour = NA) +
+  geom_label_repel(data=dtran,aes(geometry=geometry,label= cluster,fill=cluster),stat="sf_coordinates",color="white",
+    size=4.5,max.overlaps=100,box.padding=0.5,segment.color="dark gray",segment.size=0.5)  + 
+  geom_point(data=dtran,aes(geometry=geometry,color=cluster),stat="sf_coordinates") + 
+  theme(legend.position = "none") +
+  scale_fill_manual(values = cols) +
+  scale_color_manual(values = cols) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+pdf(paste0(file="../figures/panels/",name,"_map_assignments.pdf"),height=6,width=10,useDingbats=F)
+print(g1)
+dev.off()
+```
+
+```{r admix-assigmnets}
+read_q <- function(n,dir,name){
+  admix_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
+  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+  left_join(.,sample_info,by="ID")
+
+  q <- read.delim(paste0(dir,name,".admix.",n,".Q"),header=F,sep=" ")  %>% 
+    mutate(ID = admix_info$ID, 
+      location = admix_info$location, 
+      ocean = admix_info$ocean,
+      label = paste(location,ID,sep=":")) %>% 
+    tidyr::pivot_longer(cols=starts_with("V"),names_to="PC") %>%
+    group_by(label) %>% 
+    mutate(likely_assignment = PC[which.max(value)],
+           assignment_prob = max(value)) %>% 
+    arrange(likely_assignment, desc(assignment_prob)) %>% 
+    ungroup()
+
+  assign_order <- q %>% arrange(match(label,label_order)) %>%
+    pull(likely_assignment) %>% unique
+
+  q <- q %>% mutate(fct_label = forcats::fct_inorder(factor(label)),
+          #fct_label = factor(label,levels=q %>% arrange(ocean) %>% pull(label) %>% unique),
+          fct_assign = factor(likely_assignment,levels=assign_order),
+          fct_PC = factor(PC,levels=assign_order)) 
+
+  g <- ggplot(q, aes(fct_label, value, fill=fct_PC)) +
+    #ggplot(q, aes(fct_label, value, fill = ocean)) +
+    geom_col(width=0.95) +
+    facet_grid(~fct_assign, scales = 'free', space = 'free') + 
+    theme(strip.background = element_blank(),strip.text.x = element_blank()) +
+    xlab("") + ylab("") +
+    theme(legend.position="none",axis.text=element_text(size=3),
+      axis.text.x = element_text(angle = 45, hjust=1),
+      axis.ticks.x = element_blank()) 
+
+   return(g)
+}
+
+fct_cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+names(fct_cols) <- cluster_IDs %>% arrange(match(cluster,names(cols))) %>% pull(likely_assignment)
+
+admix <- read_q(5,dir,name)
+pdf(paste0("../figures/panels/",name,"_admixture.pdf"),height=8,width=35)
+print(admix + scale_fill_manual(values = fct_cols))
+dev.off()
+```
+
+
+```{r write_pops}
+write.table(assignments %>% select(ID,cluster) %>% arrange(ID),file="../data/pop.txt",col.names=F,quote=F,row.names=F)
+```
+
+```{r pixy}
+# use pops.txt in BCF workflow
+
+dir <- "../results/pixy/pop/"
+
+fst <- read.delim(paste0(dir,"pixy_fst.txt"))
+pi <- read.delim(paste0(dir,"pixy_pi.txt"))
+dxy <- read.delim(paste0(dir,"pixy_dxy.txt"))
+
+pops <- unique(fst[c("pop1", "pop2")])
+
+options(scipen=999)
+
+#for (p in 1:nrow(pops)){
+#  combo <- pops[p,]
+#  thisPop <- subset(fst, pop1 == combo$pop1[[1]] & pop2 == combo$pop2[[1]]) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_wc_fst,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
+#  mutate(value = ifelse(is.na(value),"",value))
+#  write.table(thisPop,file=paste("fst_utr_", combo$pop1[[1]], "_", combo$pop2[[1]],".bedgraph", sep=""),sep="\t",col.names=F,row.names=F,quote=F)
+#}
+#
+#for (p in 1:length(unique(pi$pop))){
+#  pop <- unique(pi$pop)[p]
+#  thisPop <- subset(pi, pop == pop) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_pi,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
+#  mutate(value = ifelse(is.na(value),"",value))
+#  write.table(thisPop,file=paste("pi_", pop,".bedgraph", sep=""),sep="\t",col.names=F,row.names=F,quote=F)
+#}
+
+summary_fst <- fst %>% 
+  left_join(.,assignments %>% distinct(cluster) %>% mutate(pop1 = cluster),by="pop1") %>% 
+  left_join(.,assignments %>% distinct(cluster) %>% mutate(pop2 = cluster),by="pop2") %>% 
+  group_by(pop1,pop2) %>% summarize(Fst = mean(avg_wc_fst, na.rm=T)) %>% ungroup()
+
+sym_fst <- bind_rows(summary_fst,summary_fst %>% rename(pop1 = pop2, pop2 = pop1)) %>% arrange(Fst) %>% data.frame
+fst_mat_plot <- ggplot(sym_fst,aes(x = pop1, y = pop2, fill = Fst, label= round(Fst,2))) + 
+  geom_tile() + 
+  scale_fill_distiller(type = "seq", limits = c(0,1),
+                        direction = 1,
+                        palette = "Greys") +  
+  geom_text(color="white") + 
+  xlab("") + ylab("")
+
+png(paste0("../figures/panels/populations_Fst.png"),height=950,width=1200,res=300)
+print(fst_mat_plot)
+dev.off()
+
+#  summary_pi <- pi %>% group_by(pop) %>% summarize(pi = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% arrange(pi)
+#  summary_dxy <- dxy %>% group_by(pop1,pop2) %>% summarize(dxy = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% arrange(dxy)
+#  
+#  sym_dxy <- bind_rows(summary_dxy,summary_dxy %>% rename(pop1 = pop2, pop2 = pop1)) #%>% rename(ID = pop1) %>% left_join(.,sample_info,by="ID")
+
+```
+

@@ -1,0 +1,333 @@
+---
+title: "_Physalia_ citizen science data"
+format:
+  html:
+    embed-resources: true
+theme: cosmo
+---
+
+Samuel H. Church, River Abedon
+
+Initiated: October, 2023
+
+```{r Libraries}
+library(dplyr)
+library(ggplot2)
+library(maps)
+library(dggridR)
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+theme_set(theme_classic())
+```
+
+
+```{r load original data}
+#	river_res <- read.csv("../data/inaturalist_scores/River_batch.tsv",sep="\t") %>% mutate(batch = "river1")
+#	sam_res <- read.csv("../data/inaturalist_scores/Sam_batch.tsv",sep="\t") %>% mutate(batch = "sam1")
+#	nam_res <- read.csv("../data/inaturalist_scores/Nam_batch.tsv",sep="\t") %>% mutate(batch = "nam1")
+#	nz_res <- read.csv("../data/inaturalist_scores/NZ_batch1.tsv",sep="\t") %>% mutate(batch = "sam2")
+#	bz_res <- read.csv("../data/inaturalist_scores/Brazil_batch1.tsv",sep="\t") %>% mutate(batch = "sam3")
+#	batch2_res <- read.csv("../data/inaturalist_scores/batch2.tsv",sep="\t") %>% mutate(batch = "sam4")
+#	batch3_res <- read.csv("../data/inaturalist_scores/batch3.tsv",sep="\t") %>% mutate(batch = "sam5")
+#	
+#	all_results <- bind_rows(river_res,sam_res,nam_res,nz_res,bz_res,batch2_res,batch3_res) %>% 
+#		mutate(juvenile = ifelse(body_size == "0","Y",ifelse(body_size == "","","N"))) %>%
+#	  	select(batch,id,latitude,longitude,observed_on,
+#	  		body_color,crest_height,tentacle_number,thumb_ratio,clear,gap,pink_purple,
+#	  		image_type,juvenile) %>% 
+#	  	replace(is.na(.), "") %>% mutate(across(c(longitude,latitude),as.numeric)) 
+#	
+#	write.table(all_results,file="../data/final_inaturalist_scores.tsv",row.names=F,quote=T,sep="\t")
+
+all_results <- read.delim("../data/final_inaturalist_scores.tsv",header=T,sep="\t")
+```
+
+```{r set up data}
+offset <- 60
+world_off <- map_data('world', wrap=c(offset, offset+360), ylim=c(-55,75))
+
+filtered_results <- all_results %>% 
+  mutate(lon_off = ifelse(longitude < offset, longitude + 360, longitude)) %>%
+	filter(image_type %in% c("D","L"),juvenile == "N") %>% # drop samples with image type marked as "poor" or "ventral", retain only "lateral" or "dorsal"
+	group_by(id) %>% slice(1L) %>% ungroup() %>% # pick the first entry for each ID, for those that were scored twice
+	filter(!is.na(longitude),!is.na(latitude))
+```
+
+
+```{r rules}
+
+physalis_conditions <- with(filtered_results,
+	(body_color == "R") | 
+	(crest_height == 'H' & tentacle_number == 'M' & thumb_ratio == 'S')
+)
+physalis_exclusions <- with(filtered_results,
+	body_color == 'Y' | 
+	clear == 'Y' | 
+	gap == 'Y' | 
+	thumb_ratio == 'L'
+)
+
+utriculus_conditions <- with(filtered_results, 
+	(body_color == 'Y') | 
+	(gap == 'Y' & clear == 'Y')
+)
+utriculus_exclusions <- with(filtered_results, 
+	body_color == 'R' | 
+	thumb_ratio == 'L' | 
+	tentacle_number == 'M'
+)
+
+megalista_conditions <- with(filtered_results, 
+	thumb_ratio == 'L' & pink_purple == 'Y' & gap == 'Y'
+)
+megalista_exclusions <- with(filtered_results, 
+	body_color == 'Y' | 
+	body_color == 'R' | 
+	thumb_ratio == 'S' | 
+	clear == "Y"
+)
+
+C2_conditions <- with(filtered_results, 
+	crest_height == 'N' & tentacle_number == 'M'
+)
+C2_exclusions <- with(filtered_results, 
+	pink_purple == 'Y'
+)
+
+physalis_subset <- filtered_results[physalis_conditions & !physalis_exclusions,]
+utriculus_subset <- filtered_results[utriculus_conditions & !utriculus_exclusions,]
+megalista_subset <- filtered_results[megalista_conditions & !megalista_exclusions,]
+C2_subset <- filtered_results[C2_conditions & !C2_exclusions,]
+
+```
+
+
+```{r double check}
+
+# checked all points outside the N Atlantic or SW Atlantic
+
+physalis_outliers_exclude <- list(
+	144843720, # large thumb ratio
+	66751785, # ventral
+	39066937, # large thumb ratio
+	37567271, # 1 tentacle
+	104944966 # 1 tentacle
+)
+physalis_checked <- physalis_subset %>% filter(!id %in% physalis_outliers_exclude)
+
+# checked all points in the SE Pacific (below Ecuador) and Atlantic (except points in SW below Horn of Brazil)
+
+utriculus_outliers_exclude <- c(
+	35947063, # gap not visibly present
+	109450541, # gap not visibly present
+	133995607, # gap not visibly present
+	2956804, # gap not visibly present
+	15427904, # gap not visibly present
+	155595732 # gap not visibly present
+)
+utriculus_checked <- utriculus_subset %>% filter(!id %in% utriculus_outliers_exclude)
+
+# checked points above Tropic of Capricorn
+
+megalista_outliers_exclude <- list(
+	156146507 # ventral view, reddish bodies
+)
+megalista_checked <- megalista_subset %>% filter(!id %in% megalista_outliers_exclude)
+
+# checked all points, scrutiny on points outside of NZ & Australia
+
+C2_outliers_exclude <- list(
+	1693708, # ventral view, large, likely physalis
+	9986226, # ventral view, large and sinuous, likely megalista
+	37713921, # poor image, likely weathered physalis
+	39838970, # large crest, physalis
+	63758995, # ventral view, large, likely physalis
+	66751785, # ventral view, large and sinuous, likely megalista
+	152566014 # ventral view, large, likely physalis
+)
+C2_checked <- C2_subset %>% filter(!id %in% C2_outliers_exclude)
+
+```
+
+```{r plot checked}
+
+generate_map <- function(subset){
+	subset <- subset %>% mutate(month_day = lubridate::ymd(gsub(".*-(.*-.*)","2025-\\1",observed_on)))
+
+	map <- ggplot() +
+		geom_polygon(data = world_off, aes(x = long, y = lat, group = group), fill = "light gray") +
+		geom_point(data = subset, aes(x = lon_off, y = latitude, color = month_day), alpha = 0.7, size = 0.75, pch = 16) +
+		theme(axis.text.x = element_blank(), axis.text.y = element_blank()) +
+		viridis::scale_color_viridis(option="turbo",
+			labels = function(x) format(as.Date(x, origin = "1970-01-01"), "%B")) + 
+		ylab("") + xlab("")
+	return(map)
+}
+
+physalis_map <- generate_map(physalis_checked)
+utriculus_map <- generate_map(utriculus_checked)
+megalista_map <- generate_map(megalista_checked)
+C2_map <- generate_map(C2_checked)
+
+
+pdf("../figures/panels/physalis_date.pdf",height=3,width=6)
+print(physalis_map)
+dev.off()
+pdf("../figures/panels/megalista_date.pdf",height=3,width=6)
+print(megalista_map)
+dev.off()
+pdf("../figures/panels/utriculus_date.pdf",height=3,width=6)
+print(utriculus_map)
+dev.off()
+pdf("../figures/panels/C2_date.pdf",height=3,width=6)
+print(C2_map)
+dev.off()
+
+```
+
+```{r tiled}
+
+dggs <- dgconstruct(res=5)
+world <- ne_countries(scale = "medium", returnclass = "sf") %>% st_set_crs(4326)
+
+generate_tiled_map <- function(subset,LeftBound){
+
+	robinson = paste("+proj=robin +lon_0=",LeftBound," +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs",sep="")
+	world2 = world %>% st_break_antimeridian(lon_0 = LeftBound) %>% st_transform(crs = robinson)
+
+	subset$cell <- dgGEO_to_SEQNUM(dggs,subset$longitude,subset$latitude)$seqnum
+
+	subcounts   <- subset %>% group_by(cell) %>% summarise(count=n())
+	grid          <- dgcellstogrid(dggs,subcounts$cell)
+	grid          <- merge(grid,subcounts,by.x="seqnum",by.y="cell")
+	grid$records  <- grid$count
+	grid$count    <- log(grid$count)
+	cutoff        <- quantile(grid$count,0.9)
+	grid          <- grid %>% mutate(count=ifelse(count>cutoff,cutoff,count))
+
+	wrapped_grid = st_wrap_dateline(grid, options = c("WRAPDATELINE=YES","DATELINEOFFSET=-50"), quiet = TRUE)
+	transformed_grid <- st_transform(wrapped_grid,robinson)
+
+	tiled_map <- ggplot(data=world2) + geom_sf(fill = "#ededed", colour = NA) + 
+    	geom_sf(data=transformed_grid, aes(fill=records), color=alpha("white", 0.1)) +
+    	scale_fill_gradient(low="#636363", high = "red", 
+			trans="log",limits = c(1,50),breaks=c(1,5,10,20,40)) + 
+    	xlab("") + ylab("") #+ 
+    	#theme(legend.position = "none")
+   	return(tiled_map)
+}
+
+physalis_tiled <- generate_tiled_map(physalis_checked,-40) 
+utriculus_tiled <- generate_tiled_map(utriculus_checked,163) 
+megalista_tiled <- generate_tiled_map(megalista_checked,163) 
+C2_tiled <- generate_tiled_map(C2_checked,163) 
+
+pdf("../figures/panels/physalis_tiled.pdf",height=3,width=6)
+print(physalis_tiled)
+dev.off()
+pdf("../figures/panels/megalista_tiled.pdf",height=3,width=6)
+print(megalista_tiled)
+dev.off()
+pdf("../figures/panels/utriculus_tiled.pdf",height=3,width=6)
+print(utriculus_tiled)
+dev.off()
+pdf("../figures/panels/C2_tiled.pdf",height=3,width=6)
+print(C2_tiled)
+dev.off()
+```
+
+
+```{r plot_score}
+repeat_results <- all_results %>% group_by(id) %>% filter(n() > 2) %>% arrange(id) %>% mutate(id = as.character(id))
+
+
+plot_score <- function(res){
+
+	comparison <- res %>% 
+		select(id,batch, trait) %>% 
+		pivot_wider(names_from = batch, values_from = trait) %>% 
+		mutate(
+			comp_1 = ifelse(nzchar(sam1) | nzchar(river1),nchar(sam1) == nchar(river1), NA),
+			comp_2 = ifelse(nzchar(sam1) | nzchar(nam1),nchar(sam1) == nchar(nam1), NA),
+			comp_3 = ifelse(nzchar(river1) | nzchar(river1),nchar(sam1) == nchar(nam1), NA),
+			all = ifelse(nzchar(sam1) | nzchar(river1) | nzchar(nam1),nchar(sam1) == nchar(nam1) & nchar(sam1) == nchar(nam1), NA)) %>% 
+		ungroup() %>% 
+		summarize(
+			comp_1 = mean(comp_1,na.rm=T),
+			comp_2 = mean(comp_2,na.rm=T),
+			comp_3 = mean(comp_3,na.rm=T),
+			all = mean(all,na.rm=T),
+		) %>% 
+		pivot_longer(cols = everything(),names_to="comparison",values_to="fraction")
+
+	comp_plot <- ggplot(comparison,aes(x = comparison, y = fraction, fill = comparison)) + 
+		geom_bar(stat = "identity") + 
+		scale_y_continuous(limits = c(0,1)) + 
+		scale_fill_manual(values = c("firebrick4","aquamarine4","aquamarine4","aquamarine4")) + 
+		geom_hline(yintercept=0.5,linetype="dotted") + 
+		theme(legend.position="none")
+
+	return(comp_plot)
+
+}
+
+p1 <- plot_score(repeat_results %>% rename(trait = tentacle_number)) + ggtitle("tentacle number")
+p2 <- plot_score(repeat_results %>% rename(trait = crest_height)) + ggtitle("crest height")
+p3 <- plot_score(repeat_results %>% rename(trait = body_color)) + ggtitle("body color")
+p4 <- plot_score(repeat_results %>% rename(trait = clear)) + ggtitle("float color")
+p5 <- plot_score(repeat_results %>% rename(trait = gap)) + ggtitle("gap")
+p6 <- plot_score(repeat_results %>% rename(trait = pink_purple)) + ggtitle("crest color")
+p7 <- plot_score(repeat_results %>% rename(trait = juvenile)) + ggtitle("juvenile")
+p8<- plot_score(repeat_results %>% rename(trait = thumb_ratio)) + ggtitle("crest length")
+
+pdf(file="../figures/panels/inat_score_comparison.pdf",height=6,width=8)
+grid.arrange(p1,p2,p3,p4,p5,p6,p7,p8,ncol=3)
+dev.off()
+```
+
+
+```{r plot-comparison}
+
+plot_comparison <- function(res){
+
+	comparison <- res %>% 
+		select(id,batch, trait) %>% 
+		pivot_wider(names_from = batch, values_from = trait) %>% 
+		mutate(
+			comp_1 = ifelse(nzchar(sam1) & nzchar(river1), sam1 == river1, NA),
+			comp_2 = ifelse(nzchar(sam1) & nzchar(nam1), sam1 == nam1, NA),
+			comp_3 = ifelse(nzchar(river1) & nzchar(nam1), river1 == nam1, NA),
+			all = ifelse(nzchar(sam1) & nzchar(river1) & nzchar(nam1), sam1 == river1 & sam1 == nam1, NA)) %>% 
+		ungroup() %>% 
+		summarize(
+			comp_1 = mean(comp_1,na.rm=T),
+			comp_2 = mean(comp_2,na.rm=T),
+			comp_3 = mean(comp_3,na.rm=T),
+			all = mean(all,na.rm=T),
+		) %>% 
+		pivot_longer(cols = everything(),names_to="comparison",values_to="fraction")
+
+	comp_plot <- ggplot(comparison,aes(x = comparison, y = fraction, fill = comparison)) + 
+		geom_bar(stat = "identity") + 
+		scale_y_continuous(limits = c(0,1)) + 
+		scale_fill_manual(values = c("dark red","dodger blue","dodger blue","dodger blue")) + 
+		geom_hline(yintercept=0.5,linetype="dotted") + 
+		theme(legend.position="none")
+
+	return(comp_plot)
+
+}
+
+p1 <- plot_comparison(repeat_results %>% rename(trait = tentacle_number)) + ggtitle("tentacle number")
+p2 <- plot_comparison(repeat_results %>% rename(trait = crest_height)) + ggtitle("crest height")
+p3 <- plot_comparison(repeat_results %>% rename(trait = pink_purple)) + ggtitle("crest color")
+p4 <- plot_comparison(repeat_results %>% rename(trait = juvenile)) + ggtitle("juvenile")
+p5 <- plot_comparison(repeat_results %>% rename(trait = image_type)) + ggtitle("image type")
+p6 <- plot_comparison(repeat_results %>% rename(trait = thumb_ratio)) + ggtitle("crest length")
+
+pdf(file="../figures/panels/inat_value_comparison.pdf",height=4,width=8)
+grid.arrange(p1,p2,p3,p4,p5,p6,ncol=3)
+dev.off()
+```

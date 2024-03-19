@@ -1,0 +1,190 @@
+---
+title: "pop gen stats"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: false
+  warn: false
+  error: false
+  fig-align: center
+theme: cosmo
+---
+
+November, 2023
+
+```{r init}
+#| include: false
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(gridExtra)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(ggtree)
+library(ggrepel)
+library(maps)
+library(gganimate)
+library(readr)
+
+theme_set(theme_classic())
+no_legend <- theme(legend.position="none")
+
+```
+
+
+```{r setup}
+metadata <- read.delim("../data/metadata.tsv",header=T,stringsAsFactors=F) %>% filter(status %in% c("sequenced","sequenced elsewhere"))
+sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
+  mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
+  separate(lat_long,into=c("lat","long"),sep=", ")
+
+bam_list <- data.frame(ID = read.table("../results/all_samples/bam.filelist",head=F) %>% 
+  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+  left_join(.,sample_info,by="ID")
+
+cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+names(cols) <- c("A","B1","B2","C1","C2")
+
+pops <- read.delim("../data/pop.txt",sep="\t",header=F)
+colnames(pops) <- c("ID","pop")
+sample_info <- left_join(sample_info,pops,by="ID")
+
+jitter = position_jitter(width=0,seed=123)
+
+```     
+
+# mapping
+
+Fraction of reads mapped and properly paired vary across populations. The reference is from cluster A, and it has the highest mapping and paired rate. Cluster C2 has the lowest mapping rate; it is typically recovered as sister to the rest of Physalia. 
+
+```{r mapping}
+flagstat <- lapply(metadata$ID,function(x){
+  read.delim(paste0("../QC/flagstat/",x,"_stat.txt"),header=F) %>%
+  separate(V1,into=c("reads","category"),sep=" \\+ 0 ") %>%
+  mutate(category = gsub(" \\(.*","",category))
+  })
+
+flagstat_reads <- data.frame(ID = metadata$ID,
+  flag_total = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "in total") %>% pull(reads)})),
+  mapped = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "mapped") %>% pull(reads)})),
+  properly_paired = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "properly paired") %>% pull(reads)}))) %>%
+  left_join(.,sample_info %>% select(ID,ocean,pop),by="ID")
+
+fr <- flagstat_reads %>% mutate(mapped_rate = mapped / flag_total, paired_rate = properly_paired / flag_total) %>% filter(!is.na(pop))
+
+g1 <- ggplot(fr,aes(x = mapped_rate, y = pop, color = pop) ) + 
+	geom_point(position = jitter) + 
+	scale_color_manual(values = cols) + 
+	xlab("fraction mapped against cluster A reference") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,1))
+
+g2 <- ggplot(fr,aes(x = paired_rate, y = pop, color = pop) ) + 
+	geom_point(position = jitter) + 
+	scale_color_manual(values = cols) + 
+	xlab("fraction properly paired against cluster A reference") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,1))
+
+grid.arrange(g1,g2,nrow=2)
+```
+
+# Dxy
+
+Dxy measures of genetic sequence divergence across populations. We calculate it on windows of non-repeat regions, larger than a given length. Here I am showing average Dxy across a subsample of windows.
+
+Dxy is largest between cluster C2 as compared to A, and smallest between cluster B1 as compared to A, consistent with the mapping rate. 
+
+I am not sure yet how to interpret the magnitude of average Dxy values in isolation (or if they can be).
+
+Fst is a measure of genetic differentiation between populations. Fst is related to both Dxy and pi.
+
+```{r dxy}
+
+dir <- "../results/pixy/pop/"
+
+dxy <- read.delim(paste0(dir,"pixy_dxy.txt"))
+fst <- read.delim(paste0(dir,"pixy_fst.txt"))
+
+options(scipen=999)
+
+summary_dxy <- dxy %>% group_by(pop1,pop2) %>% summarize(dxy = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% arrange(dxy)
+summary_fst <- fst %>% group_by(pop1,pop2) %>% summarize(Fst = mean(avg_wc_fst, na.rm=T)) %>% ungroup()
+  
+g1 <- ggplot(summary_dxy %>% filter(pop1 == "A"),aes(x = dxy, y = pop2, color = pop2)) + 
+	geom_point() + 
+	scale_color_manual(values = cols) + 
+	xlab("mean Dxy compared to cluster A") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,0.04))
+
+g2 <- ggplot(summary_fst %>% filter(pop1 == "A"),aes(x = Fst, y = pop2, color = pop2)) + 
+	geom_point() + 
+	scale_color_manual(values = cols) + 
+	xlab("mean Fst compared to cluster A") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,1))
+
+
+grid.arrange(g1,g2,nrow=2)
+```
+
+# pi
+
+pi is an estimate of nucleotide diversity within populations. As above, we calculate on windows; here I am showing average across a subsample of windows.
+
+As with Dxy, I am not sure how to interpret the magnitude of these pi values in isolation. Here I visualize pi from 0 to 1 (full range), and from 0 to 0.1, to see variation across populations.
+
+```{r pi}
+
+pi <- read.delim(paste0(dir,"pixy_pi.txt"))
+
+summary_pi <- pi %>% group_by(pop) %>% summarize(pi = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% arrange(pi)
+
+g1 <- ggplot(summary_pi,aes(x = pi, y = pop, color = pop)) + 
+	geom_point() + 
+	scale_color_manual(values = cols) + 
+	xlab("mean pi values, from 0-1") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,1))
+
+
+g2 <- ggplot(summary_pi,aes(x = pi, y = pop, color = pop)) + 
+	geom_point() + 
+	scale_color_manual(values = cols) + 
+	xlab("mean pi values, from 0-0.1") + ylab("cluster") + 
+	no_legend + 
+	scale_x_continuous(limits = c(0,0.1))
+
+grid.arrange(g1,g2,nrow=2)
+```
+
+# heterozygosity
+
+We estimate genome size from kmer distributions for a subset of deeply sequenced individuals. From this we can also estimate heterozygosity (as a range of posible values). This heterozygosity at the individual level matches the pattern in nucleotide diversity across populations we see above. 
+
+Samples with large ranges likely have a poor model fit, and are therefore less reliable.
+
+```{r kmer}
+kmer <- read.delim("../results/physalia_kmer/genome_report.tsv",sep="\t",header=T) %>% rename(ID = "sample") %>% left_join(.,pops,by="ID")
+
+
+km <-  bind_rows(kmer %>% select(ID,pop,min_het) %>% rename(het = "min_het") %>% mutate(type = "min"),kmer %>% select(ID,pop,max_het) %>% rename(het = "max_het") %>% mutate(type = "max"))
+
+
+ggplot(km,aes(x = het,y = factor(ID, levels = km %>% arrange(pop,ID) %>% pull(ID) %>% unique), shape =type, color = pop, group=ID)) + 
+	geom_point()  + 
+	geom_line() + 
+	scale_color_manual(values = cols) + 
+	xlab("estimated heterozygosity") + ylab("sample") + 
+	no_legend
+```
+
+
+
+
+
+

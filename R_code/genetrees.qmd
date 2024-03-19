@@ -1,0 +1,179 @@
+
+---
+title: "_Physalia_ global population genomics: phylogenies"
+format:
+  html:
+    embed-resources: true
+theme: cosmo
+---
+
+Samuel H. Church
+Initiated: March, 2024
+
+```{r init}
+#| include: false
+
+library(gridExtra)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(ggtree)
+library(ggrepel)
+library(maps)
+library(ape)
+library(phytools)
+library(viridis)
+
+theme_set(theme_classic())
+```
+
+```{r setup}
+sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
+  mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
+  separate(lat_long,into=c("lat","long"),sep=", ")
+
+cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+names(cols) <- c("A","B1","B2","C1","C2")
+
+assignments <- read.delim("../data/pop.txt",header=F,sep=" ")
+names(assignments) <- c("ID","cluster")
+sample_info <- left_join(sample_info,assignments,by="ID")
+```
+
+
+```{r mito}
+
+# read in tree, update tip labels
+mito_tree <- read.tree("../results/iqtree/go_mito_aligned.fasta.treefile")
+mito_tree$tip.label <- gsub("(.*)_mito_path1","\\1",mito_tree$tip.label)
+mito_tree$tip.label <- gsub("_R_(.*)","\\1",mito_tree$tip.label)
+mito_tree$tip.label <- gsub("(.*)\\.1","\\1",mito_tree$tip.label)
+
+# root at midpoint
+new_mito_tree <- phytools::midpoint.root(mito_tree)
+
+# format info 
+sd <- sample_info %>% mutate(seq = ID, label2 = paste(ID,location,sep=":")) %>% select(seq,label2,location,ocean) %>% 
+  left_join(.,assignments %>% rename(seq = ID),by="seq") %>% 
+  mutate(label2 = paste(cluster,location,sep=":"))
+sd <- bind_rows(sd,data.frame(seq = c("KT809335.1","KT809328.1"),label2=c("R. eysenhardtii","NCBI specimen"),ocean=c(NA,NA)))
+
+# get nodes to set cluster order
+node1 <- getMRCA(new_mito_tree,assignments %>% filter(cluster == "A") %>% pull(ID))
+node2 <- getMRCA(new_mito_tree,assignments %>% filter(cluster %in% c("B1","B2")) %>% pull(ID))
+
+# plot
+max_edge <- max(nodeHeights(new_mito_tree)) 
+p <- ggtree(new_mito_tree,size=1)
+
+pdf("../figures/panels/mitochondrial_tree_assign.pdf",height=16,width=12,useDingbats=F)
+print(flip(p, node1, node2) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5,position=position_nudge(x = 0.0125)) + 
+	xlim(c(0,max_edge+(max_edge*0.1))) + 	
+  scale_color_manual(values=cols))
+dev.off()
+
+# plot with bootstrap values
+pdf("../figures/panels/mitochondrial_tree_assign_bootstrap.pdf",height=14,width=12,useDingbats=F)
+print(flip(p, node1, node2) %<+% sd + 
+  geom_tippoint(aes(color=cluster),size=4.5,position=position_nudge(x = 0.0125)) + 
+  geom_text2(aes(label=label, subset = !is.na(as.numeric(label))),hjust=1) +
+  geom_tiplab(aes(label=label2),size=1.5,hjust=-0.35) + 
+	xlim(c(0,max_edge+(max_edge*0.1))) + 	
+  scale_color_manual(values=cols))
+dev.off()
+```
+
+```{r SNP-specimens}
+
+# read in tree, update labels
+snp_tree <- read.nexus("../results/svdq/all_filtered.tre")
+snp_tree$tip.label <- gsub("_","-",snp_tree$tip.label)
+
+# reroot at C1, match mito tree
+node1 <- getMRCA(snp_tree,assignments %>% filter(cluster == "C1") %>% pull(ID))
+new_snp_tree <- phytools::reroot(snp_tree,node1,position=0.5)
+
+#plot 
+p <- ggtree(new_snp_tree,size=1,layout="daylight",branch.length="none")
+
+pdf("../figures/panels/SNP_tree_regions.pdf",height=16,width=12,useDingbats=F)
+print(p %<+% sd + 
+  geom_tippoint(aes(color=ocean),size=4.5) + 	
+  scale_color_manual(values=colors))
+dev.off()
+```
+
+```{r SNP-species}
+
+# read in tree, update labels
+snp_sp_tree <- read.tree("../results/svdq/all_filtered.partition.tre")
+snp_sp_tree <- unroot(snp_sp_tree)
+
+#plot 
+p <- ggtree(snp_sp_tree,size=3,layout="daylight",branch.length="none")
+
+pdf("../figures/panels/SNP_sp_tree.pdf",height=16,width=12,useDingbats=F)
+print(p + geom_tiplab(size=20) + geom_text2(aes(label=label, subset = !is.na(as.numeric(label))),hjust=1))
+dev.off()
+```
+
+```{r genetrees}
+genes <- c("18S","16S","CO1","ITS")
+
+NCBI_data <- read.delim("../data/NCBI_data.tsv",header=T,stringsAsFactors=F) %>% 
+		mutate(ocean = ifelse(grepl("Rhizo",organism),NA,ifelse(ocean == "",NA,ocean))) %>%
+		mutate(country = ifelse(grepl("Rhizo",organism),organism,country)) %>%
+		mutate(seq = accession, label2 = paste(accession,country,sep=" : "), ocean=ocean) %>% 
+        select(seq,label2,ocean,COI_clan)
+        
+si <- sample_info %>% 
+        mutate(seq = ID, label2 = paste(ID,location,sep=":"), COI_clan = cluster) %>% 
+        select(seq,label2,ocean,COI_clan)     
+
+NCBI_data <- rbind(NCBI_data,si)
+
+cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6","red","blue","magenta","cyan")
+names(cols) <- c("A","B1","B2","C1","C2","clan_2","clan_1","clan_3","clan_Atlantic")
+
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
+
+plot_tree <- function(gene_name){
+	
+	tree <- read.tree(paste0("../results/iqtree/",gene_name,".aln.fa.treefile"))
+	tree$tip.label <- gsub("^.*\\|(.*?)\\_.*","\\1",tree$tip.label)
+	tree$tip.label <- gsub("_rc$","",tree$tip.label)
+
+  Rhizophysa_seqs <- c("AY937377.1","GQ120038.1","AY935286.1","AY935309.1","AY937351.1","AY937327.1")
+  Rhizo_nodes <- unlist(sapply(Rhizophysa_seqs,function(x){
+    grep(x,tree$tip.label)
+  },USE.NAMES=F))
+
+	new_tree <- if(length(Rhizo_nodes > 0)){
+        R_node <- MRCA(tree,Rhizo_nodes)
+        new_tree <- phytools::reroot(tree,R_node,position=0.5*tree$edge.length[which(tree$edge[,2]==R_node)])
+    } else {
+        new_tree <- phytools::midpoint.root(tree)
+    }
+ 
+	p <- ggtree(new_tree)
+
+	max_edge <- max(nodeHeights(new_tree)) 
+
+	pdf(file=paste0("../figures/panels/plot_",gene_name,".pdf"),width=8,height=12)
+	print(
+        p %<+% NCBI_data + 
+		geom_tippoint(aes(color=ocean),size=2,position=position_nudge(x = max_edge * 10e-3)) + 
+		geom_tiplab(aes(label = label2), size=1.5,hjust=-0.15) + 
+		xlim(c(0,max_edge+(max_edge*0.25))) + 	
+		scale_color_manual(values = colors) + 
+    theme(legend.position="none") 
+        )
+	dev.off()
+}
+
+lapply(genes,plot_tree)
+```

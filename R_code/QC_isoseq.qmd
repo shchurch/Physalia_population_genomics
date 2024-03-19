@@ -1,0 +1,275 @@
+---
+title: "_Physalia_ population genomics: QC against isoseq reference"
+format:
+  html:
+    embed-resources: true
+execute:
+  echo: false
+  warn: false
+  error: false
+  fig-align: center
+theme: cosmo
+---
+
+November, 2023
+
+```{r init}
+#| include: false
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+
+library(gridExtra)
+library(ggplot2)
+library(dplyr)
+library(knitr)
+library(kableExtra)
+library(tidyr)
+library(ggtree)
+library(ggrepel)
+library(maps)
+library(gganimate)
+library(readr)
+
+theme_set(theme_classic())
+no_legend <- theme(legend.position="none")
+
+```
+
+```{r setup}
+metadata <- read.delim("../data/metadata.tsv",header=T,stringsAsFactors=F) %>% filter(status %in% c("sequenced","sequenced elsewhere"))
+sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
+  mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
+  separate(lat_long,into=c("lat","long"),sep=", ")
+
+# should remove YPM-IZ from those that are YPM actually
+# or get them accessioned
+
+bam_list <- data.frame(ID = read.table("../results/isoseq/bam.filelist",head=F) %>% 
+  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+  left_join(.,sample_info,by="ID")
+
+#kable(sample_info) %>%
+#  kable_styling(font_size = 16)
+
+locations <- sample_info %>% pull(location) %>% unique()
+
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
+
+ocean_levels <- c("Gulf of Mexico","NW Atlantic","NE Atlantic","SW Atlantic","W Indian","E Indian","SW Pacific","NW Pacific","Central Pacific","Gulf of California","SE Pacific")
+sample_info$ocean <- factor(sample_info$ocean,levels=ocean_levels)
+
+mito_haplotypes <- read.delim("../data/mito_haplotypes.tsv",sep="\t",header=T)
+sample_info <- left_join(sample_info,mito_haplotypes,by="ID")
+
+jitter = position_jitter(width=0,seed=123)
+```     
+
+## Mapping statistics
+
+We examine sample quality by mapping to our assembled genome. As with the genome reference, we see one sample with a significantly lower percentage mapped:
+
+* YPM-IZ-110574
+
+Tests using _in silico_ PCR to extract 18S from this sample further indicated contamination from arthropod DNA. This sample will be excluded. 
+
+```{r flagstat}
+#| fig-height: 4
+
+flagstat <- lapply(metadata$ID,function(x){
+  read.delim(paste0("../QC/flagstat_isoseq/",x,"_stat.txt"),header=F) %>%
+  separate(V1,into=c("reads","category"),sep=" \\+ 0 ") %>%
+  mutate(category = gsub(" \\(.*","",category))
+  })
+
+flagstat_reads <- data.frame(ID = metadata$ID,
+  flag_total = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "in total") %>% pull(reads)})),
+  mapped = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "mapped") %>% pull(reads)})),
+  properly_paired = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "properly paired") %>% pull(reads)}))) %>%
+  left_join(.,sample_info %>% select(ID,ocean,haplotype),by="ID")
+
+
+total_mapped <- ggplot(flagstat_reads,aes(label = ID,color = ocean, x = flag_total, y = mapped)) +
+   geom_point() + 
+   scale_x_log10(labels=  scales::label_number(scale_cut = scales::cut_short_scale())) + 
+   scale_y_log10(labels=  scales::label_number(scale_cut = scales::cut_short_scale())) +
+   scale_color_manual(values = colors)+
+   geom_text_repel(size=2, max.overlaps=10,box.padding=0.1,segment.color=NA)  +
+   xlab("total reads") + 
+   ylab("mapped") +
+   no_legend + 
+   coord_fixed()
+
+total_mapped
+
+fastqc <- lapply(metadata$ID,function(x){
+  path <- paste0("../QC/fastqc/",x,"_R1/")
+  f <- list.files(path=path,pattern="fastqc_data.txt",recursive=T)
+  fastqc_data <- read.delim(paste0(path,f))
+  return(fastqc_data)
+})
+
+fastqc_reads <- data.frame(ID = metadata$ID, 
+  fastqc_total = as.numeric(sapply(fastqc, function(df) df[df[,1] == "Total Sequences", 2]))) %>%
+  left_join(.,flagstat_reads,by="ID")
+
+
+#ggplot(fastqc_reads,aes(label = ID,color = ocean, y = flag_total, x = fastqc_total)) + geom_point() + 
+#   scale_x_log10() + scale_y_log10() +
+#scale_color_manual(values = colors)+
+#   geom_text_repel(size=2, max.overlaps=10,box.padding=0.1,segment.color=NA) 
+```
+
+# Establishing appropriate filters
+
+## Site quality 
+
+The first distribution of Phred quality scores are somehwat lower with the isoseq reference than the genome reference. For this reference, we set a threshold of: 
+
+* minimum site quality score = 20
+
+```{r quality}
+var_qual <- read_delim("../QC/vcftools_isoseq/QC_stats.lqual", delim = "\t",
+           col_names = c("chr", "pos", "qual"), skip = 1)
+
+quality <- ggplot(var_qual, aes(qual))  +  geom_vline(xintercept=20,linetype="dotted") +
+  geom_histogram(fill="gray",bins=50)  +
+  scale_x_continuous(breaks = c(0,10,20,30,40,50,100,150,200,250)) + 
+  xlab("Phred-scaled quality score") 
+
+quality
+```
+
+## Coverage
+
+We `angsd` to estimate realized depth across samples and sites. We categorize samples into those with poor coverage distributions, those with low coverage (between 2 and 10x), moderate coverage (11 and 20x) and high coverage (>20x). Poor coverage samples were the following:
+
+* KM5634
+* YPM-IZ-110926
+* YPM-IZ-110277
+* YPM-IZ-110268
+
+
+```{r depth}
+#| fig-height: 12
+
+depth_sample <- read.delim("../results/isoseq/isoseq.depthSample",header=F)
+ colnames(depth_sample) <- seq(0,101)
+ ds <- depth_sample %>% select(-c(`101`)) %>% 
+   mutate(ID=bam_list$ID,
+     location=bam_list$location,
+     ocean=bam_list$ocean) %>% 
+   tidyr::pivot_longer(cols=-c(ID,location,ocean),names_to="reads") %>%
+   mutate(reads = as.numeric(reads))
+ 
+ds_peak_5 <- ds %>% group_by(ID) %>% filter(reads > 4, reads < 100) %>% filter(value == max(value))
+ds_peak_2 <- ds %>% filter(ID %in% (ds_peak_5 %>% filter(reads == 5) %>% pull(ID))) %>% 
+  group_by(ID) %>% filter(reads > 1, reads < 100) %>% filter(value == max(value))
+ds_peak_sub <- ds %>% filter(ID %in% (ds_peak_2 %>% filter(reads == 2) %>% pull(ID))) %>% 
+  group_by(ID) %>% filter(reads > 0, reads < 100) %>% filter(value == max(value))
+ds_peak <- bind_rows(ds_peak_5,ds_peak_2,ds_peak_sub) %>% group_by(ID) %>% arrange(reads) %>% slice(1L)
+ 
+  breaks <- c(1,2,3,4,5,10,20,30,40,50,60,70,80,90,100)
+
+
+ 
+ poor_cov <- ds_peak %>% filter(reads < 2) %>% pull(ID)
+ low_cov <- ds_peak %>% filter(reads >=2, reads < 10) %>% pull(ID)
+ med_cov <- ds_peak %>% filter(reads >=11, reads < 20) %>% pull(ID)
+ hi_cov <- ds_peak %>% filter(reads >=20) %>% pull(ID)
+
+ 
+g1 <- ggplot(ds %>% filter(ID %in% poor_cov),aes(label=ID,x=reads,y=value,color=ocean,group=ID)) + 
+     geom_line() +  scale_x_continuous(breaks =breaks) +
+     scale_color_manual(values = colors) + no_legend + 
+     ggtitle("poor coverage distribution") +
+     xlab("read depth") + ylab("number of sites") +
+    geom_text_repel(data = ds_peak %>% filter(ID %in% poor_cov),aes(x = reads, y = value),nudge_x=12,nudge_y=50000,size=2, max.overlaps=100,box.padding=0.1,segment.color=NA)
+
+
+g2 <- ggplot(ds %>% filter(ID %in% low_cov),aes(label=ID,x=reads,y=value,color=ocean,group=ID)) + 
+     geom_vline(data = ds_peak %>% filter(ID %in% low_cov),aes(xintercept = reads,color = ocean), linetype="dotted") +
+     geom_line() +  scale_x_continuous(breaks = breaks) +
+     scale_color_manual(values = colors) + no_legend +
+     xlab("read depth") + ylab("number of sites") +
+     ggtitle("coverage between 2x and 10x") 
+
+g3 <- ggplot(ds %>% filter(ID %in% med_cov),aes(label=ID,x=reads,y=value,color=ocean,group=ID)) + 
+     geom_vline(data = ds_peak %>% filter(ID %in% med_cov),aes(xintercept = reads,color = ocean), linetype="dotted") +
+     geom_line() +  scale_x_continuous(breaks = breaks) +
+     scale_color_manual(values = colors) + no_legend +
+     xlab("read depth") + ylab("number of sites") +
+     ggtitle("coverage between 11x and 20x") 
+
+g4 <- ggplot(ds %>% filter(ID %in% hi_cov),aes(label=ID,x=reads,y=value,color=ocean,group=ID)) + 
+     geom_vline(data = ds_peak %>% filter(ID %in% hi_cov),aes(xintercept = reads,color = ocean), linetype="dotted") +
+     geom_line() +  scale_x_continuous(breaks = breaks) +
+     scale_color_manual(values = colors) + no_legend +
+     xlab("read depth") + ylab("number of sites") +
+     ggtitle("coverage >20x") +
+     geom_text_repel(data = ds_peak %>% filter(ID %in% hi_cov),aes(x = reads, y = value),nudge_y=50000,size=2, max.overlaps=10,box.padding=0.1,segment.color=NA)
+
+ 
+grid.arrange(g1,g2,g3,g4,nrow=4)
+```
+
+
+As with the genomic reference, we use the following thresholds:
+
+* minimum depth = 2x
+* maximum depth = 99x
+
+```{r peak}
+depth_distributions <- ggplot(ds,aes(x=reads,y=value,color=ocean,group=ID)) + 
+     geom_line() +  scale_x_continuous(breaks = breaks) +
+     xlab("realized depth") + ylab("number of sites") +
+     scale_color_manual(values = colors) + 
+     geom_vline(xintercept=2,linetype="dotted") +
+     geom_vline(xintercept=99,linetype="dotted") + 
+     no_legend
+
+depth_distributions
+```
+
+## Missingness 
+
+Missingness across samples is more evenly distributed with the isoseq reference than the genomic reference, without significant outliers.
+
+```{r missing-ind}
+excluded_samples <- c("YPM-IZ-110574","YPM-IZ-110432","YPM-IZ-110632","YPM-IZ-110694-dry","YPM-IZ-110973","YPM-IZ-110827","KM5633","YPM-IZ-110826")
+
+ind_miss  <- read_delim("../QC/vcftools_isoseq/QC_stats.imiss", delim = "\t",
+                        col_names = c("ID", "ndata", "nfiltered", "nmiss", "fmiss"), skip = 1)  %>% 
+           left_join(sample_info,by="ID") 
+
+missingness_sample <- ggplot(ind_miss %>% filter(!ID %in% excluded_samples), aes(label = ID, y = ocean, x = fmiss,color=ocean)) + 
+  geom_point(position=jitter) + 
+  geom_text_repel(size=2, max.overlaps=10,box.padding=0.1,segment.color=NA,position=jitter)  +
+  scale_color_manual(values = colors) +
+      xlab("proportion missing data") + ylab("ocean") +
+    scale_x_continuous(breaks=c(0,0.25,0.5,0.75,1),limits = c(0,1)) + 
+    no_legend
+missingness_sample
+```
+
+We use the same threshold for missingness:
+
+* tolerate missingness equal to or below 75%
+
+This means we exclude sites for which >25% of samples are missing data.
+
+```{r missing-var}
+var_miss <- read_delim("../QC/vcftools_isoseq/QC_stats.lmiss", delim = "\t",
+                       col_names = c("chr", "pos", "nchr", "nfiltered", "nmiss", "fmiss"), skip = 1)
+
+missingness_site <- ggplot(var_miss, aes(fmiss)) + 
+  geom_vline(xintercept=0.25,linetype="dotted") +
+  geom_histogram(fill="gray",bins=98)  +
+      xlab("fraction of individuals missing data") + ylab("number of sites") +
+    ggtitle("missingness across sites")
+
+missingness_site
+```
+
+
+
+
