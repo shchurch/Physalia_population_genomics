@@ -1,9 +1,0 @@
-PCAngsd v1.11
-Time: 11/03/2023 11:11:24
-Directory: /gpfs/ysm/project/dunn/sc2962/20230103_Phy_skim_variants
-Options:
-	-beagle /home/sc2962/scratch60/20230117_Phy_skim_variants/angsd/pilot_genolike.beagle.gz
-	-threads 14
-	-out pilot_pcangsd
-	-admix
-	-admix_alpha 50.0

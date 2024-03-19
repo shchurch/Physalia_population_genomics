@@ -1,9 +1,0 @@
-PCAngsd v1.11
-Time: 22/03/2023 17:36:35
-Directory: /gpfs/gibbs/project/dunn/sc2962/20230317_physalia_subsampling_1x
-Options:
-	-beagle /vast/palmer/home.mccleary/sc2962/palmer_scratch/20230317_physalia_subsampling_1x/angsd/pilot.beagle.gz
-	-threads 14
-	-out /vast/palmer/home.mccleary/sc2962/palmer_scratch/20230317_physalia_subsampling_1x/pcangsd/pilot
-	-admix
-	-admix_alpha 50.0

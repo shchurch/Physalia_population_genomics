@@ -1,0 +1,9 @@
+PCAngsd v1.11
+Time: 21/02/2024 08:56:54
+Directory: /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/ANGSD
+Options:
+	-beagle /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/angsd/main_run.beagle.gz
+	-threads 32
+	-out /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/pcangsd/main_run
+	-admix
+	-admix_alpha 50.0
