@@ -1,0 +1,44 @@
+"""
+sharkmer Snake
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        expand(scratchdir + "results/{sample}/{sample}.stats",sample=config["sample"]),
+
+rule sharkmer:
+    input:
+        FILE = lambda wildcards: config["sample"][wildcards.sample]["reads"][0]
+    output:
+        DIR = directory(scratchdir + "results/{sample}"),        
+        STATS = scratchdir + "results/{sample}/{sample}.stats"
+    params:
+        DIR = directory(scratchdir + "results/"),        
+        SAMPLE = "{sample}",
+        READS = 1000000
+    log:
+        OUT = "logs/sharkmer/{sample}.out",
+        ERR = "logs/sharkmer/{sample}.err"
+    shell:
+        """
+        touch {params.DIR}
+        zcat {input.FILE} | ./sharkmer -k 31 -m {params.READS} -n 100 -t 8 -s {params.SAMPLE} -o {params.DIR} \
+        --pcr "TCAACCAACCACAAAGACATTGGCAC_TAGACTTCTGGGTGGCCAAAGAATCA_1000_FishF1" \
+        --pcr "TCGACTAATCATAAAGATATCGGCAC_ACTTCAGGGTGACCGAAGAATCAGAA_1000_FishF2" \
+        --pcr "GACTGTTTACCAAAAACATA_AATTCAACATCGAGG_1000_16S" \
+        --pcr "GGTCAACAAATCATAAAGATATTGG_TAAACTTCAGGGTGACCAAAAAATCA_1000_co1" \
+        --pcr "TCATAAAGATATAGGAACA_GTGACCAAAAAACCA_1000_CO1" \
+        --pcr "AACCTGGTTGATCCTGCCAGT_TGATCCTTCTGCAGGTTCACCTAC_2500_18S" \
+        --pcr "TACACACCGCCCGTCGCTACTA_ACTCGCCGTTACTRRGG_1000_ITS"  \
+        --pcr "AACCTGGTTGATCCTGCCAGT_ACTCGCCGTTACTRRGG_3500_18S-ITS"  \
+        --pcr "CCYYAGTAACGGCGAGT_SWACAGATGGTAGCTTCG_4000_28S" \
+        --pcr "ACGTGGTATGGTTGCCTCTG_CTTGATAACGCCAACGGCWAC_3000_EF1a" >{log.OUT} 2>{log.ERR} || true
+        """
+    

@@ -1,0 +1,457 @@
+scratchdir: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/"
+
+genome: "/gpfs/gibbs/pi/dunn/sc2962/Physalia_TX2017-38_HiFi_primary/Physalia_TX2017-38_HiFi_primary.fa"
+regions: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/regions_filtered.tsv"
+
+populations: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/BCF/subset.txt" 
+
+prior_mutation_rate: 0.001
+min_qual: 40
+min_depth: 2
+max_depth: 99
+max_missing: 0.25
+sample_size: 100000
+
+
+sample:
+  YPM-IZ-111156:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111156_raw.bcf
+  YPM-IZ-111157:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111157_raw.bcf
+  YPM-IZ-111158:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111158_raw.bcf
+  YPM-IZ-111159:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111159_raw.bcf
+  YPM-IZ-111160:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111160_raw.bcf
+  YPM-IZ-111163:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111163_raw.bcf
+  YPM-IZ-111209:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111209_raw.bcf
+  YPM-IZ-111212:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111212_raw.bcf
+  YPM-IZ-111207:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111207_raw.bcf
+  YPM-IZ-111208:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111208_raw.bcf
+  YPM-IZ-111210:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111210_raw.bcf
+  YPM-IZ-111211:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111211_raw.bcf
+  YPM-IZ-110972:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110972_raw.bcf
+  YPM-IZ-111006:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111006_raw.bcf
+#  YPM-IZ-110973:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110973_raw.bcf
+  YPM-IZ-111007:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111007_raw.bcf
+  YPM-IZ-111008:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111008_raw.bcf
+  YPM-IZ-111009:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111009_raw.bcf
+  YPM-IZ-111010:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111010_raw.bcf
+  YPM-IZ-110937:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110937_raw.bcf
+  YPM-IZ-110931:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110931_raw.bcf
+  WAMZ97902:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97902_raw.bcf
+  WAMZ97907:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97907_raw.bcf
+  WAMZ97908:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97908_raw.bcf
+  WAMZ97910:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97910_raw.bcf
+  WAMZ97911:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97911_raw.bcf
+  WAMZ97914:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97914_raw.bcf
+  WAMZ97916:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97916_raw.bcf
+  WAMZ97923:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97923_raw.bcf
+#  YPM-IZ-110694-dry:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110694-dry_raw.bcf
+  YPM-IZ-110906:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110906_raw.bcf
+  YPM-IZ-110907:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110907_raw.bcf
+#  YPM-IZ-110826:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110826_raw.bcf
+#  YPM-IZ-110827:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110827_raw.bcf
+  YPM-IZ-110829:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110829_raw.bcf
+  YPM-IZ-110830:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110830_raw.bcf
+  FM16644:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/FM16644_raw.bcf
+  WAMZ97917:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97917_raw.bcf
+  YPM-IZ-110694:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110694_raw.bcf
+  YPM-IZ-110878:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110878_raw.bcf
+#  YPM-IZ-110879:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110879_raw.bcf
+  YPM-IZ-110880:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110880_raw.bcf
+  YPM-IZ-110845:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110845_raw.bcf
+  YPM-IZ-110844:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110844_raw.bcf
+  YPM-IZ-110843:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110843_raw.bcf
+  YPM-IZ-110842:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110842_raw.bcf
+  YPM-IZ-110828:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110828_raw.bcf
+  YPM-IZ-110786:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110786_raw.bcf
+  YPM-IZ-110785:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110785_raw.bcf
+  YPM-IZ-110631:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110631_raw.bcf
+#  YPM-IZ-110632:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110632_raw.bcf
+  YPM-IZ-110633:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110633_raw.bcf
+  YPM-IZ-110667:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110667_raw.bcf
+  YPM-IZ-110881:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110881_raw.bcf
+  YPM-IZ-110883:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110883_raw.bcf
+  YPM-IZ-110777:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110777_raw.bcf
+  YPM-IZ-110780:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110780_raw.bcf
+  WAMZ88480:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ88480_raw.bcf
+  WAMZ97900:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97900_raw.bcf
+  WAMZ97906:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97906_raw.bcf
+  WAMZ97901:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97901_raw.bcf
+  WAMZ97903:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97903_raw.bcf
+  WAMZ97920:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97920_raw.bcf
+  WAMZ97921:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/WAMZ97921_raw.bcf
+  YPM-IZ-110716:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110716_raw.bcf
+  YPM-IZ-110726:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110726_raw.bcf
+  YPM-IZ-110738:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110738_raw.bcf
+  YPM-IZ-110846:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110846_raw.bcf
+  YPM-IZ-110847:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110847_raw.bcf
+  YPM-IZ-110600:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110600_raw.bcf
+#  YPM-IZ-110574:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110574_raw.bcf
+  YPM-IZ-110569:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110569_raw.bcf
+  YPM-IZ-110473:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110473_raw.bcf
+  KM5636:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/KM5636_raw.bcf
+  KM5635:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/KM5635_raw.bcf
+  YPM-IZ-110460:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110460_raw.bcf
+  YPM-IZ-110470:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110470_raw.bcf
+  YPM-IZ-110515:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110515_raw.bcf
+  YPM-IZ-110520:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110520_raw.bcf
+  YPM-IZ-110526:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110526_raw.bcf
+  YPM-IZ-110556:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110556_raw.bcf
+  YPM-IZ-110557:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110557_raw.bcf
+  YPM-IZ-110558:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110558_raw.bcf
+  YPM-IZ-110566:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110566_raw.bcf
+  YPM-IZ-110602:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110602_raw.bcf
+  YPM-IZ-110605:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110605_raw.bcf
+  YPM-IZ-110612:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110612_raw.bcf
+  YPM-IZ-110613:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110613_raw.bcf
+  YPM-IZ-110616:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110616_raw.bcf
+  YPM-IZ-110882:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110882_raw.bcf
+  KM5632:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/KM5632_raw.bcf
+  KM5633:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/KM5633_raw.bcf
+  KM5634:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/KM5634_raw.bcf
+  OA-Bluebottle:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/OA-Bluebottle_raw.bcf
+  OA-190531-1:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/OA-190531-1_raw.bcf
+  YPM-IZ-104465:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-104465_raw.bcf
+  YPM-IZ-104464:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-104464_raw.bcf
+  YPM-IZ-106954:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106954_raw.bcf
+  YPM-IZ-106943:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106943_raw.bcf
+  YPM-IZ-110254:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110254_raw.bcf
+  YPM-IZ-110251:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110251_raw.bcf
+  YPM-IZ-106923:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106923_raw.bcf
+  YPM-IZ-106920:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106920_raw.bcf
+  YPM-IZ-110276:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110276_raw.bcf
+  YPM-IZ-106941:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106941_raw.bcf
+  YPM-IZ-110277:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110277_raw.bcf
+#  YPM-IZ-106944:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106944_raw.bcf
+  YPM-IZ-110278:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110278_raw.bcf
+  YPM-IZ-106935:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106935_raw.bcf
+  YPM-IZ-106958:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106958_raw.bcf
+  YPM-IZ-110876:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110876_raw.bcf
+  YPM-IZ-106919:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106919_raw.bcf
+  YPM-IZ-110264:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110264_raw.bcf
+  YPM-IZ-104460:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-104460_raw.bcf
+  YPM-IZ-110268:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110268_raw.bcf
+  YPM-IZ-106936:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106936_raw.bcf
+  YPM-IZ-104461:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-104461_raw.bcf
+  YPM-IZ-110269:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110269_raw.bcf
+#  YPM-IZ-110269-A:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110269-A_raw.bcf
+#  YPM-IZ-110269-B:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110269-B_raw.bcf
+  YPM-IZ-106937:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-106937_raw.bcf
+  YPM-IZ-110877:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110877_raw.bcf
+#  YPM-IZ-110432:
+#   bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110432_raw.bcf
+  YPM-IZ-110433:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110433_raw.bcf
+  YPM-IZ-110438:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110438_raw.bcf
+  YPM-IZ-110443:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110443_raw.bcf
+  YPM-IZ-110467:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110467_raw.bcf
+  YPM-IZ-110468:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110468_raw.bcf
+  YPM-IZ-110469:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110469_raw.bcf
+  YPM-IZ-110471:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110471_raw.bcf
+  YPM-IZ-110474:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110474_raw.bcf
+  YPM-IZ-110480:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110480_raw.bcf
+  YPM-IZ-110943:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110943_raw.bcf
+#  YPM-IZ-110474-2:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110474-2_raw.bcf
+  YPM-IZ-110925:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110925_raw.bcf
+  YPM-IZ-110926:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110926_raw.bcf
+  YPM-IZ-110930:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110930_raw.bcf
+  YPM-IZ-110933:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110933_raw.bcf
+  YPM-IZ-110938:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-110938_raw.bcf
+  YPM-IZ-111012:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111012_raw.bcf
+  YPM-IZ-111013:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111013_raw.bcf
+  YPM-IZ-111014:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111014_raw.bcf
+#  YPM-IZ-111015:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111015_raw.bcf
+  YPM-IZ-111016:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111016_raw.bcf
+  YPM-IZ-111017:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111017_raw.bcf
+  YPM-IZ-111018:
+    bcf:
+      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111018_raw.bcf
+#  YPM-IZ-111019:
+#    bcf:
+#      - /gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/calls/YPM-IZ-111019_raw.bcf

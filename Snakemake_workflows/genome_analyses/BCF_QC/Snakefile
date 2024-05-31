@@ -1,0 +1,114 @@
+"""
+This snakefile does bowtie mapping and variant ualling
+Modified from https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        multiext(scratchdir + "vcftools_stats/all_filtered_subsample", ".frq", ".idepth", ".lqual", ".imiss", ".lmiss", ".het"),
+
+rule subsample_regions:
+    input:
+        TSV = config["regions"]
+    output: 
+        SAMP = temp( scratchdir + "subsample_regions_filtered.tsv" )
+    params:
+        SAMPLE_SIZE = config["sample_size"]
+    shell:
+        """
+        shuf -n {params.SAMPLE_SIZE} {input.TSV} > {output.SAMP}
+        """
+        
+rule bcftools_filter:
+    input:
+        BCF = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0],
+        IND = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0] + ".csi",
+        REG = scratchdir + "subsample_regions_filtered.tsv"
+    output:
+        BCF = temp( scratchdir + "calls/{sample}_filtered.bcf" ),
+        IND = temp( scratchdir + "calls/{sample}_filtered.bcf.csi" )
+    log:
+        "logs/bcftools_call/{sample}_filter.log"
+    shell:
+        """
+        bcftools filter -Ob -R {input.REG} {input.BCF} -o {output.BCF} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_merge:
+    input:
+        BCF = expand( scratchdir + "calls/{sample}_filtered.bcf", sample=config["sample"] ),
+        IND = expand( scratchdir + "calls/{sample}_filtered.bcf.csi", sample=config["sample"] )
+    output:
+        BCF = temp( scratchdir + "calls/all_filtered.bcf" ),
+        IND = temp( scratchdir + "calls/all_filtered.bcf.csi" )
+    threads: 
+        workflow.cores
+    log:
+        "logs/bcftools_call/merge.log"
+    shell:
+        """
+        bcftools merge {input.BCF} -Ob -o {output.BCF} --threads {threads} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_convert:
+    priority: 60
+    input:
+        BCF = scratchdir + "calls/all_filtered.bcf", 
+        IND = scratchdir + "calls/all_filtered.bcf.csi"
+    output:
+        temp( scratchdir + "calls/all_filtered.vcf.gz" )
+    log:
+        "logs/bcftools_call/convert.log"
+    shell:
+        "bcftools convert -Oz {input} -o {output} &> {log}"
+       
+rule bcftools_subsample:
+    input:
+        scratchdir + "calls/all_filtered.vcf.gz"
+    output:
+        temp( scratchdir + "calls/all_filtered_subsample.vcf" ),
+    log:
+        "logs/bcftools_call/subsample.log"
+    shell:
+        """
+        bcftools view {input} | vcfrandomsample -r 0.1 > {output} 2> {log}
+        """
+
+rule bgzip:
+    input:
+        scratchdir + "calls/all_filtered_subsample.vcf"
+    output:
+        scratchdir + "calls/all_filtered_subsample.vcf.gz"
+    shell:
+        """
+        bgzip {input}
+        """
+        
+rule vcftools_qc:
+    input:
+        scratchdir + "calls/all_filtered_subsample.vcf.gz"
+    output:
+        multiext(scratchdir + "vcftools_stats/all_filtered_subsample", ".frq", ".idepth", ".lqual", ".imiss", ".lmiss", ".het"),
+    params:
+        scratchdir + "vcftools_stats/all_filtered_subsample"
+    log:
+        "logs/vcftools/qc.log"
+    shell:
+        """
+        vcftools --gzvcf {input} --freq2 --out {params} --max-alleles 2 &> {log}
+        vcftools --gzvcf {input} --depth --out {params} &> {log}
+        vcftools --gzvcf {input} --site-mean-depth --out {params} &> {log}
+        vcftools --gzvcf {input} --site-quality --out {params} &> {log}
+        vcftools --gzvcf {input} --missing-indv --out {params} &> {log}
+        vcftools --gzvcf {input} --missing-site --out {params} &> {log}
+        vcftools --gzvcf {input} --het --out {params} &> {log}
+        """

@@ -1,0 +1,97 @@
+"""
+This snakefile filters SNPs and runs pixy to calculate pi, Dxy, and Fst
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+#        expand(scratchdir + "calls/{sample}_filtered.bcf", sample=config["sample"]),
+        multiext(scratchdir + "pixy/subset/pixy", "_pi.txt", "_dxy.txt", "_fst.txt"),
+        scratchdir + "calls/all_filtered.vcf.gz",
+
+rule filter_gff:
+    input:
+        TSV = config["regions"]
+    output: 
+        SAMP = temp( scratchdir + "BCF_regions_filtered.tsv" )
+    params:
+        SIZE = config["sample_size"]
+    shell:
+        """
+        shuf -n {params.SIZE} {input.TSV} > {output.SAMP}
+        """
+        
+rule bcftools_filter:
+    input:
+        BCF = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0],
+        IND = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0] + ".csi",
+        REG = scratchdir + "BCF_regions_filtered.tsv" # need to change for final analysis
+    output:
+        BCF = temp( scratchdir + "calls/{sample}_filtered.bcf" ),
+        IND = temp( scratchdir + "calls/{sample}_filtered.bcf.csi" )
+    params:
+        MIN_QUAL = config["min_qual"],
+        MIN_DEPTH = config["min_depth"],
+        MAX_DEPTH = config["max_depth"],
+        MAX_MISSING = config["max_missing"]
+    log:
+        "logs/bcftools_call/{sample}_filter.log"
+    shell:
+        """
+        bcftools filter -Ob \
+            -e'QUAL<{params.MIN_QUAL} || DP<{params.MIN_DEPTH} || DP>{params.MAX_DEPTH} || F_MISSING>{params.MAX_MISSING}' \
+            -R {input.REG} {input.BCF} -o {output.BCF} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_merge:
+    input:
+        BCF = expand( scratchdir + "calls/{sample}_filtered.bcf", sample=config["sample"] ),
+        IND = expand( scratchdir + "calls/{sample}_filtered.bcf.csi", sample=config["sample"] )
+    output:
+        BCF = scratchdir + "calls/all_filtered.vcf.gz"
+    threads: 
+        workflow.cores
+    log:
+        "logs/bcftools_call/merge.log"
+    shell:
+        """
+        bcftools merge {input.BCF} -Oz -o {output.BCF} --threads {threads} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule tabix:
+    input:
+        scratchdir + "calls/all_filtered.vcf.gz"
+    output:
+        scratchdir + "calls/all_filtered.vcf.gz.tbi"
+    log:
+        "logs/tabix/tabix.log"
+    shell:
+        """
+        tabix -p vcf {input} &> {log}
+        """
+
+rule pixy:
+    input:
+        VCF = scratchdir + "calls/all_filtered.vcf.gz",
+        TBI = scratchdir + "calls/all_filtered.vcf.gz.tbi",
+        REG = scratchdir + "BCF_regions_filtered.tsv" # need to change for final analysis
+    output:
+        multiext(scratchdir + "pixy/subset/pixy", "_pi.txt", "_dxy.txt", "_fst.txt"),
+    params:
+        EXT = scratchdir + "pixy/subset",
+        POP = config["populations"]
+    threads: workflow.cores
+    log:
+        "logs/pixy/subset.log"
+    shell:
+        """
+        pixy --stats pi fst dxy --vcf {input.VCF} --populations {params.POP} --n_cores {threads} --bed_file {input.REG} --output_folder {params.EXT} &> {log}
+        """

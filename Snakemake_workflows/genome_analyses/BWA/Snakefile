@@ -1,0 +1,217 @@
+"""
+This Snakefile is used for analyzing population genomic data using Snakemake.
+It performs BWA mapping and variant calling on input read data and a reference genome.
+The workflow is based on https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample = "[A-Za-z0-9\-]+"
+
+# Rule to generate all the required output files
+rule all:
+    input:
+        scratchdir + "regions.tsv", # genomic regions of interest
+        expand(scratchdir + "fastqc/{sample}_R1", sample=config["sample"]), # fastQC report per sample
+        expand(scratchdir + "mapped_sorted/{sample}_pic.bam", sample=config["sample"]), # mapped, sorted, and deduplicated reads per sample
+        expand(scratchdir + "mapped_sorted/{sample}_stat.txt", sample=config["sample"]), # mapping stats per sample
+        scratchdir + "mapped_sorted/bam.filelist", # bam file list for ANGSD analysis
+        expand(scratchdir + "calls/{sample}_raw.bcf", sample=config["sample"]) # variants called per sample
+
+# Rule to perform FastQC analysis on the input reads
+rule fastqc:
+    input:
+        lambda wildcards: config["sample"][wildcards.sample]["reads"][0]
+    output:
+        directory(scratchdir + "fastqc/{sample}_R1")
+    log:
+        "logs/fastqc/{sample}.log"
+    shell:
+        """
+        mkdir {output}
+        fastqc {input} --outdir {output} 2> {log}
+        """ 
+
+# Rule to perform read trimming using Trimmomatic with standard Illumina adapters
+rule trimmomatic_pe:
+    priority: 1
+    input:
+        READ1 = lambda wildcards: config["sample"][wildcards.sample]["reads"][0],
+        READ2 = lambda wildcards: config["sample"][wildcards.sample]["reads"][1]
+    output:
+        TRIM1P = temp(scratchdir + "trimmed/{sample}.R1.trimmed.fastq"),
+        TRIM1U = temp(scratchdir + "trimmed/{sample}.R1.unpaired.trimmed.fastq"),
+        TRIM2P = temp(scratchdir + "trimmed/{sample}.R2.trimmed.fastq"),
+        TRIM2U = temp(scratchdir + "trimmed/{sample}.R2.unpaired_trimmed.fastq")
+    log:
+        "logs/trimmomatic/{sample}.log"
+    threads: workflow.cores - 2
+    shell:
+        """
+        echo ">PrefixPE/1\nTACACTCTTTCCCTACACGACGCTCTTCCGATCT\n>PrefixPE/2\nGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT" > TruSeq3-PE.fa
+        java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE -threads $SLURM_CPUS_PER_TASK \
+            {input.READ1} \
+            {input.READ2} \
+            {output.TRIM1P} \
+            {output.TRIM1U} \
+            {output.TRIM2P} \
+            {output.TRIM2U} \
+            ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:15 TRAILING:15 MINLEN:50 2> {log}
+        """
+
+# Rule to index the reference genome using BWA
+rule bwa_index:
+    input:
+        config["genome"]
+    output:
+        config["genome"] + ".bwt"
+    shell:
+        "bwa index {input}"
+
+# Rule to index the reference genome using samtools
+rule fasta_index:
+    input:
+        config["genome"]
+    output:
+        config["genome"] + ".fai"
+    shell:
+        "samtools faidx {input}"
+        
+# Rule to filter GFF file based on regions of interest (e.g. non-repeats)
+rule filter_gff:
+    input:
+        REPEAT = config["repeat"],
+        FAI = config["genome"] + ".fai"
+    output: 
+        TSV = scratchdir + "regions.tsv",
+        FILT = scratchdir + "regions_filtered.tsv",
+        LIST = scratchdir + "regions_filtered.list"
+    shell:
+        """
+        bedtools complement -i {input.REPEAT} -g {input.FAI} >{output.TSV}
+        awk '{{if($3-$2 >= 1000) print}}' {output.TSV} > {output.FILT}
+        cat {output.FILT} | awk -F "\\t" '{{print $1":"$2"-"$3}}' >{output.LIST}
+        """
+
+# Rule to perform paired-end read mapping using BWA
+rule bwa_map:
+    priority: 10
+    input:
+        INDEX = config["genome"] + ".bwt",
+        ASSEM = config["genome"],
+        READ1 = scratchdir + "trimmed/{sample}.R1.trimmed.fastq",
+        READ2 = scratchdir + "trimmed/{sample}.R2.trimmed.fastq"
+    output:
+        temp(scratchdir + "mapped_reads/{sample}.bam")
+    log:
+        "logs/bwa_mem/{sample}.log"
+    threads: workflow.cores -2
+    shell:
+        """
+        (bwa mem -t {threads} {input.ASSEM} {input.READ1} {input.READ2} | \
+            samtools view -Sb - > {output}) &> {log}
+        """
+
+# Rule to sort the mapped reads using Picard
+rule picard_sort:
+    input:
+        scratchdir + "mapped_reads/{sample}.bam"
+    output:
+        temp(scratchdir + "mapped_sorted/{sample}_sorted.bam")
+    log:
+        "logs/picard/{sample}_sort.log"
+    shell:
+        """
+        java -jar $EBROOTPICARD/picard.jar SortSam \
+            I={input} \
+            O={output} \
+            SORT_ORDER=coordinate &> {log}
+        """
+
+# Rule to deduplicated mapped reads using Picard
+rule picard_dedup:
+    input:
+        scratchdir + "mapped_sorted/{sample}_sorted.bam"
+    output:
+        DEDUP = temp(scratchdir + "mapped_sorted/{sample}_dedup.bam"),
+        METRIC = scratchdir + "mapped_sorted/{sample}_dup_metrics.txt"
+    log:
+        "logs/picard/{sample}_dedup.log"
+    shell:
+        """
+        java -jar $EBROOTPICARD/picard.jar MarkDuplicates \
+            I={input} \
+            O={output.DEDUP} \
+            M={output.METRIC} \
+            REMOVE_DUPLICATES=true &> {log}
+        """
+
+# Rule to add read groups indices (e.g. for downstream GATK analysis) using Picard
+rule picard_readgroup_index:
+    priority: 30 
+    input: 
+        scratchdir + "mapped_sorted/{sample}_dedup.bam",
+    output: 
+        BAM = scratchdir + "mapped_sorted/{sample}_pic.bam",
+        IND = scratchdir + "mapped_sorted/{sample}_pic.bam.bai"
+    params: 
+        SAMPLE = "{sample}"
+    log:
+        "logs/picard/{sample}_readgroup.log"
+    shell:
+        """
+        java -jar $EBROOTPICARD/picard.jar AddOrReplaceReadGroups \
+            I={input} \
+            O={output.BAM} \
+            RGID=1 \
+            RGLB=lib1 \
+            RGPL=ILLUMINA \
+            RGPU=unit1 \
+            RGSM={params.SAMPLE} &> {log}
+        samtools index {output.BAM} &> {log}
+        """
+
+# Rule to generate mapping statistics using samtools flagstat
+rule flagstat:
+    input:
+        scratchdir + "mapped_sorted/{sample}_pic.bam"
+    output:
+        scratchdir + "mapped_sorted/{sample}_stat.txt"
+    shell:
+        "samtools flagstat {input} > {output}"
+
+# Rule to generate a list of BAM files (e.g. for downstream ANGSD analysis)
+rule bam_list:
+    input:
+        expand(scratchdir + "mapped_sorted/{sample}_pic.bam", sample=config["sample"])
+    output:
+        BAMS_TMP = temp(scratchdir + "mapped_sorted/tmp.filelist"),
+        BAMS = scratchdir + "mapped_sorted/bam.filelist"
+    shell:
+        """
+        echo {input} >> {output.BAMS_TMP}
+        cat {output.BAMS_TMP} | tr " " "\\n" > {output.BAMS} 
+        """
+
+# Rule to perform variant calling using bcftools
+rule bcftools_call:
+    priority: 50
+    input:
+        FA = config["genome"],
+        SORT = scratchdir + "mapped_sorted/{sample}_pic.bam",
+        IND = scratchdir + "mapped_sorted/{sample}_pic.bam.bai"
+    output:
+        BCF = scratchdir + "calls/{sample}_raw.bcf",
+        IND = scratchdir + "calls/{sample}_raw.bcf.csi"
+    log:
+        "logs/bcftools_call/{sample}.log"
+    shell:
+        """
+        (bcftools mpileup -f {input.FA} {input.SORT} |
+            bcftools call -m -Ob -f GQ -o {output.BCF}) &> {log}
+        bcftools index {output.BCF}
+        """
+

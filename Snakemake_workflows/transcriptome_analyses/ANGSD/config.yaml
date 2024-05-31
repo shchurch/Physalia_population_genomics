@@ -1,0 +1,10 @@
+scratchdir: "/gpfs/gibbs/pi/dunn/sc2962/20231226_isoPhy_PopGen/"
+
+genome: "/gpfs/gibbs/pi/dunn/sc2962/20231226_isoPhy_PopGen/Physalia_physalis_8_transcripts.strict.fasta"
+
+min_qual: 40
+min_depth: 2
+max_depth: 99
+min_ind: 100
+
+bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20231226_isoPhy_PopGen/mapped_sorted/subset_bam.filelist"

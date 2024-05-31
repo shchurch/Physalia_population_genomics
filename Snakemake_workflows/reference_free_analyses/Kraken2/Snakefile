@@ -1,0 +1,83 @@
+"""
+This snakefile runs Kraken on a subset of reads
+Modified from https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+standarddir = config["standarddir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        expand(scratchdir + "kraken/{sample}.report.txt", sample=config["sample"]), 
+
+rule reads_subset:
+    input:
+        READ1 = lambda wildcards: config["sample"][wildcards.sample]["reads"][0],
+        READ2 = lambda wildcards: config["sample"][wildcards.sample]["reads"][1]
+    output:
+        R1 = temp( scratchdir + "reads/{sample}_sub_R1.fastq" ),
+        R2 = temp( scratchdir + "reads/{sample}_sub_R2.fastq" )
+    shell:
+        """
+        set +o pipefail;
+        zcat {input.READ1} | head --lines=40000000 > {output.R1}
+        zcat {input.READ2} | head --lines=40000000 > {output.R2}
+        """
+
+rule trimmomatic_pe:
+    input:
+        R1 = scratchdir + "reads/{sample}_sub_R1.fastq",
+        R2 = scratchdir + "reads/{sample}_sub_R2.fastq"
+    output:
+        TRIM1P = temp( scratchdir + "trimmed/{sample}.R1.trimmed.fastq" ),
+        TRIM1U = temp( scratchdir + "trimmed/{sample}.R1.unpaired.trimmed.fastq" ),
+        TRIM2P = temp( scratchdir + "trimmed/{sample}.R2.trimmed.fastq" ),
+        TRIM2U = temp( scratchdir + "trimmed/{sample}.R2.unpaired_trimmed.fastq" )
+    log:
+        "logs/trimmomatic/{sample}.log"
+    threads: 4
+    shell:
+        """
+        echo ">PrefixPE/1\nTACACTCTTTCCCTACACGACGCTCTTCCGATCT\n>PrefixPE/2\nGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT" > TruSeq3-PE.fa
+        java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE -threads $SLURM_CPUS_PER_TASK \
+        {input.R1} \
+        {input.R2} \
+        {output.TRIM1P} \
+        {output.TRIM1U} \
+        {output.TRIM2P} \
+        {output.TRIM2U} \
+        ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:15 TRAILING:15 MINLEN:50 2> {log}
+        """
+
+rule kraken:
+    input:
+        READ1 = scratchdir + "trimmed/{sample}.R1.trimmed.fastq",
+        READ2 = scratchdir + "trimmed/{sample}.R2.trimmed.fastq",
+        DB = standarddir
+    output:
+        OUT = temp( scratchdir + "kraken/{sample}.out.txt" ),
+        CLASS_R1 = temp( scratchdir + "kraken/{sample}.classified_1.fq" ), 
+        CLASS_R2 = temp( scratchdir + "kraken/{sample}.classified_2.fq" ), 
+        UNCLASS_R1 = temp( scratchdir + "kraken/{sample}.unclassified_1.fq" ),
+        UNCLASS_R2 = temp( scratchdir + "kraken/{sample}.unclassified_2.fq" ),
+        REPORT = scratchdir + "kraken/{sample}.report.txt"
+    params:
+        SAMPLE = scratchdir + "kraken/{sample}", 
+    log:
+        "logs/kraken/{sample}.log"
+    threads: 10
+    shell:
+        """
+        kraken2 --threads {threads} \
+        --db {input.DB} \
+        --unclassified-out "{params.SAMPLE}.unclassified#.fq" \
+        --classified-out "{params.SAMPLE}.classified#.fq" \
+        --output "{params.SAMPLE}.out.txt" \
+        --report "{params.SAMPLE}.report.txt" --use-names --report-minimizer-data  \
+        --paired {input.READ1} {input.READ2} 2> {log}
+        """ 

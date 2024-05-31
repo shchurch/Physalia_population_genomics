@@ -1,0 +1,236 @@
+
+"""
+This snakefile subsets reads, assemblies a mitochondrial genome with GO
+it then builds a mitochondrial phylogeny with IQtree2
+and then maps mito reads back to the genome to test for an abundance of polymorphisms (test still in beta)
+"""
+
+from Bio import SeqIO
+import sys
+
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+# assembly
+        expand(scratchdir + "go_mito/{sample}_mtgenome/animal_mt.K105.scaffolds.graph1.1.path_sequence.fasta", sample=config["sample"]),
+# phylogeny
+        scratchdir + "tree/go_mito_aligned.fasta.iqtree",
+# method for checking SNPs, allele frequencies
+#        expand(scratchdir + "go_mito/{sample}.bcf.stats", sample=config["sample"])
+
+# subset the reads
+rule reads_subset:
+    input:
+        READ1 = lambda wildcards: config["sample"][wildcards.sample]["reads"][0],
+        READ2 = lambda wildcards: config["sample"][wildcards.sample]["reads"][1]
+    output:
+        R1 = temp( "reads/{sample}_sub_R1.fastq" ),
+        R2 = temp( "reads/{sample}_sub_R2.fastq" )
+    params:
+        SUBSET = 40000000
+    shell:
+        """
+        set +o pipefail;
+        zcat {input.READ1} | head --lines={params.SUBSET} > {output.R1}
+        zcat {input.READ2} | head --lines={params.SUBSET} > {output.R2}
+        """
+
+# trim Illumina adapters
+rule trimmomatic_pe:
+    input:
+        R1 = "reads/{sample}_sub_R1.fastq",
+        R2 = "reads/{sample}_sub_R2.fastq"
+    output:
+        TRIM1P = temp( scratchdir + "trimmed/{sample}.R1.trimmed.fastq" ),
+        TRIM1U = temp( scratchdir + "trimmed/{sample}.R1.unpaired.trimmed.fastq" ),
+        TRIM2P = temp( scratchdir + "trimmed/{sample}.R2.trimmed.fastq" ),
+        TRIM2U = temp( scratchdir + "trimmed/{sample}.R2.unpaired_trimmed.fastq" )
+    log:
+        "logs/trimmomatic/{sample}.log"
+    threads: 4
+    shell:
+        """
+        echo ">PrefixPE/1\nTACACTCTTTCCCTACACGACGCTCTTCCGATCT\n>PrefixPE/2\nGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT" > TruSeq3-PE.fa
+        java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE -threads $SLURM_CPUS_PER_TASK \
+            {input.R1} \
+            {input.R2} \
+            {output.TRIM1P} \
+            {output.TRIM1U} \
+            {output.TRIM2P} \
+            {output.TRIM2U} \
+        ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:15 TRAILING:15 MINLEN:50 2> {log}
+        """
+
+# run GO
+rule get_organelle:
+    input:
+        ASSEM = config["mito_genome"],
+        READ1 = scratchdir + "trimmed/{sample}.R1.trimmed.fastq",
+        READ2 = scratchdir + "trimmed/{sample}.R2.trimmed.fastq",
+    output:
+        FASTA = scratchdir + "go_mito/{sample}_mtgenome/animal_mt.K105.scaffolds.graph1.1.path_sequence.fasta"
+    priority: 1250
+    params:
+        OUTDIR = "go_mito/{sample}_mtgenome"
+    log:
+        "logs/getorganelle/{sample}.log"
+    threads: 4
+    shell:
+        """
+        get_organelle_from_reads.py \
+            -1 {input.READ1} -2 {input.READ2} \
+            -R 10 -k 21,45,65,85,105 \
+            -F animal_mt \
+            -s {input.ASSEM} \
+            --overwrite \
+            -o {params.OUTDIR} > {log}
+        """
+
+# grab the top path from the GO results 
+rule make_go_mito:
+    input:
+        scratchdir + "go_mito/{sample}_mtgenome/animal_mt.K105.scaffolds.graph1.1.path_sequence.fasta"
+    output:
+        scratchdir + "go_mito/{sample}_mito_path1.fasta"
+    params:
+        lambda wildcards: wildcards.sample
+    shell:
+        """
+        touch {output}
+        echo ">{params}_mito_path1" >> {output}
+        tail -q -n 1 {input} >> {output}
+        """
+
+# combine into one fasta
+rule merge_go_mito:
+    input:
+        GO = expand(scratchdir + "go_mito/{sample}_mito_path1.fasta", sample=config["sample"]),
+        OTHERS=config["mito_fasta"]
+    output:
+        scratchdir + "tree/go_mito.fasta"
+    shell:
+        "cat {input.OTHERS} {input.GO} >> {output}"
+    
+
+# align
+rule mafft_go_mito:
+    input:
+        scratchdir + "tree/go_mito.fasta"
+    output:
+        scratchdir + "tree/go_mito_aligned.fasta"
+    log:
+        "logs/mafft/go_mito.log"
+    threads: workflow.cores
+    shell:
+        "mafft --adjustdirectionaccurately --thread {threads} {input} > {output} 2> {log}"
+
+# infer phylogeny
+rule iqtree_go_mito:
+    input:
+        scratchdir + "tree/go_mito_aligned.fasta"
+    output:
+        scratchdir + "tree/go_mito_aligned.fasta.iqtree"
+    threads: workflow.cores
+    log:
+        "logs/iqtree/go_mito.log"
+    shell:
+        "iqtree -s {input} -nt {threads} -bb 1000 2> {log}"
+        
+# index each assembly
+rule bwa_index_go_mito:
+    input:
+        ASSEM = scratchdir + "go_mito/{sample}_mito_path1.fasta"
+    output:
+        INDEX = scratchdir + "go_mito/{sample}_mito_path1.fasta" + ".bwt"
+    shell:
+        "bwa index {input.ASSEM}"
+
+# map subset of reads back to the assembly
+rule bwa_map_go_mito:
+    input:
+        ASSEM = scratchdir + "go_mito/{sample}_mito_path1.fasta",
+        READ1 = scratchdir + "trimmed/{sample}.R1.trimmed.fastq",
+        READ2 = scratchdir + "trimmed/{sample}.R2.trimmed.fastq",
+        INDEX = scratchdir + "go_mito/{sample}_mito_path1.fasta" + ".bwt"
+    output:
+        BAM = temp( scratchdir + "go_mito/{sample}.unsorted.bam" )
+    log:
+        "logs/bwa_mem/{sample}_go.log"
+    threads: 4
+    shell:
+        """
+        (bwa mem -t {threads} {input.ASSEM} {input.READ1} {input.READ2} | \
+            samtools view -Sb - > {output}) 2> {log}
+        """
+
+# sort and index mapped reads
+rule samtools_sort_go_mito:
+    input:
+        BAM = scratchdir + "go_mito/{sample}.unsorted.bam"
+    output:
+        SORTED = temp( scratchdir + "go_mito/{sample}.bam" ),
+        INDEX = temp( scratchdir + "go_mito/{sample}.bam.bai" )
+    log:
+        "logs/bwa_mem/{sample}_go_sort.log"
+    threads: 4
+    shell:
+        """
+        samtools sort -@ {threads} {input.BAM} > {output.SORTED} 2> {log}
+        samtools index {output.SORTED}
+        """
+
+# call SNPs
+rule bcftools_call_go_mito:
+    input:
+        ASSEM = scratchdir + "go_mito/{sample}_mito_path1.fasta",
+        BAM = scratchdir + "go_mito/{sample}.bam",
+        INDEX = scratchdir + "go_mito/{sample}.bam.bai"
+    output:
+        BCF = temp( scratchdir + "go_mito/{sample}.raw.bcf" ),
+        INDEX = temp( scratchdir + "go_mito/{sample}.raw.bcf.csi" )
+    params:
+        min_qual=config["min_qual"],
+        min_depth=config['min_depth']
+    log:
+        "logs/bcftools_call/{sample}_go.log"
+    shell:
+        """
+        (bcftools mpileup -f {input.ASSEM} -a "FORMAT/AD" {input.BAM} | \
+            bcftools call -mv -Ob - > {output.BCF}) 2> {log}
+        bcftools index {output.BCF}
+        """
+
+# filter SNPs
+rule bcftools_filter_go_mito:
+    input:
+        BCF_raw = scratchdir + "go_mito/{sample}.raw.bcf",
+        INDEX_raw= scratchdir + "go_mito/{sample}.raw.bcf.csi"
+    output:
+        BCF = scratchdir + "go_mito/{sample}.bcf",
+        INDEX = scratchdir + "go_mito/{sample}.bcf.csi"
+    params:
+        min_qual=config["min_qual"],
+        min_depth=config['min_depth']
+    log:
+        "logs/bcftools_filter/{sample}_go.log"
+    shell:
+        """
+        (bcftools filter -Ob -i'QUAL>={params.min_qual} && DP>={params.min_depth}' {input.BCF_raw} > {output.BCF}) 2> {log}
+        bcftools index {output.BCF}
+        """
+
+# calculate stats on SNPs
+rule bcftools_stats_go_mito:
+    input:
+        BCF = scratchdir + "go_mito/{sample}.bcf"
+    output:
+        STATS = scratchdir + "go_mito/{sample}.bcf.stats"
+    shell:
+        """
+        bcftools stats {input.BCF} > {output.STATS}
+        """

@@ -1,0 +1,679 @@
+scratchdir: "/gpfs/gibbs/pi/dunn/sc2962/20230917_mitochondria/"
+
+mito_genome: "Physalia_mtgenome_KT809328.1.fasta"
+mito_fasta: "/gpfs/gibbs/pi/dunn/sc2962/20230924_sPCR/NCBI_sequences/cystonectae_mitochondria.fa"
+
+min_qual: 20                                                                                                             
+min_depth: 3 
+
+sample:
+###  Nanomia-cali-WS5:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS5_179_014/WS5_179_014_S30_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS5_179_014/WS5_179_014_S30_L004_R2_001.fastq.gz
+###  Nanomia-cali-WS6:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS6_190_003/WS6_190_003_S31_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS6_190_003/WS6_190_003_S31_L004_R2_001.fastq.gz
+###  Nanomia-cali-WS7:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS7_167_026/WS7_167_026_S32_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS7_167_026/WS7_167_026_S32_L004_R2_001.fastq.gz
+###  Nanomia-cali-WS8:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS8_155_038/WS8_155_038_S33_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS8_155_038/WS8_155_038_S33_L004_R2_001.fastq.gz
+###  Nanomia-cali-WS9:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS9_178_015/WS9_178_015_S34_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS9_178_015/WS9_178_015_S34_L004_R2_001.fastq.gz
+###  Nanomia-cali-WS10:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS10_143_050/WS10_143_050_S35_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS10_143_050/WS10_143_050_S35_L004_R2_001.fastq.gz
+###  Nanomia-FHL-NA34:
+###    reads:
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA34_103_090/NA34_103_090_S34_L008_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA34_103_090/NA34_103_090_S34_L008_R2_001.fastq.gz
+###  Nanomia-FHL-NA35:
+###    reads:
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA35_186_007/NA35_total_R1.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA35_186_007/NA35_total_R2.fastq.gz
+###  Nanomia-FHL-NA36:
+###    reads:
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA36_174_019/NA36_174_019_S36_L008_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA36_174_019/NA36_174_019_S36_L008_R2_001.fastq.gz
+###  Nanomia-rhody-NA28:
+###    reads:
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA28_165_028/NA28_165_028_S20_L002_R1_001.fastq.gz
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA28_165_028/NA28_165_028_S20_L002_R2_001.fastq.gz
+###  Nanomia-villefranche-NA30:
+###    reads:
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA30_153_040/NA30_153_040_S22_L002_R1_001.fastq.gz
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA30_153_040/NA30_153_040_S22_L002_R2_001.fastq.gz
+###  Nanomia-hawaii-NA29:
+###    reads:
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA29_141_052/NA29_141_052_S21_L002_R1_001.fastq.gz
+###    - /gpfs/gibbs/project/dunn/na375/Sample_NA29_141_052/NA29_141_052_S21_L002_R2_001.fastq.gz
+###  Nanomia-GOC-NA32:
+###    reads:
+###    - /home/sc2962/palmer_scratch/Nanomia_sequences/Sample_NA32_152_041/NA32_152_041_S3_L003_R1_001.fastq.gz
+###    - /home/sc2962/palmer_scratch/Nanomia_sequences/Sample_NA32_152_041/NA32_152_041_S3_L003_R2_001.fastq.gz
+###  Nanomia-GOC-NA31:
+###    reads:      
+###    - /home/sc2962/palmer_scratch/Nanomia_sequences/Sample_NA31_164_029/NA31_164_029_S2_L003_R1_001.fastq.gz 
+###    - /home/sc2962/palmer_scratch/Nanomia_sequences/Sample_NA31_164_029/NA31_164_029_S2_L003_R2_001.fastq.gz 
+###  Nanomia-GOC-NA33:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA33_140_053/NA33_140_053_S4_L003_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_NA33_140_053/NA33_140_053_S4_L003_R2_001.fastq.gz
+###  Nanomia-rhody-WS1:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS1_132_061/WS1_132_061_S26_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS1_132_061/WS1_132_061_S26_L004_R2_001.fastq.gz
+###  Nanomia-rhody-WS2:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS2_120_073/WS2_120_073_S27_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS2_120_073/WS2_120_073_S27_L004_R2_001.fastq.gz
+###  Nanomia-rhody-WS3:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS3_108_085/WS3_108_085_S28_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS3_108_085/WS3_108_085_S28_L004_R2_001.fastq.gz
+###  Nanomia-rhody-WS4:
+###    reads:  
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS4_191_002/WS4_191_002_S29_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/na375/Sample_WS4_191_002/WS4_191_002_S29_L004_R2_001.fastq.gz
+###  Nanomia-NC-CWD16:
+###    reads:
+###    - /vast/palmer/scratch/dunn/sc2962/Nanomia_sequences/Sample_CWD16_296_281/CWD16_296_281_S17_L004_R1_001.fastq.gz
+###    - /vast/palmer/scratch/dunn/sc2962/Nanomia_sequences/Sample_CWD16_296_281/CWD16_296_281_S17_L004_R2_001.fastq.gz
+  YPM-IZ-111156:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111156_147_046/111156_147_046_S79_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111156_147_046/111156_147_046_S79_L003_R2_001.fastq.gz
+  YPM-IZ-111157:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111157_135_058/111157_135_058_S80_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111157_135_058/111157_135_058_S80_L003_R2_001.fastq.gz
+  YPM-IZ-111158:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111158_123_070/111158_123_070_S81_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111158_123_070/111158_123_070_S81_L003_R2_001.fastq.gz
+  YPM-IZ-111159:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111159_111_082/111159_111_082_S82_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111159_111_082/111159_111_082_S82_L003_R2_001.fastq.gz
+  YPM-IZ-111160:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111160_099_094/111160_099_094_S83_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111160_099_094/111160_099_094_S83_L003_R2_001.fastq.gz
+  YPM-IZ-111163:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111163_159_034/111163_159_034_S78_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111163_159_034/111163_159_034_S78_L003_R2_001.fastq.gz
+  YPM-IZ-111209:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ33_182_011/CWD_NZ33_182_011_S84_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ33_182_011/CWD_NZ33_182_011_S84_L003_R2_001.fastq.gz
+  YPM-IZ-111212:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ36_170_023/CWD_NZ36_170_023_S85_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ36_170_023/CWD_NZ36_170_023_S85_L003_R2_001.fastq.gz
+  YPM-IZ-111207:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ31_158_035/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ31_158_035/combined_R2.fastq.gz
+  YPM-IZ-111208:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ32_146_047/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ32_146_047/combined_R2.fastq.gz
+  YPM-IZ-111210:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ34_134_059/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ34_134_059/combined_R2.fastq.gz
+  YPM-IZ-111211:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ35_122_071/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD_NZ35_122_071/combined_R2.fastq.gz
+  YPM-IZ-110972:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110972_169_024/110972_169_024_S11_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110972_169_024/110972_169_024_S11_L003_R2_001.fastq.gz
+  YPM-IZ-111006:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111006_145_048/111006_145_048_S13_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111006_145_048/111006_145_048_S13_L003_R2_001.fastq.gz
+#  YPM-IZ-110973:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110973_157_036/110973_157_036_S12_L003_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110973_157_036/110973_157_036_S12_L003_R2_001.fastq.gz
+  YPM-IZ-111007:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111007_133_060/111007_133_060_S14_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111007_133_060/111007_133_060_S14_L003_R2_001.fastq.gz      
+  YPM-IZ-111008:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111008_121_072/111008_121_072_S15_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111008_121_072/111008_121_072_S15_L003_R2_001.fastq.gz      
+  YPM-IZ-111009:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111009_109_084/111009_109_084_S16_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111009_109_084/111009_109_084_S16_L003_R2_001.fastq.gz      
+  YPM-IZ-111010:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111010_097_096/111010_097_096_S17_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111010_097_096/111010_097_096_S17_L003_R2_001.fastq.gz
+  YPM-IZ-110937:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110937_181_012/110937_181_012_S10_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110937_181_012/110937_181_012_S10_L003_R2_001.fastq.gz
+  YPM-IZ-110931:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110931_098_095/110931_098_095_S9_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110931_098_095/110931_098_095_S9_L003_R2_001.fastq.gz
+  WAMZ97902:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97902_152_041/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97902_152_041/combined_R2.fastq.gz
+  WAMZ97907:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97907_140_053/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97907_140_053/combined_R2.fastq.gz
+  WAMZ97908:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97908_128_065/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97908_128_065/combined_R2.fastq.gz
+  WAMZ97910:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97910_116_077/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97910_116_077/combined_R2.fastq.gz
+  WAMZ97911:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97911_104_089/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97911_104_089/combined_R2.fastq.gz
+  WAMZ97914:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97914_187_006/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97914_187_006/combined_R2.fastq.gz
+  WAMZ97916:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_Z97916/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_Z97916/combined_R2.fastq.gz
+  WAMZ97923:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_Z97923/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_Z97923/combined_R2.fastq.gz
+#  YPM-IZ-110694-dry:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110694_dry_151_042/combined_R1.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110694_dry_151_042/combined_R2.fastq.gz
+  YPM-IZ-110906:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_110906/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_110906/combined_R2.fastq.gz
+  YPM-IZ-110907:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_110907/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/RELABEL_Sample_110907/combined_R2.fastq.gz
+#  YPM-IZ-110826:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110826_176_017/110826_combined_R1.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110826_176_017/110826_combined_R2.fastq.gz
+#  YPM-IZ-110827:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110827_164_029/110827_combined_R1.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110827_164_029/110827_combined_R2.fastq.gz
+  YPM-IZ-110829:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110829_177_016/110829_177_016_S5_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110829_177_016/110829_177_016_S5_L003_R2_001.fastq.gz
+  YPM-IZ-110830:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110830_165_028/110830_165_028_S6_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110830_165_028/110830_165_028_S6_L003_R2_001.fastq.gz
+  FM16644:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_FM16644_153_040/FM16644_153_040_S7_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_FM16644_153_040/FM16644_153_040_S7_L004_R2_001.fastq.gz
+  WAMZ97917:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97917_188_005/Z97917_188_005_S12_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97917_188_005/Z97917_188_005_S12_L004_R2_001.fastq.gz
+  YPM-IZ-110694:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110694_105_088/110694_105_088_S11_L004_R1_001.fastq.gz 
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110694_105_088/110694_105_088_S11_L004_R2_001.fastq.gz 
+  YPM-IZ-110878:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCBW1_141_052/GoCBW1_141_052_S8_L004_R1_001.fastq.gz 
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCBW1_141_052/GoCBW1_141_052_S8_L004_R2_001.fastq.gz 
+#  YPM-IZ-110879:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCBW2_129_064/GoCBW2_129_064_S9_L004_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCBW2_129_064/GoCBW2_129_064_S9_L004_R2_001.fastq.gz
+  YPM-IZ-110880:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD-BI1-1_117_076/CWD-BI1-1_117_076_S10_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_CWD-BI1-1_117_076/CWD-BI1-1_117_076_S10_L004_R2_001.fastq.gz
+  YPM-IZ-110845:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110845_111_082/110845_111_082_S15_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110845_111_082/110845_111_082_S15_L002_R2_001.fastq.gz
+  YPM-IZ-110844:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110844_123_070/110844_123_070_S14_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110844_123_070/110844_123_070_S14_L002_R2_001.fastq.gz
+  YPM-IZ-110843:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110843_135_058/110843_135_058_S13_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110843_135_058/110843_135_058_S13_L002_R2_001.fastq.gz
+  YPM-IZ-110842:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110842_147_046/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110842_147_046/combined_R2.fastq.gz
+  YPM-IZ-110828:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110828_159_034/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110828_159_034/combined_R2.fastq.gz
+  YPM-IZ-110786:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110786_171_022/110786_171_022_S10_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110786_171_022/110786_171_022_S10_L002_R2_001.fastq.gz
+  YPM-IZ-110785:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110785_183_010/110785_183_010_S9_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110785_183_010/110785_183_010_S9_L002_R2_001.fastq.gz
+  YPM-IZ-110631:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110631_114_079/110631_114_079_S2_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110631_114_079/110631_114_079_S2_L005_R2_001.fastq.gz
+#  YPM-IZ-110632:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110632_102_091/110632_102_091_S3_L005_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110632_102_091/110632_102_091_S3_L005_R2_001.fastq.gz
+  YPM-IZ-110633:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110633_161_032/110633_161_032_S6_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110633_161_032/110633_161_032_S6_L005_R2_001.fastq.gz
+  YPM-IZ-110667:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110667_126_067/110667_126_067_S1_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110667_126_067/110667_126_067_S1_L005_R2_001.fastq.gz
+  YPM-IZ-110881:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW1-16_185_008/HI23BW1-16_185_008_S4_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW1-16_185_008/HI23BW1-16_185_008_S4_L005_R2_001.fastq.gz
+  YPM-IZ-110883:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW5-2_173_020/HI23BW5-2_173_020_S5_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW5-2_173_020/HI23BW5-2_173_020_S5_L005_R2_001.fastq.gz
+  YPM-IZ-110777:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110777_112_081/110777_112_081_S19_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110777_112_081/110777_112_081_S19_L004_R2_001.fastq.gz
+  YPM-IZ-110780:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110780_100_093/110780_100_093_S20_L005_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110780_100_093/110780_100_093_S20_L005_R2_001.fastq.gz
+  WAMZ88480:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z88480_170_023/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z88480_170_023/combined_R2.fastq.gz
+  WAMZ97900:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97900_158_035/Z97900_158_035_S24_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97900_158_035/Z97900_158_035_S24_L002_R2_001.fastq.gz
+  WAMZ97906:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97906_122_071/Z97906_122_071_S27_L002_R1_001.fastq.gz 
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97906_122_071/Z97906_122_071_S27_L002_R2_001.fastq.gz
+  WAMZ97901:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97901_146_047/Z97901_146_047_S25_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97901_146_047/Z97901_146_047_S25_L002_R2_001.fastq.gz
+  WAMZ97903:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97903_134_059/Z97903_134_059_S26_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97903_134_059/Z97903_134_059_S26_L002_R2_001.fastq.gz
+  WAMZ97920:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97920_110_083/Z97920_110_083_S28_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97920_110_083/Z97920_110_083_S28_L003_R2_001.fastq.gz
+  WAMZ97921:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97921_098_095/Z97921_098_095_S29_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Z97921_098_095/Z97921_098_095_S29_L003_R2_001.fastq.gz
+  YPM-IZ-110716:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110716_148_045/110716_148_045_S16_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110716_148_045/110716_148_045_S16_L004_R2_001.fastq.gz
+  YPM-IZ-110726:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110726_136_057/110726_136_057_S17_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110726_136_057/110726_136_057_S17_L004_R2_001.fastq.gz
+  YPM-IZ-110738:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110738_124_069/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110738_124_069/combined_R2.fastq.gz
+  YPM-IZ-110846:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110846_099_094/110846_099_094_S21_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110846_099_094/110846_099_094_S21_L002_R2_001.fastq.gz
+  YPM-IZ-110847:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110847_182_011/110847_182_011_S22_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110847_182_011/110847_182_011_S22_L002_R2_001.fastq.gz
+  YPM-IZ-110600:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110600_163_030/110600_163_030_S10_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110600_163_030/110600_163_030_S10_L003_R2_001.fastq.gz
+#  YPM-IZ-110574:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110574_175_018/110574_175_018_S9_L003_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110574_175_018/110574_175_018_S9_L003_R2_001.fastq.gz
+  YPM-IZ-110569:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110569_187_006/110569_187_006_S8_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110569_187_006/110569_187_006_S8_L003_R2_001.fastq.gz
+  YPM-IZ-110473:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110473_104_089/110473_104_089_S7_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110473_104_089/110473_104_089_S7_L003_R2_001.fastq.gz
+  KM5636:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5636_116_077/KM5636_116_077_S6_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5636_116_077/KM5636_116_077_S6_L003_R2_001.fastq.gz
+  KM5635:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5635_128_065/KM5635_128_065_S5_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5635_128_065/KM5635_128_065_S5_L003_R2_001.fastq.gz
+  YPM-IZ-110460:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110460_118_075/110460_118_075_S1_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110460_118_075/110460_118_075_S1_L001_R2_001.fastq.gz
+  YPM-IZ-110470:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110470_106_087/110470_106_087_S2_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110470_106_087/110470_106_087_S2_L001_R2_001.fastq.gz
+  YPM-IZ-110515:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110515_189_004/110515_189_004_S3_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110515_189_004/110515_189_004_S3_L001_R2_001.fastq.gz
+  YPM-IZ-110520:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110520_177_016/110520_177_016_S4_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110520_177_016/110520_177_016_S4_L001_R2_001.fastq.gz
+  YPM-IZ-110526:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110526_165_028/110526_165_028_S5_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110526_165_028/110526_165_028_S5_L001_R2_001.fastq.gz
+  YPM-IZ-110556:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110556_153_040/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110556_153_040/combined_R2.fastq.gz
+  YPM-IZ-110557:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110557_141_052/110557_141_052_S7_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110557_141_052/110557_141_052_S7_L001_R2_001.fastq.gz
+  YPM-IZ-110558:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110558_129_064/110558_129_064_S8_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110558_129_064/110558_129_064_S8_L001_R2_001.fastq.gz
+  YPM-IZ-110566:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110566_117_076/110566_117_076_S9_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110566_117_076/110566_117_076_S9_L001_R2_001.fastq.gz
+  YPM-IZ-110602:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110602_105_088/110602_105_088_S10_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110602_105_088/110602_105_088_S10_L001_R2_001.fastq.gz
+  YPM-IZ-110605:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110605_139_054/110605_139_054_S22_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110605_139_054/110605_139_054_S22_L004_R2_001.fastq.gz
+  YPM-IZ-110612:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110612_127_066/110612_127_066_S23_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110612_127_066/110612_127_066_S23_L004_R2_001.fastq.gz
+  YPM-IZ-110613:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110613_115_078/110613_115_078_S24_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110613_115_078/110613_115_078_S24_L004_R2_001.fastq.gz
+  YPM-IZ-110616:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110616_103_090/110616_103_090_S25_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110616_103_090/110616_103_090_S25_L004_R2_001.fastq.gz
+  YPM-IZ-110882:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW5-1_188_005/HI23BW5-1_188_005_S11_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_HI23BW5-1_188_005/HI23BW5-1_188_005_S11_L001_R2_001.fastq.gz
+  KM5632: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5632_138_055/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5632_138_055/combined_R2.fastq.gz
+  KM5633: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5633_150_043/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5633_150_043/combined_R2.fastq.gz
+  KM5634: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5634_126_067/KM5634_126_067_S67_L003_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_KM5634_126_067/KM5634_126_067_S67_L003_R2_001.fastq.gz
+  OA-Bluebottle: 
+    reads:
+      - /vast/palmer/scratch/dunn/sc2962/physalia_genome_assemblies/2023_physalia_pacfic_genome/GON10891/GON10891A1/BluebottleDNA_S1_L001_R1_001.fastq.gz
+      - /vast/palmer/scratch/dunn/sc2962/physalia_genome_assemblies/2023_physalia_pacfic_genome/GON10891/GON10891A1/BluebottleDNA_S1_L001_R2_001.fastq.gz
+  OA-190531-1:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_190531_FD09253810/HYGF2CCXY_1_190531_FD09253810_Other__R_190530_SAMROS_DNA_M001_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_190531_FD09253810/HYGF2CCXY_1_190531_FD09253810_Other__R_190530_SAMROS_DNA_M001_R2.fastq.gz
+  YPM-IZ-104465: 
+    reads:      
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_NA22_176_017/NA22_176_017_S7_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_NA22_176_017/NA22_176_017_S7_L002_R2_001.fastq.gz
+  YPM-IZ-104464: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_NA24_164_029/NA24_164_029_S8_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_NA24_164_029/NA24_164_029_S8_L002_R2_001.fastq.gz
+  YPM-IZ-106954: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Bermuda_94_150_043/94_150_043_S31_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Bermuda_94_150_043/94_150_043_S31_L004_R2_001.fastq.gz
+  YPM-IZ-106943: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Bermuda_67_162_031/67_162_031_S30_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_Bermuda_67_162_031/67_162_031_S30_L004_R2_001.fastq.gz
+  YPM-IZ-110254: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_YPM110254_102_091/YDM110254_102_091_S35_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_YPM110254_102_091/YDM110254_102_091_S35_L004_R2_001.fastq.gz
+  YPM-IZ-110251: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_YPM110251_114_079/YDM110251_114_079_S34_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_YPM110251_114_079/YDM110251_114_079_S34_L004_R2_001.fastq.gz
+  YPM-IZ-106923: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_6_Japan_126_067/6gDNA_126_067_S33_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_6_Japan_126_067/6gDNA_126_067_S33_L004_R2_001.fastq.gz
+  YPM-IZ-106920: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_3_Japan_138_055/3gDNA_138_055_S32_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_3_Japan_138_055/3gDNA_138_055_S32_L004_R2_001.fastq.gz
+  YPM-IZ-110276: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110276_231_346/110276_231_346_S14_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110276_231_346/110276_231_346_S14_L001_R2_001.fastq.gz
+  YPM-IZ-106941: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_63_232_345/63_232_345_S6_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_63_232_345/63_232_345_S6_L001_R2_001.fastq.gz
+  YPM-IZ-110277: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110277_219_358/110277_219_358_S15_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110277_219_358/110277_219_358_S15_L001_R2_001.fastq.gz
+#  YPM-IZ-106944: 
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_68gDNA-KD_220_357/68gDNA-KD_220_357_S7_L001_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_68gDNA-KD_220_357/68gDNA-KD_220_357_S7_L001_R2_001.fastq.gz
+  YPM-IZ-110278: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110278_207_370/110278_207_370_S16_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110278_207_370/110278_207_370_S16_L001_R2_001.fastq.gz
+  YPM-IZ-106935: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_13TX_280_297/13TX_280_297_S1_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_13TX_280_297/13TX_280_297_S1_L001_R2_001.fastq.gz
+  YPM-IZ-106958: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_8TX_244_333/8TX_244_333_S5_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_8TX_244_333/8TX_244_333_S5_L001_R2_001.fastq.gz
+  YPM-IZ-110876: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_16TX_278_299/16TX_278_299_S4_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_16TX_278_299/16TX_278_299_S4_L001_R2_001.fastq.gz 
+  YPM-IZ-106919: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_2gDNA_279_298/2gDNA_279_298_S10_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_2gDNA_279_298/2gDNA_279_298_S10_L001_R2_001.fastq.gz
+  YPM-IZ-110264: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110264_267_310/110264_267_310_S11_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110264_267_310/110264_267_310_S11_L001_R2_001.fastq.gz
+  YPM-IZ-104460: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_G104460_208_369/G104460_208_369_S8_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_G104460_208_369/G104460_208_369_S8_L001_R2_001.fastq.gz
+  YPM-IZ-110268: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110268_255_322/110268_255_322_S12_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110268_255_322/110268_255_322_S12_L001_R2_001.fastq.gz
+  YPM-IZ-106936: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_42TX_268_309/42TX_268_309_S2_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_42TX_268_309/42TX_268_309_S2_L001_R2_001.fastq.gz
+  YPM-IZ-104461: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_G104461_196_381/G104461_196_381_S9_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_G104461_196_381/G104461_196_381_S9_L001_R2_001.fastq.gz
+  YPM-IZ-110269: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/combined_R2.fastq.gz
+#  YPM-IZ-110269-A:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/subA_50mil_R1.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/subA_50mil_R2.fastq.gz
+#  YPM-IZ-110269-B:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/subB_50mil_R1.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110269_243_334/subB_50mil_R2.fastq.gz
+  YPM-IZ-106937: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_59TX_256_321/59TX_256_321_S3_L001_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_59TX_256_321/59TX_256_321_S3_L001_R2_001.fastq.gz
+  YPM-IZ-110877: 
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCJUN6_195_382/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_GoCJUN6_195_382/combined_R2.fastq.gz
+#  YPM-IZ-110432:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110432_180_013/110432_180_013_S1_L002_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110432_180_013/110432_180_013_S1_L002_R2_001.fastq.gz
+  YPM-IZ-110433:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110433_168_025/110433_168_025_S2_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110433_168_025/110433_168_025_S2_L002_R2_001.fastq.gz
+  YPM-IZ-110438:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110438_156_037/110438_156_037_S3_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110438_156_037/110438_156_037_S3_L002_R2_001.fastq.gz
+  YPM-IZ-110443:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110443_144_049/110443_144_049_S4_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110443_144_049/110443_144_049_S4_L002_R2_001.fastq.gz
+  YPM-IZ-110467:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110467_132_061/110467_132_061_S5_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110467_132_061/110467_132_061_S5_L002_R2_001.fastq.gz
+  YPM-IZ-110468:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110468_120_073/110468_120_073_S6_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110468_120_073/110468_120_073_S6_L002_R2_001.fastq.gz
+  YPM-IZ-110469:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110469_108_085/combined_R1.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110469_108_085/combined_R2.fastq.gz
+  YPM-IZ-110471:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110471_191_002/110471_191_002_S8_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110471_191_002/110471_191_002_S8_L002_R2_001.fastq.gz
+  YPM-IZ-110474:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110474_179_014/110474_179_014_S9_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110474_179_014/110474_179_014_S9_L002_R2_001.fastq.gz
+  YPM-IZ-110480:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110480_167_026/110480_167_026_S10_L002_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110480_167_026/110480_167_026_S10_L002_R2_001.fastq.gz
+  YPM-IZ-110943:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110943_143_050/110943_143_050_S57_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110943_143_050/110943_143_050_S57_L004_R2_001.fastq.gz
+#  YPM-IZ-110474-2:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110474_2_131_062/110474_2_131_062_S58_L004_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110474_2_131_062/110474_2_131_062_S58_L004_R2_001.fastq.gz
+  YPM-IZ-110925:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110925_179_014/110925_179_014_S52_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110925_179_014/110925_179_014_S52_L004_R2_001.fastq.gz
+  YPM-IZ-110926:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110926_119_074/110926_119_074_S53_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110926_119_074/110926_119_074_S53_L004_R2_001.fastq.gz
+  YPM-IZ-110930:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110930_107_086/110930_107_086_S54_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110930_107_086/110930_107_086_S54_L004_R2_001.fastq.gz
+  YPM-IZ-110933:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110933_167_026/110933_167_026_S55_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110933_167_026/110933_167_026_S55_L004_R2_001.fastq.gz
+  YPM-IZ-110938:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110938_155_038/110938_155_038_S56_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_110938_155_038/110938_155_038_S56_L004_R2_001.fastq.gz
+  YPM-IZ-111012:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111012_192_001/111012_192_001_S44_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111012_192_001/111012_192_001_S44_L004_R2_001.fastq.gz
+  YPM-IZ-111013:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111013_180_013/111013_180_013_S45_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111013_180_013/111013_180_013_S45_L004_R2_001.fastq.gz
+  YPM-IZ-111014:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111014_168_025/111014_168_025_S46_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111014_168_025/111014_168_025_S46_L004_R2_001.fastq.gz
+#  YPM-IZ-111015:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111015_156_037/111015_156_037_S47_L004_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111015_156_037/111015_156_037_S47_L004_R2_001.fastq.gz
+  YPM-IZ-111016:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111016_144_049/111016_144_049_S48_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111016_144_049/111016_144_049_S48_L004_R2_001.fastq.gz
+  YPM-IZ-111017:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111017_132_061/111017_132_061_S49_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111017_132_061/111017_132_061_S49_L004_R2_001.fastq.gz
+  YPM-IZ-111018:
+    reads:
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111018_120_073/111018_120_073_S50_L004_R1_001.fastq.gz
+      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111018_120_073/111018_120_073_S50_L004_R2_001.fastq.gz
+#  YPM-IZ-111019:
+#    reads:
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111019_108_085/111019_108_085_S51_L004_R1_001.fastq.gz
+#      - /vast/palmer/home.mccleary/sc2962/palmer_scratch/physalia_novaseq_2023/Sample_111019_108_085/111019_108_085_S51_L004_R2_001.fastq.gz
+
+

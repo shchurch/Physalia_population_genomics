@@ -1,0 +1,54 @@
+"""
+This snakefile does bowtie mapping and variant ualling
+Modified from https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        multiext(scratchdir + "angsd/isoseq", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz"),
+        scratchdir + "pcangsd/isoseq.cov",
+
+rule angsd_isoseq:
+    input:
+        BAMS = config["bam_filelist"]
+    params:
+        PRE = scratchdir + "angsd/isoseq",
+        MIN_PVAL = 1e-6,
+        MIN_QUAL = config["min_qual"],
+        MAX_DEPTH = config["max_depth"],
+        MIN_IND = config["min_ind"]
+    threads: 
+        workflow.cores 
+    output: 
+        multiext(scratchdir + "angsd/isoseq", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz")
+    log:
+        "logs/angsd/isoseq.log"
+    shell:
+        """
+        angsd -GL 1 -bam {input.BAMS} -out {params.PRE} -P {threads} \
+            -doGlf 2 -doMajorMinor 1 -doMaf 2 -doCounts 1 -doDepth 1 \
+            -SNP_pval {params.MIN_PVAL} -minMapQ {params.MIN_QUAL} -minInd {params.MIN_IND} -setMaxDepthInd {params.MAX_DEPTH} &> {log}
+        """
+        
+rule pcangsd:
+    input: 
+        scratchdir + "angsd/isoseq.beagle.gz"
+    params:
+        PRE = scratchdir + "pcangsd/isoseq"
+    output: 
+        multiext(scratchdir + "pcangsd/isoseq", ".args", ".cov")
+    threads: 
+        workflow.cores 
+    log:
+        "logs/pcangsd/pcangsd.log"
+    shell:
+        """
+        pcangsd -b {input} -o {params.PRE} --threads {threads} --admix --admix_alpha 50 &> {log}
+        """

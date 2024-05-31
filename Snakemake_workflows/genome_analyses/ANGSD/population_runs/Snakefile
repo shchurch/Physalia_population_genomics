@@ -1,0 +1,122 @@
+"""
+This snakefile does bowtie mapping and variant ualling
+Modified from https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+analysisdir = config["scratchdir"] + config["analysisdir"]
+regiondir = config["regiondir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        #analysisdir + "B2_nonrepeat.bcf",
+        analysisdir + "angsd/B2.beagle.gz",
+        multiext(analysisdir + "pcangsd/B2", ".args", ".cov")
+
+##### make B2 specific vcf for sexing
+rule bcftools_filter:
+    input:
+        BCF = scratchdir + "calls/{sample}_raw.bcf",
+        IND = scratchdir + "calls/{sample}_raw.bcf.csi",
+        REG = config["all_nonrepeat_regions"]
+    output:
+        BCF = temp( analysisdir + "calls/{sample}_nonrepeat.bcf" ),
+        IND = temp( analysisdir + "calls/{sample}_nonrepeat.bcf.csi" )
+    log:
+        "logs/bcftools_call/{sample}_nonrepeat.log"
+    shell:
+        """
+        bcftools filter -Ob -R {input.REG} {input.BCF} -o {output.BCF} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_merge:
+    input:
+        BCF = expand( analysisdir + "calls/{sample}_nonrepeat.bcf", sample=config["sample"] ),
+        IND = expand( analysisdir + "calls/{sample}_nonrepeat.bcf.csi", sample=config["sample"] )
+    output:
+        BCF = analysisdir + "B2_nonrepeat.bcf",
+        IND = analysisdir + "B2_nonrepeat.bcf.csi"
+    threads: 
+        workflow.cores
+    log:
+        "logs/bcftools_call/nonrepeat_merge.log"
+    shell:
+        """
+        bcftools merge {input.BCF} -Ob -o {output.BCF} --threads {threads} &> {log}
+        bcftools index {output.BCF}
+        """
+################################
+
+rule bam_list:
+    input:
+        expand(scratchdir+"mapped_sorted/{sample}_pic.bam",sample=config["sample"])
+    output:
+        BAMS_TMP = temp( analysisdir + "angsd/tmp.filelist" ),
+        BAMS = analysisdir + "angsd/B2.filelist"
+    shell:
+        """
+        echo {input} >> {output.BAMS_TMP}
+        cat {output.BAMS_TMP} | tr " " "\\n" > {output.BAMS} 
+        """
+
+
+rule run_angsd:
+    input:
+        BAMS = analysisdir + "angsd/B2.filelist",
+        REGION = scratchdir + "ANGSD/region_files/{region}"
+    output:
+        temp( multiext( analysisdir + "angsd/split_likes/{region}", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz" ) )
+    log:
+        "logs/angsd/{region}.log"
+    threads:
+        2
+    params:
+        PRE = analysisdir + "angsd/split_likes/{region}", 
+        MIN_PVAL = 1e-6,
+        MIN_QUAL = config["min_qual"],
+        MAX_DEPTH = config["max_depth"],
+    shell:
+        """
+        angsd -GL 1 -bam {input.BAMS} -out {params.PRE} -rf {input.REGION} -P {threads} \
+            -doGlf 2 -doMajorMinor 1 -doMaf 2 -doCounts 1 -doDepth 1 \
+            -SNP_pval {params.MIN_PVAL} -minMapQ {params.MIN_QUAL} -setMaxDepthInd {params.MAX_DEPTH} &> {log}
+        """
+
+rule join_likes:
+    input:
+        expand( analysisdir + "angsd/split_likes/{region}.beagle.gz", region=config["regions"] )
+    output:
+        analysisdir + "angsd/B2.beagle.gz"
+    params:
+        FIRST = analysisdir + "angsd/split_likes/aaaa.beagle.gz",
+        DIR = analysisdir + "angsd/split_likes/"
+    threads:
+        workflow.cores
+    shell:
+        """
+        zgrep -m1 '^marker' {params.FIRST} | gzip > {output}
+        ls {input} | parallel -j {threads} --keep-order "zgrep -v '^marker' {{}} | gzip" >> {output}
+        """
+
+rule pcangsd:
+    input: 
+        analysisdir + "angsd/B2.beagle.gz"
+    params:
+        PRE = analysisdir + "pcangsd/B2"
+    output: 
+        multiext(analysisdir + "pcangsd/B2", ".args", ".cov")
+    threads: 
+        workflow.cores 
+    log:
+        "logs/pcangsd/pcangsd.log"
+    shell:
+        """
+        pcangsd -b {input} -o {params.PRE} --threads {threads} --admix --admix_alpha 50 &> {log}
+        """
+

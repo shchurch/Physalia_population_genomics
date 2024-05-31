@@ -1,0 +1,101 @@
+"""
+This snakemake file filters SNPs to a subsample and then calculates relatedness with PLINK2
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+        scratchdir + "plink/plink2.king"
+
+rule filter_gff:
+    input:
+        TSV = config["regions"]
+    output: 
+        SAMP = temp( scratchdir + "plink_regions_filtered.tsv" )
+    params:
+        SIZE = config["sample_size"]
+    shell:
+        """
+        shuf -n {params.SIZE} {input.TSV} > {output.SAMP}
+        """
+        
+rule bcftools_filter:
+    input:
+        BCF = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0],
+        IND = lambda wildcards: config["sample"][wildcards.sample]["bcf"][0] + ".csi",
+        REG = scratchdir + "plink_regions_filtered.tsv"
+    output:
+        BCF = scratchdir + "calls/{sample}_filtered.bcf",
+        IND = scratchdir + "calls/{sample}_filtered.bcf.csi"
+    params:
+        MIN_QUAL = config["min_qual"],
+        MIN_DEPTH = config["min_depth"],
+        MAX_DEPTH = config["max_depth"]
+    log:
+        "logs/bcftools_call/{sample}_filter.log"
+    shell:
+        """
+        bcftools filter -Ob \
+        -e'QUAL<{params.MIN_QUAL} || DP<{params.MIN_DEPTH} || DP>{params.MAX_DEPTH} ' \
+        -R {input.REG} {input.BCF} -o {output.BCF} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_merge:
+    input:
+        BCF = expand( scratchdir + "calls/{sample}_filtered.bcf", sample=config["sample"] ),
+        IND = expand( scratchdir + "calls/{sample}_filtered.bcf.csi", sample=config["sample"] )
+    output:
+        BCF = temp( scratchdir + "calls/all_filtered_plink.bcf" ),
+        IND = temp( scratchdir + "calls/all_filtered_plink.bcf.csi" )
+    threads: 
+        workflow.cores
+    log:
+        "logs/bcftools_call/merge.log"
+    shell:
+        """
+        bcftools merge {input.BCF} -Ob -o {output.BCF} --threads {threads} &> {log}
+        bcftools index {output.BCF}
+        """
+
+rule bcftools_convert:
+    input:
+        scratchdir + "calls/all_filtered_plink.bcf"
+    output:
+        temp( scratchdir + "calls/all_filtered_plink.vcf.gz" )
+    log:
+        "logs/bcftools_call/convert.log"
+    shell:
+        "bcftools convert -Oz {input} -o {output} &> {log}"
+       
+
+rule plink:
+    input:
+        scratchdir + "calls/all_filtered_plink.vcf.gz"
+    output:
+        KING = scratchdir + "plink/plink2.king",
+        ID = scratchdir + "plink/plink2.king.id"
+    params:
+        OUTDIR = scratchdir + "plink/plink2",
+        MAF = config["maf"],
+        HWE = config["hwe"],
+        GENO = config["geno"]
+    log:
+        "logs/plink/plink.log"
+    shell:
+        """
+        plink2 --make-king square --vcf {input} \
+        --allow-extra-chr \
+        --snps-only \
+        --hwe {params.HWE} \
+        --maf {params.MAF} \
+        --geno {params.GENO} \
+        --out {params.OUTDIR}
+        """
+

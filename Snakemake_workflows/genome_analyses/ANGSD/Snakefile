@@ -1,0 +1,94 @@
+"""
+This snakefile generates genotype likelihoods with ANGSD and runs a PCA with PCANGSD
+Modified from https://snakemake.readthedocs.io/en/stable/tutorial/advanced.html
+"""
+
+import sys
+configfile: "config.yaml"
+scratchdir = config["scratchdir"]
+
+wildcard_constraints:
+    sample="[A-Za-z0-9\-]+"
+
+rule all:
+    input:
+#        multiext(scratchdir + "angsd/subsample", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz"),
+        scratchdir + "angsd/strict.beagle.gz",
+        multiext(scratchdir + "pcangsd/strict", ".args", ".cov")
+
+rule angsd_subsample:
+    priority: 10
+    input:
+        BAMS = config["bam_filelist"],
+        REG = scratchdir + "ANGSD/region_files/aaaa"
+    params:
+        PRE = scratchdir + "angsd/subsample",
+        MIN_PVAL = 1e-6
+    threads: 
+        2
+    output: 
+        multiext(scratchdir + "angsd/subsample", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz")
+    log:
+        "logs/angsd/subsample.log"
+    shell:
+        """
+        angsd -GL 1 -bam {input.BAMS} -out {params.PRE} -rf {input.REG} -P {threads} \
+            -doGlf 2 -doMajorMinor 1 -doMaf 2 -doCounts 1 -doDepth 1 \
+            -SNP_pval {params.MIN_PVAL} &> {log}
+        """
+        
+rule run_angsd:
+    input:
+        scratchdir + "ANGSD/region_files/{region}"
+    output:
+        temp( multiext( scratchdir + "angsd/split_likes/{region}", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz" ) )
+    log:
+        "logs/angsd/{region}.log"
+    threads:
+        2
+    params:
+        PRE = scratchdir + "angsd/split_likes/{region}",
+        MIN_PVAL = 1e-6,
+        MIN_QUAL = config["min_qual"],
+        MAX_DEPTH = config["max_depth"],
+        MIN_IND = config["min_ind"],
+        BAMS = config["bam_filelist"],
+    shell:
+        """
+        angsd -GL 1 -bam {params.BAMS} -out {params.PRE} -rf {input} -P {threads} \
+            -doGlf 2 -doMajorMinor 1 -doMaf 2 -doCounts 1 -doDepth 1 \
+            -SNP_pval {params.MIN_PVAL} -minMapQ {params.MIN_QUAL} -minInd {params.MIN_IND} -setMaxDepthInd {params.MAX_DEPTH} &> {log}
+        """
+
+rule join_likes:
+    input:
+        expand( scratchdir + "angsd/split_likes/{region}.beagle.gz", region=config["regions"] )
+    output:
+        scratchdir + "angsd/strict.beagle.gz"
+    params:
+        FIRST = scratchdir + "angsd/split_likes/aaaa.beagle.gz",
+        DIR = scratchdir + "angsd/split_likes/"
+    threads:
+        workflow.cores
+    shell:
+        """
+        zgrep -m1 '^marker' {params.FIRST} | gzip > {output}
+        ls {input} | parallel -j {threads} --keep-order "zgrep -v '^marker' {{}} | gzip" >> {output}
+        """
+
+rule pcangsd:
+    input: 
+        scratchdir + "angsd/strict.beagle.gz"
+    params:
+        PRE = scratchdir + "pcangsd/strict"
+    output: 
+        multiext(scratchdir + "pcangsd/strict", ".args", ".cov")
+    threads: 
+        workflow.cores 
+    log:
+        "logs/pcangsd/pcangsd.log"
+    shell:
+        """
+        pcangsd -b {input} -o {params.PRE} --threads {threads} --admix --admix_alpha 50 &> {log}
+        """
+
