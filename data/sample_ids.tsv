@@ -1,135 +1,146 @@
-status	ID	Accession No	site ID	ocean	location	site	lat_long	date_collected	specimen_ID	raw lat long	Collector
-high quality	FM16644			NE Atlantic	Canary Islands	La Palma	28.591940, -17.920910	5/14/2023		28.59194, -17.92091	Tauana Cunha, Juan Moles
-moderate quality	KM5632			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	Nerida Wilson
-moderate quality	KM5633			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	Nerida Wilson
-moderate quality	KM5634			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	Nerida Wilson
-moderate quality	KM5635			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	Nerida Wilson
-moderate quality	KM5636			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	Nerida Wilson
-high quality	WAMZ88480			E Indian	Western Australia	Peasholm Dog Beach, Scarborough	-31.908144, 115.754811	8/3/2018	NA	-31 54`29.32"S, 115 45`17.32"E	K. Tullis
-high quality	WAMZ97900			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 1	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97901			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 2	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97902			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 3	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97903			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 4	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97906			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 7	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97907			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 8	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97908			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 9	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97910			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 11	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97911			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 12	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97914			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 15	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97916			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 17	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic
-high quality	WAMZ97917			SW Pacific	New South Wales	North Steyne, Queenscliff Beach, Manly	-33.787002, 151.288609	1/18/2019	NSW n.1	-33.787002, 151.288609	N. Lo
-high quality	WAMZ97920			SW Pacific	New South Wales	La Perouse, Sydney	-33.987424, 151.231329	2/5/2018	NSW l.p.	-33.987424, 151.231329	Y. K. Tea
-high quality	WAMZ97921			SW Pacific	Queensland	Dicky Beach, Caloundra, Sunshine Coast	-26.784003, 153.140596	1/19/2019	1	-26.784003, 153.140596	G. Cobb
-high quality	WAMZ97923			SW Pacific	Queensland	Dicky Beach, Caloundra, Sunshine Coast	-26.784003, 153.140596	1/19/2019	QLD d.b3	-26.784003, 153.140596	G. Cobb
-high quality	YPM-IZ-104460			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104460	13.427861, 144.798518	David Burdick
-high quality	YPM-IZ-104461			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104461	13.427861, 144.798518	David Burdick
-high quality	YPM-IZ-104464			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104464	13.427861, 144.798518	David Burdick
-high quality	YPM-IZ-104465			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104465	13.427861, 144.798518	David Burdick
-high quality	YPM-IZ-106919			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_2	35.307390, 139.480651	Gaku
-high quality	YPM-IZ-106920			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_3	35.307390, 139.480651	Gaku
-high quality	YPM-IZ-106923			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_6	35.307390, 139.480651	Gaku
-high quality	YPM-IZ-106935			Gulf of Mexico	Texas		29.19532, -94.8429383	3/2/2016	13_TX2016_043	-94.8429383,29.19532	Catriona Munro
-high quality	YPM-IZ-106936			Gulf of Mexico	Texas		29.19532, -94.8429383	3/3/2016	TX2016_046	-94.8429383,29.19532	Catriona Munro
-high quality	YPM-IZ-106937			Gulf of Mexico	Texas		29.19532, -94.8429383	3/3/2016	TX2016_048	-94.8429383,29.19532	Catriona Munro
-high quality	YPM-IZ-106941			NW Atlantic	Bermuda		32.323333, -64.656300	5/18/2019	Bermuda_63, P2	32 19.400 N, 64 39.378 W	Alex Damien-Serrano
-high quality	YPM-IZ-106943			NW Atlantic	Bermuda		32.341117, -64.669133	5/18/2019	Bermuda_67, P8	32 20.467 N, 64 40.148 W	Alex Damien-Serrano
-excluded	YPM-IZ-106944			NW Atlantic	Bermuda		32.297917, -64.686850	5/18/2019	Bermuda_68, P3	32 17.875 N, 64 41.211 W	Alex Damien-Serrano
-high quality	YPM-IZ-106954			NW Atlantic	Bermuda		32.367233, -64.714550	5/20/2019	Bermuda_94, P13	32 22.034 N, 64 42.873 W	Alex Damien-Serrano
-high quality	YPM-IZ-106958			Gulf of Mexico	Texas		29.195320, -94.842938	3/18/2017	TX2017_028	-94.8429383,29.19532	Catriona Munro
-high quality	YPM-IZ-110251			NW Atlantic	Florida	Key Biscanye, Virginia Key	25.737060, -80.152790	12/22/2022	22-VK-02	25.73706° N, 80.15279° W	L.M. Rojas
-high quality	YPM-IZ-110254			NW Atlantic	Florida	Key Biscanye, Virginia Key	25.736470, -80.153500	12/22/2022	22-VK-05	25.73647° N, 80.15350° W	L.M. Rojas
-high quality	YPM-IZ-110264	YPM.13356	IZS.34440	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	10/31/2022	SHC05	22.069018, -159.316685	Samuel Church
-moderate quality	YPM-IZ-110268	YPM.13356	IZS.34441	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	11/4/2022	SHC09	22.069018, -159.316685	Samuel Church
-high quality	YPM-IZ-110269	YPM.13356	IZS.34441	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	11/4/2022	SHC10	22.069018, -159.316685	Samuel Church
-high quality	YPM-IZ-110276	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC17	20.9225222,-156.4926917	Samuel Church
-moderate quality	YPM-IZ-110277	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC18	20.9225222,-156.4926917	Samuel Church
-high quality	YPM-IZ-110278	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC19	20.9225222,-156.4926917	Samuel Church
-excluded	YPM-IZ-110432			NW Atlantic	Florida	Key Biscayne, Hobie Bch.	25.745160, -80.175990	3/14/2023	KBW-01	25.74516° N, 80.17599° W	L.M. Rojas
-high quality	YPM-IZ-110433			NW Atlantic	Florida	Key Biscayne, Hobie Bch.	25.741630, -80.175194	3/14/2023	KBW-02	25.74163° N, 80.175194° W	L.M. Rojas
-moderate quality	YPM-IZ-110438		IZS.34487	Gulf of Mexico	Texas	Follets Island beach	28.989194, -95.237778	3/24/2023	SHCTX001	28°59'21.1"N 95°14'16.0"W	Samuel Church
-high quality	YPM-IZ-110443		IZS.34488	Gulf of Mexico	Texas	Surfisde Beach	28.951778, -95.283167	3/24/2023	SHCTX006	28°57'06.4"N 95°16'59.4"W	Samuel Church
-high quality	YPM-IZ-110460		IZS.34491	Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	11/14/2022	Kailua-1	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110467		IZS.34498	SW Pacific	Breaker Bay		-41.330278, 174.831944	2/16/2023	Breaker Bay-1	-41.330278, 174.831944	Chris Simon
-high quality	YPM-IZ-110468		IZS.34499	SW Pacific	Breaker Bay		-41.330000, 174.833056	2/16/2023	Breaker Bay-2	-41.33, 174.833056	Chris Simon
-high quality	YPM-IZ-110469		IZS.34499	SW Pacific	Breaker Bay		-41.330000, 174.833056	2/16/2023	Breaker Bay-3	-41.33, 174.833056	Chris Simon
-high quality	YPM-IZ-110470		IZS.34499	SW Pacific	Breaker Bay		-41.330000, 174.833056	2/16/2023	Breaker Bay-4	-41.33, 174.833056	Chris Simon
-high quality	YPM-IZ-110471			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	4/9/2023	Kailua-8	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110473		IZS.34500	Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	4/9/2023	Kailua-10	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110474			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/4/2023	Lanikai-0	21.4546, -157.7485	Chris Simon
-excluded	YPM-IZ-110474-2			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/4/2023	Lanikai-0	21.4546, -157.7485	Chris Simon
-high quality	YPM-IZ-110480			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/6/2023	Lanikai-6	21.4546, -157.7485	Chris Simon
-high quality	YPM-IZ-110515		IZS.34511	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	2/9/2023	4	151°15'26.5"E, 33°56'51.0"S 	Amandine Schaeffer
-high quality	YPM-IZ-110520		IZS.34512	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	2/19/2023	9	151°15'26.5"E, 33°56'51.0"S 	Amandine Schaeffer
-high quality	YPM-IZ-110526		IZS.34515	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	4/23/2023	15	151°15'26.5"E, 33°56'51.0"S 	Amandine Schaeffer
-high quality	YPM-IZ-110556			SW Pacific	Tasmania	Friendly Beaches 	-41.996839, 148.284729	12/25/2022	LA001	-41.9968388, 148.2847291	Lisa Albinsson
-high quality	YPM-IZ-110557			SW Pacific	Tasmania	Friendly Beaches 	-41.996839, 148.284729	12/25/2022	LA002	-41.9968388, 148.2847291	Lisa Albinsson
-high quality	YPM-IZ-110558			SW Pacific	Tasmania	Friendly Beaches 	-41.996839, 148.284729	12/25/2022	LA003	-41.9968388, 148.2847291	Lisa Albinsson
-high quality	YPM-IZ-110566		IZS.34517	NW Pacific	Guam	Tarague	13.605463, 144.907196	1/24/2022	Phys1	13.605463, 144.907196	Colin J. Anthony
-moderate quality	YPM-IZ-110569		IZS.34519	NW Pacific	Guam	Pago	13.427664, 144.801336	1/27/2022	Phys10	13.4276635, 144.8013362	Colin J. Anthony
-excluded	YPM-IZ-110574		IZS.34522	NW Pacific	Guam	Ipan	13.359762, 144.773724	4/9/2022	Phys18	13.3597622, 144.7737238	Colin J. Anthony
-high quality	YPM-IZ-110600		IZS.34566	NW Pacific	Guam	Togcha	13.372435, 144.773357	4/27/2023	Blank Lid	13.3724348, 144.773357	Colin J. Anthony
-high quality	YPM-IZ-110602		IZS.34566	NW Pacific	Guam	Togcha	13.372435, 144.773357	4/27/2023	I2T01002	13.3724348, 144.773357	Colin J. Anthony
-high quality	YPM-IZ-110605		IZS.34568	SW Pacific	Queensland	Burleigh Beach	-28.089089, 153.453921	2/3/2023	KP001	-28.089089, 153.453921	Kylie Pitt
-high quality	YPM-IZ-110612		IZS.34569	SW Pacific	New South Wales	Scotts Head	-30.745087, 152.995494	3/26/2023	KP007	-30.745087, 152.995494	Kylie Pitt
-high quality	YPM-IZ-110613		IZS.34570	SW Pacific	New South Wales	Arakoon Beach	-30.745087, 152.995494	3/26/2023	KP008	-30.884074, 153.066594	Kylie Pitt
-high quality	YPM-IZ-110616		IZS.34571	SW Pacific	New South Wales	Southwest Rocks	-30.881192, 153.035604	3/26/2023	KP011	-30.881192, 153.035604	Kylie Pitt
-high quality	YPM-IZ-110631		IZS.34572	NW Atlantic	Northeast US	East Beach	41.346250, -71.678310	7/14/2023	EB-01	41.34625° N, 71.67831°W	L.M. Rojas
-excluded	YPM-IZ-110632		IZS.34573	NW Atlantic	Northeast US	East Matunuck State Beach	41.377020, -71.527820	7/14/2023	EMSB-01	41.37702° N, 71.52782°W	L.M. Rojas
-high quality	YPM-IZ-110633		IZS.34574	NW Atlantic	Northeast US	East Matunuck State Beach	41.377020, -71.527820	7/15/2023	LM62-2023	41.37702° N, 71.52782°W	EMSB lifeguards
-high quality	YPM-IZ-110667			NW Atlantic	Northeast US	Montauk	40.857420, -71.779920	7/20/2023	CWD-MK1	40.85742 N 71.77992 W	Casey Dunn, Namrata Ahuja, Mary Beth Decker
-high quality	YPM-IZ-110694			NW Atlantic	Northeast US	Martha's Vineyard	41.344990, -70.836797	7/26/2023		41.3449897, -70.8367974	Mary Beth Decker
-excluded	YPM-IZ-110694-dry			NW Atlantic	Northeast US	Martha's Vineyard	41.344990, -70.836797	7/26/2023		41.3449897, -70.8367974	Mary Beth Decker
-high quality	YPM-IZ-110716			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	10	36.45809, -6.25268	Laura Prieto
-high quality	YPM-IZ-110726			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	20	36.45809, -6.25268	Laura Prieto
-high quality	YPM-IZ-110738			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	32	36.45809, -6.25268	Laura Prieto
-high quality	YPM-IZ-110777			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/19/2023	Kailua-27	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110780			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/19/2023	Kailua-30	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110785			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/21/2023	Kailua-35	21.4007-9, -157.7345	Chris Simon
-high quality	YPM-IZ-110786			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/28/2023	Kailua-36	21.4007-9, -157.7345	Chris Simon
-excluded	YPM-IZ-110826			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.971100, -71.360200	5/29/2015	7706	-29.9711, -71.3602	Javier Sellanes Lopez
-excluded	YPM-IZ-110827			SE Pacific	Chile	Morrillos, Coquimbo, Chile	-30.152100, -71.375068	4/9/2016	7269	-30.1521, -71.375068	Javier Sellanes Lopez
-high quality	YPM-IZ-110828			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.972700, -71.360900	7/12/2023	20230712	-29.9727, -71.3609	Javier Sellanes Lopez
-high quality	YPM-IZ-110829			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.972700, -71.360900	7/13/2023	20230713	-29.9727, -71.3609	Javier Sellanes Lopez
-high quality	YPM-IZ-110830			SW Atlantic	Uruguay	Barra del Chuy, Rocha, Uruguay	-33.751600, -53.380100	2/28/2014	BC-1	-33.7516, -53.3801	Javier Sellanes Lopez
-high quality	YPM-IZ-110842			NE Atlantic	Azores	Porto Pim beach, Faial Island, Azores	38.524769, -28.625946	7/18/2019	PHY104	38.524769, -28.625946	Bruno I. Magalhães
-high quality	YPM-IZ-110843			NE Atlantic	Azores	Santa Barbara beach, São Miguel Island, Azores	37.818604, -25.543635	5/22/2020	PHY314	37.818604, -25.543635	Bruno I. Magalhães
-high quality	YPM-IZ-110844			NE Atlantic	Azores	Porto Pim beach, Faial Island, Azores	38.524769, -28.625946	11/29/2019	PHY128	38.524769, -28.625946	Bruno I. Magalhães
-high quality	YPM-IZ-110845			NE Atlantic	Azores	Milicias beach, São Miguel Island, Azores	37.750488, -25.624447	8/17/2020	PHY374	37.750488, -25.624447	Bruno I. Magalhães
-high quality	YPM-IZ-110846			NE Atlantic	Azores	Entre Montes, Faial Island, Azores	38.523756, -28.623767	7/10/2020	PHY56	38.523756, -28.623767	Carlos J. Moura
-high quality	YPM-IZ-110847			NE Atlantic	Azores	Conceição beach, Faial Island, Azores	38.542865, -28.618676	7/15/2020	PHY60	38.542865, -28.618676	Carlos J. Moura
-high quality	YPM-IZ-110876	not assigned yet	izs.34603	Gulf of Mexico	Texas		29.260000, -94.840000	3/19/2017	TX2017_038	29.26, -94.84	Catriona Munro
-high quality	YPM-IZ-110877		izs.34604	Gulf of California	Mexico	Gulf of California	27.245000, -111.500000	6/6/2007	GoCJUN6	27° 14.7 N 111° 30 W	Steve Haddock
-high quality	YPM-IZ-110878		izs.34605	Gulf of California	Mexico	Gulf of California	27.326667, -111.480000	6/9/2006	GoCBW1	27°19.6'N 111°28.8'W	Steve Haddock
-excluded	YPM-IZ-110879			Gulf of California	Mexico	Gulf of California	27.326667, -111.480000	6/9/2006	GoCBW2	27°19.6'N 111°28.8'W	Steve Haddock
-high quality	YPM-IZ-110880			NW Atlantic	Northeast US	Block Island	41.149290, -71.481140	8/23/2023	CWD-BI1	41.14929, -71.48114	Casey Dunn, Namrata Ahuja, Mary Beth Decker
-high quality	YPM-IZ-110881			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW1-16	19ª 40'N 156° 05'W	Steve Haddock
-high quality	YPM-IZ-110882			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW5-1	19ª 40'N 156° 05'W	Steve Haddock
-high quality	YPM-IZ-110883			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW5-2	19ª 40'N 156° 05'W	Steve Haddock
-high quality	YPM-IZ-110906			Central Pacific	NW Hawaiian Islands		26.723056, -164.766667	8/23/2023		26 27.983N, 164 46W	Jessica Perelman
-high quality	YPM-IZ-110907			Central Pacific	NW Hawaiian Islands		26.080000, -176.470000	8/22/2023		26 00.288N, 176 15.792W	Jessica Perelman
-high quality	YPM-IZ-110931			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	5/19/2023	JP8	35.309561, 139.478820	Gaku Yamamoto
-high quality	YPM-IZ-110937			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	7/21/2023	JP14	35.309561, 139.478820	Gaku Yamamoto
-high quality	YPM-IZ-110972			NE Atlantic	Ireland	Near the Smugglers Inn, Waterville, Co. Kerry	51.83707, -10.19556	10/8/2023	1	51.83707, -10.19556	Tom Doyle
-excluded	YPM-IZ-110973			NE Atlantic	Ireland	Near Dooley's Seafood & Steak House, Waterville, Co. Kerry	51.82789, -10.17463	10/8/2023	2	51.82789, -10.17463	Tom Doyle
-high quality	YPM-IZ-111006			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	1	-27.539919, 32.678650	Andy Coetze
-high quality	YPM-IZ-111007			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	2	27.539919, 32.678650	Andy Coetze
-high quality	YPM-IZ-111008			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	3	27.539919, 32.678650	Andy Coetze
-high quality	YPM-IZ-111009			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	4	27.539919, 32.678650	Andy Coetze
-high quality	YPM-IZ-111010			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	5	27.539919, 32.678650	Andy Coetze
-high quality	OA-190531-1			SW Pacific	New South Wales	Bondi Beach	-33.891500, 151.276700	12/15/2019	190531	33.8915° S, 151.2767° E	Ozren Bogdanovic
-moderate quality	OA-Bluebottle			SW Pacific	New South Wales	Sydney	-33.920300, 151.258100	1/1/2022	GON10891	33.9203° S, 151.2581° E	Ozren Bogdanovic
-high quality	YPM-IZ-110925			NW Pacific	Japan	Amami Oshima (Oohama beach)	28.404780, 129.454826	2/4/2023	JP2	28.404779454604746, 129.45482568985193	Kosuke Uchiwa
-high quality	YPM-IZ-110926			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	4/10/2023	JP3	35.309561, 139.478820	Gaku Yamamoto
-high quality	YPM-IZ-110930			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	4/30/2023	JP7	35.309561, 139.478820	Gaku Yamamoto
-high quality	YPM-IZ-110933			NW Pacific	Japan	Miura Misaki (Arai hama beach)	35.309701, 139.478831	7/20/2023	JP10	35.309701, 139.478831	Kohei Oguchi
-high quality	YPM-IZ-110938			NW Pacific	Japan	Miura Misaki (Arai hama beach)	35.309701, 139.478831	9/22/2023	JP15	35.309701, 139.478831	Kohei Oguchi
-high quality	YPM-IZ-110943			NW Pacific	Japan	Yoshio (in front of Umihaku)	35.134935, 140.284606	5/19/2023	JP20	35.134935, 140.284606	Col. Hiroyuki Tachikawa,Fix. Kensuke Yanagi,Prov. Takato Izumi
-high quality	YPM-IZ-111012			NW Atlantic	Bermuda		32.307800, -64.750500	3/8/2022	76	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111013			NW Atlantic	Bermuda		32.307800, -64.750500	3/8/2022	79	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111014			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	89	32.3078° N, 64.7505° W	
-excluded	YPM-IZ-111015			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	90	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111016			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	91	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111017			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	92	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111018			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	93	32.3078° N, 64.7505° W	
-excluded	YPM-IZ-111019			NW Atlantic	Bermuda		32.307800, -64.750500	3/12/2022	451	32.3078° N, 64.7505° W	
-high quality	YPM-IZ-111020			NW Atlantic	Bermuda		32.307800, -64.750500	9/1/2020	falcon tube	32.3078° N, 64.7505° W	
+status	ID	accession_number	site_ID	ocean	location	site	lat_long	date_collected	collection_ID	raw lat long	collector	permit
+high quality	FM16644			NE Atlantic	Canary Islands	La Palma	28.591940, -17.920910	5/14/2023		28.59194, -17.92091	Tauana Cunha, Juan Moles	
+moderate quality	KM5632			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	N. G. Wilson	
+moderate quality	KM5633			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	N. G. Wilson	
+moderate quality	KM5634			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	N. G. Wilson	
+moderate quality	KM5635			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	N. G. Wilson	
+moderate quality	KM5636			SW Pacific	Tasmania	Bicheno: Redbill Beach	-41.863900, 148.286500	1/14/2023		-41.8639, 148.2865	N. G. Wilson	
+high quality	WAMZ88480			E Indian	Western Australia	Peasholm Dog Beach, Scarborough	-31.908144, 115.754811	8/3/2018	NA	-31 54`29.32"S, 115 45`17.32"E	K. Tullis	
+high quality	WAMZ97900			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 1	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97901			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 2	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97902			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 3	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97903			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 4	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97906			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 7	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97907			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 8	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97908			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 9	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97910			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 11	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97911			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 12	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97914			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 15	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97916			E Indian	Western Australia	North Beach, Perth	-31.855786, 115.751741	4/19/2019	WA 17	-31.855786, 115.751741	N. G. Wilson, N. Tatarnic	
+high quality	WAMZ97917			SW Pacific	New South Wales	North Steyne, Queenscliff Beach, Manly	-33.787002, 151.288609	1/18/2019	NSW n.1	-33.787002, 151.288609	N. Lo	
+high quality	WAMZ97920			SW Pacific	New South Wales	La Perouse, Sydney	-33.987424, 151.231329	2/5/2018	NSW l.p.	-33.987424, 151.231329	Y. K. Tea	
+high quality	WAMZ97921			SW Pacific	Queensland	Dicky Beach, Caloundra, Sunshine Coast	-26.784003, 153.140596	1/19/2019	1	-26.784003, 153.140596	G. Cobb	
+high quality	WAMZ97923			SW Pacific	Queensland	Dicky Beach, Caloundra, Sunshine Coast	-26.784003, 153.140596	1/19/2019	QLD d.b3	-26.784003, 153.140596	G. Cobb	
+high quality	YPM-IZ-104460			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104460	13.427861, 144.798518	David Burdick	Guam Department of Agriculture, Division of Aquatic and Wildlife Resources
+high quality	YPM-IZ-104461			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104461	13.427861, 144.798518	David Burdick	Guam Department of Agriculture, Division of Aquatic and Wildlife Resources
+high quality	YPM-IZ-104464			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104464	13.427861, 144.798518	David Burdick	Guam Department of Agriculture, Division of Aquatic and Wildlife Resources
+high quality	YPM-IZ-104465			NW Pacific	Guam		13.427861, 144.798518	11/23/2018	Guam_104465	13.427861, 144.798518	David Burdick	Guam Department of Agriculture, Division of Aquatic and Wildlife Resources
+high quality	YPM-IZ-106919			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_2	35.307390, 139.480651	Gaku Yamamoto	
+high quality	YPM-IZ-106920			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_3	35.307390, 139.480651	Gaku Yamamoto	
+high quality	YPM-IZ-106923			NW Pacific	Japan		35.307390, 139.480651	11/19/2020	Japan_6	35.307390, 139.480651	Gaku Yamamoto	
+high quality	YPM-IZ-106935			Gulf of Mexico	Texas		29.19532, -94.8429383	3/2/2016	13_TX2016_043	-94.8429383,29.19532	Catriona Munro	
+high quality	YPM-IZ-106936			Gulf of Mexico	Texas		29.19532, -94.8429383	3/3/2016	TX2016_046	-94.8429383,29.19532	Catriona Munro	
+high quality	YPM-IZ-106937			Gulf of Mexico	Texas		29.19532, -94.8429383	3/3/2016	TX2016_048	-94.8429383,29.19532	Catriona Munro	
+high quality	YPM-IZ-106941			NW Atlantic	Bermuda		32.323333, -64.656300	5/18/2019	Bermuda_63, P2	32 19.400 N, 64 39.378 W	Alex Damien-Serrano; Zachary Lewis; Reza Bergmann	Bermuda Department of Environment and Natural Resources; SP190501
+high quality	YPM-IZ-106943			NW Atlantic	Bermuda		32.341117, -64.669133	5/18/2019	Bermuda_67, P8	32 20.467 N, 64 40.148 W	Alex Damien-Serrano; Zachary Lewis; Reza Bergmann	Bermuda Department of Environment and Natural Resources; SP190501
+excluded	YPM-IZ-106944			NW Atlantic	Bermuda		32.297917, -64.686850	5/18/2019	Bermuda_68, P3	32 17.875 N, 64 41.211 W	Alex Damien-Serrano; Zachary Lewis; Reza Bergmann	Bermuda Department of Environment and Natural Resources; SP190501
+high quality	YPM-IZ-106954			NW Atlantic	Bermuda		32.367233, -64.714550	5/20/2019	Bermuda_94, P13	32 22.034 N, 64 42.873 W	Alex Damien-Serrano; Zachary Lewis; Reza Bergmann	Bermuda Department of Environment and Natural Resources; SP190501
+high quality	YPM-IZ-106958			Gulf of Mexico	Texas		29.195320, -94.842938	3/18/2017	TX2017_028	-94.8429383,29.19532	Catriona Munro	
+high quality	YPM-IZ-110251			NW Atlantic	Florida	Key Biscanye, Virginia Key	25.737060, -80.152790	12/22/2022	22-VK-02	25.73706° N, 80.15279° W	L.M. Rojas	
+high quality	YPM-IZ-110254			NW Atlantic	Florida	Key Biscanye, Virginia Key	25.736470, -80.153500	12/22/2022	22-VK-05	25.73647° N, 80.15350° W	L.M. Rojas	
+high quality	YPM-IZ-110264	YPM.13356	IZS.34440	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	10/31/2022	SHC05	22.069018, -159.316685	Samuel Church	
+moderate quality	YPM-IZ-110268	YPM.13356	IZS.34441	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	11/4/2022	SHC09	22.069018, -159.316685	Samuel Church	
+high quality	YPM-IZ-110269	YPM.13356	IZS.34441	Central Pacific	Hawai'i	Kapa'a	22.069018, -159.316685	11/4/2022	SHC10	22.069018, -159.316685	Samuel Church	
+high quality	YPM-IZ-110276	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC17	20.9225222,-156.4926917	Samuel Church	
+moderate quality	YPM-IZ-110277	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC18	20.9225222,-156.4926917	Samuel Church	
+high quality	YPM-IZ-110278	YPM.13356	IZS.34442	Central Pacific	Hawai'i	Waiehu	20.9225222, -156.4926917	11/19/2022	SHC19	20.9225222,-156.4926917	Samuel Church	
+excluded	YPM-IZ-110432			NW Atlantic	Florida	Key Biscayne, Hobie Bch.	25.745160, -80.175990	3/14/2023	KBW-01	25.74516° N, 80.17599° W	L.M. Rojas	
+high quality	YPM-IZ-110433			NW Atlantic	Florida	Key Biscayne, Hobie Bch.	25.741630, -80.175194	3/14/2023	KBW-02	25.74163° N, 80.175194° W	L.M. Rojas	
+moderate quality	YPM-IZ-110438		IZS.34487	Gulf of Mexico	Texas	Follets Island beach	28.989194, -95.237778	3/24/2023	SHCTX001	28°59'21.1"N 95°14'16.0"W	Samuel Church	Texas NR Saltwater Fishing License, 958064721164
+high quality	YPM-IZ-110443		IZS.34488	Gulf of Mexico	Texas	Surfisde Beach	28.951778, -95.283167	3/24/2023	SHCTX006	28°57'06.4"N 95°16'59.4"W	Samuel Church	Texas NR Saltwater Fishing License, 958064721164
+high quality	YPM-IZ-110460		IZS.34491	Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	11/14/2022	Kailua-1	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110467		IZS.34498	SW Pacific	New Zealand		-41.330278, 174.831944	2/16/2023	Breaker Bay-1	-41.330278, 174.831944	Chris Simon	
+high quality	YPM-IZ-110468		IZS.34499	SW Pacific	New Zealand		-41.330000, 174.833056	2/16/2023	Breaker Bay-2	-41.33, 174.833056	Chris Simon	
+high quality	YPM-IZ-110469		IZS.34499	SW Pacific	New Zealand		-41.330000, 174.833056	2/16/2023	Breaker Bay-3	-41.33, 174.833056	Chris Simon	
+high quality	YPM-IZ-110470		IZS.34499	SW Pacific	New Zealand		-41.330000, 174.833056	2/16/2023	Breaker Bay-4	-41.33, 174.833056	Chris Simon	
+high quality	YPM-IZ-110471			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	4/9/2023	Kailua-8	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110473		IZS.34500	Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	4/9/2023	Kailua-10	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110474			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/4/2023	Lanikai-0	21.4546, -157.7485	Chris Simon	
+excluded	YPM-IZ-110474-2			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/4/2023	Lanikai-0	21.4546, -157.7485	Chris Simon	
+high quality	YPM-IZ-110480			Central Pacific	Hawai'i	Lanikai	21.454600, -157.748500	4/6/2023	Lanikai-6	21.4546, -157.7485	Chris Simon	
+high quality	YPM-IZ-110515		IZS.34511	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	2/9/2023	4	151°15'26.5"E, 33°56'51.0"S	Amandine Schaeffer	
+high quality	YPM-IZ-110520		IZS.34512	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	2/19/2023	9	151°15'26.5"E, 33°56'51.0"S	Amandine Schaeffer	
+high quality	YPM-IZ-110526		IZS.34515	SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	4/23/2023	15	151°15'26.5"E, 33°56'51.0"S	Amandine Schaeffer	
+high quality	YPM-IZ-110556			SW Pacific	Tasmania	Friendly Beaches	-41.996839, 148.284729	12/25/2022	LA001	-41.9968388, 148.2847291	Lisa Albinsson	
+high quality	YPM-IZ-110557			SW Pacific	Tasmania	Friendly Beaches	-41.996839, 148.284729	12/25/2022	LA002	-41.9968388, 148.2847291	Lisa Albinsson	
+high quality	YPM-IZ-110558			SW Pacific	Tasmania	Friendly Beaches	-41.996839, 148.284729	12/25/2022	LA003	-41.9968388, 148.2847291	Lisa Albinsson	
+high quality	YPM-IZ-110566		IZS.34517	NW Pacific	Guam	Tarague	13.605463, 144.907196	1/24/2022	Phys1	13.605463, 144.907196	Colin J. Anthony	
+moderate quality	YPM-IZ-110569		IZS.34519	NW Pacific	Guam	Pago	13.427664, 144.801336	1/27/2022	Phys10	13.4276635, 144.8013362	Colin J. Anthony	
+excluded	YPM-IZ-110574		IZS.34522	NW Pacific	Guam	Ipan	13.359762, 144.773724	4/9/2022	Phys18	13.3597622, 144.7737238	Colin J. Anthony	
+high quality	YPM-IZ-110600		IZS.34566	NW Pacific	Guam	Togcha	13.372435, 144.773357	4/27/2023	Blank Lid	13.3724348, 144.773357	Colin J. Anthony	
+high quality	YPM-IZ-110602		IZS.34566	NW Pacific	Guam	Togcha	13.372435, 144.773357	4/27/2023	I2T01002	13.3724348, 144.773357	Colin J. Anthony	
+high quality	YPM-IZ-110605		IZS.34568	SW Pacific	Queensland	Burleigh Beach	-28.089089, 153.453921	2/3/2023	KP001	-28.089089, 153.453921	Kylie Pitt	Queensland Government General Fisheries Permit #209751; NSW Department of Primary Industries Scientific Collection Permit # P18/0012-1.0
+high quality	YPM-IZ-110612		IZS.34569	SW Pacific	New South Wales	Scotts Head	-30.745087, 152.995494	3/26/2023	KP007	-30.745087, 152.995494	Kylie Pitt	Queensland Government General Fisheries Permit #209751; NSW Department of Primary Industries Scientific Collection Permit # P18/0012-1.0
+high quality	YPM-IZ-110613		IZS.34570	SW Pacific	New South Wales	Arakoon Beach	-30.745087, 152.995494	3/26/2023	KP008	-30.884074, 153.066594	Kylie Pitt	Queensland Government General Fisheries Permit #209751; NSW Department of Primary Industries Scientific Collection Permit # P18/0012-1.0
+high quality	YPM-IZ-110616		IZS.34571	SW Pacific	New South Wales	Southwest Rocks	-30.881192, 153.035604	3/26/2023	KP011	-30.881192, 153.035604	Kylie Pitt	Queensland Government General Fisheries Permit #209751; NSW Department of Primary Industries Scientific Collection Permit # P18/0012-1.0
+high quality	YPM-IZ-110631		IZS.34572	NW Atlantic	Northeast US	East Beach	41.346250, -71.678310	7/14/2023	EB-01	41.34625° N, 71.67831°W	L.M. Rojas	RIDEM- Division of Marine Fisheries, 855, Type:1; RI: Scientific Collectors Permit #855
+excluded	YPM-IZ-110632		IZS.34573	NW Atlantic	Northeast US	East Matunuck State Beach	41.377020, -71.527820	7/14/2023	EMSB-01	41.37702° N, 71.52782°W	L.M. Rojas	RIDEM- Division of Marine Fisheries, 855, Type:1; RI: Scientific Collectors Permit #855
+high quality	YPM-IZ-110633		IZS.34574	NW Atlantic	Northeast US	East Matunuck State Beach	41.377020, -71.527820	7/15/2023	LM62-2023	41.37702° N, 71.52782°W	EMSB lifeguards	RIDEM- Division of Marine Fisheries, 855, Type:1; RI: Scientific Collectors Permit #855
+high quality	YPM-IZ-110667			NW Atlantic	Northeast US	Montauk	40.857420, -71.779920	7/20/2023	CWD-MK1	40.85742 N 71.77992 W	Casey Dunn, Namrata Ahuja, Mary Beth Decker	NY: Scientific License #1427
+high quality	YPM-IZ-110694			NW Atlantic	Northeast US	Martha's Vineyard	41.344990, -70.836797	7/26/2023		41.3449897, -70.8367974	Mary Beth Decker	RIDEM- Division of Marine Fisheries, 855, Type:1; RI: Scientific Collectors Permit #855
+excluded	YPM-IZ-110694-dry			NW Atlantic	Northeast US	Martha's Vineyard	41.344990, -70.836797	7/26/2023		41.3449897, -70.8367974	Mary Beth Decker	RIDEM- Division of Marine Fisheries, 855, Type:1; RI: Scientific Collectors Permit #855
+high quality	YPM-IZ-110716			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	10	36.45809, -6.25268	Laura Prieto	
+high quality	YPM-IZ-110726			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	20	36.45809, -6.25268	Laura Prieto	
+high quality	YPM-IZ-110738			NE Atlantic	Spain	Toerrgorda	36.458090, -6.252680	4/2/2013	32	36.45809, -6.25268	Laura Prieto	
+high quality	YPM-IZ-110777			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/19/2023	Kailua-27	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110780			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/19/2023	Kailua-30	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110785			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/21/2023	Kailua-35	21.4007-9, -157.7345	Chris Simon	
+high quality	YPM-IZ-110786			Central Pacific	Hawai'i	Kailua Beach (fig tree entrance)	21.400790, -157.734500	7/28/2023	Kailua-36	21.4007-9, -157.7345	Chris Simon	
+excluded	YPM-IZ-110826			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.971100, -71.360200	5/29/2015	7706	-29.9711, -71.3602	Javier Sellanes Lopez	
+excluded	YPM-IZ-110827			SE Pacific	Chile	Morrillos, Coquimbo, Chile	-30.152100, -71.375068	4/9/2016	7269	-30.1521, -71.375068	Javier Sellanes Lopez	
+high quality	YPM-IZ-110828			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.972700, -71.360900	7/12/2023	20230712	-29.9727, -71.3609	Javier Sellanes Lopez	
+high quality	YPM-IZ-110829			SE Pacific	Chile	La Herradura bay, Coquimbo, Chile	-29.972700, -71.360900	7/13/2023	20230713	-29.9727, -71.3609	Javier Sellanes Lopez	
+high quality	YPM-IZ-110830			SW Atlantic	Uruguay	Barra del Chuy, Rocha, Uruguay	-33.751600, -53.380100	2/28/2014	BC-1	-33.7516, -53.3801	Javier Sellanes Lopez	
+high quality	YPM-IZ-110842			NE Atlantic	Azores	Porto Pim beach, Faial Island, Azores	38.524769, -28.625946	7/18/2019	PHY104	38.524769, -28.625946	Bruno I. Magalhães	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110843			NE Atlantic	Azores	Santa Barbara beach, São Miguel Island, Azores	37.818604, -25.543635	5/22/2020	PHY314	37.818604, -25.543635	Bruno I. Magalhães	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110844			NE Atlantic	Azores	Porto Pim beach, Faial Island, Azores	38.524769, -28.625946	11/29/2019	PHY128	38.524769, -28.625946	Bruno I. Magalhães	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110845			NE Atlantic	Azores	Milicias beach, São Miguel Island, Azores	37.750488, -25.624447	8/17/2020	PHY374	37.750488, -25.624447	Bruno I. Magalhães	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110846			NE Atlantic	Azores	Entre Montes, Faial Island, Azores	38.523756, -28.623767	7/10/2020	PHY56	38.523756, -28.623767	Carlos J. Moura	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110847			NE Atlantic	Azores	Conceição beach, Faial Island, Azores	38.542865, -28.618676	7/15/2020	PHY60	38.542865, -28.618676	Carlos J. Moura	Secretaria Regional do Mar, Ciência e Tecnologia dos Açores, AMP/2018/021
+high quality	YPM-IZ-110876	not assigned yet	izs.34603	Gulf of Mexico	Texas		29.260000, -94.840000	3/19/2017	TX2017_038	29.26, -94.84	Catriona Munro	
+high quality	YPM-IZ-110877		izs.34604	Gulf of California	Mexico	Gulf of California	27.245000, -111.500000	6/6/2007	GoCJUN6	27° 14.7 N 111° 30 W	Steve Haddock	
+high quality	YPM-IZ-110878		izs.34605	Gulf of California	Mexico	Gulf of California	27.326667, -111.480000	6/9/2006	GoCBW1	27°19.6'N 111°28.8'W	Steve Haddock	
+excluded	YPM-IZ-110879			Gulf of California	Mexico	Gulf of California	27.326667, -111.480000	6/9/2006	GoCBW2	27°19.6'N 111°28.8'W	Steve Haddock	
+high quality	YPM-IZ-110880			NW Atlantic	Northeast US	Block Island	41.149290, -71.481140	8/23/2023	CWD-BI1	41.14929, -71.48114	Casey Dunn, Namrata Ahuja, Mary Beth Decker	RIDEM- Division of Marine Fisheries, scientific collectors permit:855
+high quality	YPM-IZ-110881			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW1-16	19ª 40'N 156° 05'W	Steve Haddock	
+high quality	YPM-IZ-110882			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW5-1	19ª 40'N 156° 05'W	Steve Haddock	
+high quality	YPM-IZ-110883			Central Pacific	Hawai'i	Hawaii, Kona	19.666667, -156.083333	4/10/2023	HI23BW5-2	19ª 40'N 156° 05'W	Steve Haddock	
+high quality	YPM-IZ-110906			Central Pacific	NW Hawaiian Islands		26.723056, -164.766667	8/23/2023		26 27.983N, 164 46W	Jessica Perelman, Andrea Schmidt	Papahānaumokuākea Marine National Monument, PMNM-2023-001
+high quality	YPM-IZ-110907			Central Pacific	NW Hawaiian Islands		26.080000, -176.470000	8/22/2023		26 00.288N, 176 15.792W	Jessica Perelman, Andrea Schmidt	Papahānaumokuākea Marine National Monument, PMNM-2023-001
+high quality	YPM-IZ-110931			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	5/19/2023	JP8	35.309561, 139.478820	Gaku Yamamoto	
+high quality	YPM-IZ-110937			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	7/21/2023	JP14	35.309561, 139.478820	Gaku Yamamoto	
+high quality	YPM-IZ-110972			NE Atlantic	Ireland	Near the Smugglers Inn, Waterville, Co. Kerry	51.83707, -10.19556	10/8/2023	1	51.83707, -10.19556	Tom Doyle	
+excluded	YPM-IZ-110973			NE Atlantic	Ireland	Near Dooley's Seafood & Steak House, Waterville, Co. Kerry	51.82789, -10.17463	10/8/2023	2	51.82789, -10.17463	Tom Doyle	
+high quality	YPM-IZ-111006			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	1	-27.539919, 32.678650	Andy Coetze	Department of Fisheries, Forestry and Environment, amend RES2023-78
+high quality	YPM-IZ-111007			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	2	27.539919, 32.678650	Andy Coetze	Department of Fisheries, Forestry and Environment, amend RES2023-78
+high quality	YPM-IZ-111008			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	3	27.539919, 32.678650	Andy Coetze	Department of Fisheries, Forestry and Environment, amend RES2023-78
+high quality	YPM-IZ-111009			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	4	27.539919, 32.678650	Andy Coetze	Department of Fisheries, Forestry and Environment, amend RES2023-78
+high quality	YPM-IZ-111010			W Indian	South Africa	Sodwana Bay, iSimangaliso Park, KwaZulu-Natal, South Africa	-27.539919, 32.678650	8/8/2023	5	27.539919, 32.678650	Andy Coetze	Department of Fisheries, Forestry and Environment, amend RES2023-78
+high quality	OA-190531-1			SW Pacific	New South Wales	Bondi Beach	-33.891500, 151.276700	12/15/2019	190531	33.8915° S, 151.2767° E	Ozren Bogdanovic	
+moderate quality	OA-Bluebottle			SW Pacific	New South Wales	Sydney	-33.920300, 151.258100	1/1/2022	GON10891	33.9203° S, 151.2581° E	Ozren Bogdanovic	
+high quality	YPM-IZ-110925			NW Pacific	Japan	Amami Oshima (Oohama beach)	28.404780, 129.454826	2/4/2023	JP2	28.404779454604746, 129.45482568985193	Kosuke Uchiwa	
+high quality	YPM-IZ-110926			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	4/10/2023	JP3	35.309561, 139.478820	Gaku Yamamoto	
+high quality	YPM-IZ-110930			NW Pacific	Japan	Fujisawa Enoshima (Nishi hama beach)	35.309561, 139.478820	4/30/2023	JP7	35.309561, 139.478820	Gaku Yamamoto	
+high quality	YPM-IZ-110933			NW Pacific	Japan	Miura Misaki (Arai hama beach)	35.309701, 139.478831	7/20/2023	JP10	35.309701, 139.478831	Kohei Oguchi	
+high quality	YPM-IZ-110938			NW Pacific	Japan	Miura Misaki (Arai hama beach)	35.309701, 139.478831	9/22/2023	JP15	35.309701, 139.478831	Kohei Oguchi	
+high quality	YPM-IZ-110943			NW Pacific	Japan	Yoshio (in front of Umihaku)	35.134935, 140.284606	5/19/2023	JP20	35.134935, 140.284606	Col. Hiroyuki Tachikawa,Fix. Kensuke Yanagi,Prov. Takato Izumi	
+high quality	YPM-IZ-111012			NW Atlantic	Bermuda		32.307800, -64.750500	3/8/2022	76	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111013			NW Atlantic	Bermuda		32.307800, -64.750500	3/8/2022	79	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111014			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	89	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+excluded	YPM-IZ-111015			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	90	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111016			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	91	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111017			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	92	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111018			NW Atlantic	Bermuda		32.307800, -64.750500	3/9/2022	93	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+excluded	YPM-IZ-111019			NW Atlantic	Bermuda		32.307800, -64.750500	3/12/2022	451	32.3078° N, 64.7505° W	R. R. Helm	Bermuda Special Permit no. SP200501
+high quality	YPM-IZ-111156			SW Pacific	Tasman Sea		-35.747000, 154.330000	10/16/2023	1	35.747° S, 154.33° E	Amandine Schaeffer	
+high quality	YPM-IZ-111157			SW Pacific	Tasman Sea		-35.747000, 154.330000	10/16/2023	2	35.747° S, 154.33° E	Amandine Schaeffer	
+high quality	YPM-IZ-111158			SW Pacific	Tasman Sea		-35.747000, 154.330000	10/16/2023	3	35.747° S, 154.33° E	Amandine Schaeffer	
+high quality	YPM-IZ-111159			SW Pacific	Tasman Sea		-35.747000, 154.330000	10/16/2023	4	35.747° S, 154.33° E	Amandine Schaeffer	
+high quality	YPM-IZ-111160			SW Pacific	Tasman Sea		-35.747000, 154.330000	10/16/2023	5	35.747° S, 154.33° E	Amandine Schaeffer	
+high quality	YPM-IZ-111163			SW Pacific	New South Wales	Maroubra beach	-33.947500, 151.257361	3/18/2024		33.9416° S, 151.2396° E	Amandine Schaeffer	
+high quality	YPM-IZ-111207			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
+high quality	YPM-IZ-111208			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
+high quality	YPM-IZ-111209			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
+high quality	YPM-IZ-111210			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
+high quality	YPM-IZ-111211			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
+high quality	YPM-IZ-111212			SW Pacific	New Zealand	Te Henga	-36.895150, 174.443889	3/15/2024		-36.8951498477991, 174.443889	Casey Dunn	
