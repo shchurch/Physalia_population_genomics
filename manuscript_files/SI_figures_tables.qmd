@@ -1,0 +1,134 @@
+---
+title: "Supplementary tables and figures"
+bibliography: bibliography.bib
+csl: science.csl
+format:
+ pdf:
+  fig-pos: "H"
+  toc: true
+  number-sections: true
+  colorlinks: false
+  include-in-header:
+   text: |
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{fig}{
+     \textbf{#1 S#2}
+    }
+    \captionsetup[figure]{
+     labelformat=fig
+    }
+    \DeclareCaptionLabelFormat{tbl}{
+     \textbf{#1 S#2}
+    }
+    \captionsetup[table]{
+     labelformat=tbl
+    }
+theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE, echo=FALSE) 
+
+library(dplyr)
+library(knitr)
+library(kableExtra)
+```
+
+# Genome assembly statistics
+
+```{r genome-stats}
+
+genome_stats <- data.frame(
+ measurement = c("total scaffolds", "total contigs", "scaffold total size, GB", "scaffold N50, MB", "scaffolds >10MB", "scaffolds >1MB"),
+ "primary" = c("2,386", "3,646", "3.33", "10.4", "96", "449"), 
+ "alternate" = c("5,480", "9,440", "2.69", "4.6", "31", "625")
+)
+
+genome_stats %>%
+ kable("latex",caption = "Genome assembly statistics.") %>%
+ kable_styling(bootstrap_options = "striped", full_width = F,
+ latex_options = "HOLD_position")
+```
+
+```{r BUSCO}
+
+BUSCO_stats <- data.frame(
+ measurement = c("BUSCO complete", "single-copy", "duplicated", "fragmented", "missing"),
+ "primary" = c("89.7%", "84.8%", "4.9%", "5.3%", "5.0%"), 
+ "alternate" = c("86.9%", "80.5%", "6.4%", "5.6%", "7.5%") 
+)
+
+BUSCO_stats %>%
+ kable("latex",caption = "Genome BUSCO statistics.") %>%
+ kable_styling(bootstrap_options = "striped", full_width = F,
+ latex_options = "HOLD_position") 
+```
+
+## Genome size estimate
+
+![Genome statistics for samples sequenced to a depth sufficient for a good model fit with a k-mer approach. A, genome size estimates from `GenomeScope`, in gigabases. Colors indicate clusters as in Fig. 2. B, estimated genome percent heterozygosity. C, estimated percent of the genome that is repeat sequences. D, example `GenomeScope model` fit for one Atlantic specimen.](../figures/SI_genome_stats.png)
+
+
+# Population genomics
+
+![Eigenvalues of the covariance matrix. The optimal number of components (k=5), as determined with `PCANGSD`, is shown with a dotted line.](../figures/panels/cov_strict.png){width=300 fig-align="center"}
+
+## Expanded sample set
+
+![Principal component analysis (PCA, A-B) and admixture analysis (C) of 133 high and moderate quality samples, mapping reads to non-repeat regions of the reference genome.](../figures/SI_main.png)
+
+## Iso-Seq reference
+
+![PCA (A-B) and admixture analysis (C) of 133 samples, mapping reads to a reference transcriptome assembled from Iso-Seq data.](../figures/SI_isoseq.png)
+
+# Population statistics
+
+## Estimates of _Fst_
+
+![_Fst_ values between clusters as defined in Figs. 1-2, box-plots show mean and quartile values. A, _Fst_ values across 5,000 randomly sampled non-repeat genomic windows. B, _Fst_ values across 5,000 randomly sampled transcripts.](../figures/SI_Fst_windows.png)
+
+## Estimates of _pi_
+
+![_pi_ values between clusters, as defined in Figs. 1-2, box-plots show mean and quartile values. A, _pi_ values across 5,000 randomly sampled non-repeat genomic windows. B, _pi_ values across 5,000 randomly sampled transcripts.](../figures/SI_pi_windows.png)
+
+# Phylogenetics
+
+## Phylogeny inferred from SNP data
+
+![A, unrooted phylogeny of specimens, inferred with `SVDQuartets` on ~800k high-quality SNPs from non-repeat genomic regions. Internal branches are annotated with cluster labels, as defined in Figs. 1-2. Colors indicate region, as in (B). C, unrooted species phylogeny using the same SNP data. Coalescent bootstrap values are shown at internal branches.](../figures/SI_snp_phylogeny.png){#fig-colors}
+
+## Genetrees
+
+![Phylogeny of cytochrome oxidase 1 (CO1) sequences, assembled using _in silico_ PCR from reads, and publicly available sequences from NCBI. Colors indicate region, as in Fig. 7B. Bootstrap support values shown at nodes. Rooted using _Rhizophysa_ as an outgroup.](../figures/panels/plot_CO1.pdf){width=65%}
+
+![Unrooted phylogeny of Internal Transcribed Spacer (ITS) sequences, assembled using _in silico_ PCR from reads, and publicly available sequences from NCBI. Colors indicate region, as in Fig. 7B. Bootstrap support values shown at nodes.](../figures/panels/plot_ITS.pdf){width=75%}
+
+![Phylogeny of 16S ribosomal RNA sequences, assembled using _in silico_ PCR from reads, and publicly available sequences from NCBI. Colors indicate region, as in Fig. 7B. Bootstrap support values shown at nodes. Rooted using _Rhizophysa_ as an outgroup.](../figures/panels/plot_16S.pdf){width=75%}
+
+![Phylogeny of 18S ribosomal RNA sequences, assembled using _in silico_ PCR from reads, and publicly available sequences from NCBI. Colors indicate region, as in Fig. 7B. Bootstrap support values shown at nodes. Rooted using _Rhizophysa_ as an outgroup.](../figures/panels/plot_18S.pdf){width=75%}
+
+# Morphological identificaiton
+
+![Rules-based analysis for positive identification of inaturalist images based on scored traits.](../figures/SI_inat_rules.png)
+
+# Subpopulation analyses
+
+## Cluster B1+B2
+
+![A, PCA of samples in clusters B1 and B2 together. B, map of samples. C, PCA, colored by collection date. D, eigenvalues of the covariance matrix.](../figures/SI_PCA_B2.png)
+
+## Temporal variation
+
+![A-D, Sample collection date, visualized on the first two PCs of genomic variation for each species. Shapes correspond to geographic region, as in Fig 4.](../figures/SI_PCA_date.png)
+
+## K-means clustering subclustering
+
+![A-D, eigenvalues of the covariance matrix, the optimal number of clusters marked by a dashed line. E-H,Result of k-means clustering within each of the four species. Shapes correspond to geographic region, as in Fig. 4](../figures/SI_PCA_clustered.png)
+
+## _Fst_ values between subpopulations
+
+![Reciprocal average _Fst_ values between subpopulations, defined by k-means clustering of the covariance matrix within populations. Lineage B2 was treated as one population.](../figures/panels/kmeans_Fst.png)
+
+## _Fst_ values between lineages and regions
+
+![Reciprocal average _Fst_ values between subpopulations, defined by lineage and oceanic region, and excluding groupings with only one representative sample.](../figures/panels/locations_Fst.png)
