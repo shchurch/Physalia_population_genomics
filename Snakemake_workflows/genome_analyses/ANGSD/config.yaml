@@ -5,10 +5,12 @@ genome: "/gpfs/gibbs/pi/dunn/sc2962/Physalia_TX2017-38_HiFi_primary/Physalia_TX2
 min_qual: 40
 min_depth: 2
 max_depth: 99
-min_ind: 91 # 121 * 0.75
+min_ind: 92 # 123 * 0.75
+#min_ind: 100 # 133 * 0.75
 
-bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/mapped_sorted/bam.filelist"
-#bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/mapped_sorted/strict_bam.filelist"
+#bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/mapped_sorted/bam.filelist"
+bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/mapped_sorted/strict_bam.filelist"
+#bam_filelist: "/gpfs/gibbs/pi/dunn/sc2962/20230901_Physalia_PopGen/mapped_sorted/subset_bam.filelist"
 
 regions:
  - aaaa

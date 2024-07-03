@@ -37,6 +37,9 @@ sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) 
 cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
 names(cols) <- c("A","B1","B2","C1","C2")
 
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
+
 assignments <- read.delim("../data/pop.txt",header=F,sep=" ")
 names(assignments) <- c("ID","cluster")
 sample_info <- left_join(sample_info,assignments,by="ID")
@@ -91,9 +94,10 @@ dev.off()
 # read in tree, update labels
 snp_tree <- read.nexus("../results/svdq/all_filtered.tre")
 snp_tree$tip.label <- gsub("_","-",snp_tree$tip.label)
+snp_tree$edge.length <- 1
 
 # reroot at C1, match mito tree
-node1 <- getMRCA(snp_tree,assignments %>% filter(cluster == "C1") %>% pull(ID))
+node1 <- getMRCA(snp_tree,assignments %>% filter(cluster == "A") %>% pull(ID))
 new_snp_tree <- phytools::reroot(snp_tree,node1,position=0.5)
 
 #plot 
@@ -133,13 +137,13 @@ si <- sample_info %>%
         mutate(seq = ID, label2 = paste(ID,location,sep=":"), COI_clan = cluster) %>% 
         select(seq,label2,ocean,COI_clan)     
 
-NCBI_data <- rbind(NCBI_data,si)
+NCBI_data <- rbind(NCBI_data,si) %>% 
+    mutate(label2 = gsub("^KM563","TMAG-K563",label2)) %>%
+    mutate(label2 = gsub("YPM-IZ-111211","NIWA-173304",label2)) %>%
+    mutate(label2 = gsub("YPM-IZ-111212","NIWA-173305",label2))
 
 cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6","red","blue","magenta","cyan")
 names(cols) <- c("A","B1","B2","C1","C2","clan_2","clan_1","clan_3","clan_Atlantic")
-
-colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
-names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
 
 plot_tree <- function(gene_name){
 	
@@ -165,9 +169,10 @@ plot_tree <- function(gene_name){
 
 	pdf(file=paste0("../figures/panels/plot_",gene_name,".pdf"),width=8,height=12)
 	print(
-        p %<+% NCBI_data + 
+    p %<+% NCBI_data + 
+    geom_text2(aes(label=label, subset = !is.na(as.numeric(label))),hjust=-1,size=1.5) +
+  	geom_tiplab(aes(label = label2),hjust=-0.25,size=1.5) + 
 		geom_tippoint(aes(color=ocean),size=2,position=position_nudge(x = max_edge * 10e-3)) + 
-		geom_tiplab(aes(label = label2), size=1.5,hjust=-0.15) + 
 		xlim(c(0,max_edge+(max_edge*0.25))) + 	
 		scale_color_manual(values = colors) + 
     theme(legend.position="none") 

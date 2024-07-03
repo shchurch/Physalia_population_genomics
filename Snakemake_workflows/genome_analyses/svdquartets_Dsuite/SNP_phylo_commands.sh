@@ -39,3 +39,9 @@ cat all_filtered_phylo2.min4.nexus taxpartitions.txt > all_filtered_phylo2.min4.
 execute all_filtered_phylo2.min4.partition.nexus
 svdq taxpartition=SPECIES bootstrap=standard nthreads=4
 savetrees file=all_filtered.partition.tre
+
+# Dsuite to run Dquartets on all 5 lineages
+
+./Dsuite/Build/Dsuite Dquartets all_filtered_phylo2.vcf.gz pop.txt 
+
+# results in file labeled BBAA

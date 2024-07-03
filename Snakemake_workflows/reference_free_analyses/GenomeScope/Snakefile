@@ -1,0 +1,244 @@
+"""
+This snakefile makes k-mer spectra using a bunch of reads in a file
+"""
+configfile: "config_kmers.yaml"
+scratchdir = config["scratchdir"]
+
+target_kmers = [21]
+
+rule all:
+    input:
+        expand(scratchdir + "output/{sample}_k{thisk}.histo.pdf", sample = config["sample"], thisk = target_kmers),
+        expand(scratchdir + "output/{sample}_k{thisk}.freqxcov.pdf", sample = config["sample"], thisk = target_kmers),
+        expand(scratchdir + "output/{sample}_k{thisk}_linear_plot.png", sample = config["sample"], thisk = target_kmers),
+        expand(scratchdir + "output/{sample}_k{thisk}_summary.txt", sample = config["sample"], thisk = target_kmers),
+        scratchdir + "output/genome_report.tsv"
+
+rule process_and_count_reads:
+    input:
+        reads = lambda wildcards: [f"{x}" for x in config["sample"][wildcards.sample]["reads"]]
+    output:
+        R1 = temp(scratchdir + "reads/{sample}_all_R1.fastq"),
+        R2 = temp(scratchdir + "reads/{sample}_all_R2.fastq"),
+        R1_paired   = temp(scratchdir + "reads/{sample}_trimmed_paired_R1.fastq"),
+        R1_unpaired = temp(scratchdir + "reads/{sample}_trimmed_unpaired_R1.fastq"),
+        R2_paired   = temp(scratchdir + "reads/{sample}_trimmed_paired_R2.fastq"),
+        R2_unpaired = temp(scratchdir + "reads/{sample}_trimmed_unpaired_R2.fastq"),
+        read_count = scratchdir + "output/{sample}.count"
+    group:
+        "group1"
+    params:
+        sample = lambda wildcards: wildcards.sample
+    priority: 1 
+    threads: workflow.cores
+    log: "logs/trimmomatic/trimmomatic_{sample}.log"
+    shell:
+        """
+        
+        # Multiple operations are combined into a single rule here to minimize the number of files on disk at any point in time.
+        
+        # Concatenate reads
+        zcat {input.reads}/*R1*.fastq.gz > {output.R1}
+        zcat {input.reads}/*R2*.fastq.gz > {output.R2}
+
+        # Trim reads
+        echo ">PrefixPE/1\nTACACTCTTTCCCTACACGACGCTCTTCCGATCT\n>PrefixPE/2\nGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT" > TruSeq3-PE.fa
+        java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE \
+          -threads {threads} \
+          {output.R1} \
+          {output.R2} \
+          {output.R1_paired} \
+          {output.R1_unpaired} \
+          {output.R2_paired} \
+          {output.R2_unpaired} \
+          ILLUMINACLIP:TruSeq3-PE.fa:2:30:10:2:True LEADING:15 TRAILING:15 MINLEN:50 2> {log}
+
+        # Count reads
+        sum=0
+        num_lines_raw=$(cat {output.R1} | wc -l)
+        num_reads_raw=$(($num_lines_raw / 4))
+        num_nucleotides_raw=$(cat {output.R1} {output.R2} | awk '{{if(NR%4==2) sum+=length($0)}} END {{print sum}}' )
+
+        sum=0
+        num_lines_trimmed=$(cat {output.R1_paired} | wc -l)
+        num_reads_trimmed=$(($num_lines_trimmed / 4))
+        num_nucleotides_trimmed=$(cat {output.R1_paired} {output.R2_paired} | awk '{{if(NR%4==2) sum+=length($0)}} END {{print sum}}' )
+
+        sum=0
+        num_lines_unpaired_trimmed=$(cat {output.R1_unpaired} {output.R2_unpaired} | wc -l)
+        num_reads_unpaired_trimmed=$(($num_lines_unpaired_trimmed / 4))
+        num_nucleotides_unpaired_trimmed=$(cat {output.R1_unpaired} {output.R2_unpaired} | awk '{{if(NR%4==2) sum+=length($0)}} END {{print sum}}' )
+
+        echo "reads_pairs_raw\t$num_reads_raw" > {output.read_count}
+        echo "nucleotides_raw\t$num_nucleotides_raw" >> {output.read_count}
+        echo "reads_pairs_trimmed\t$num_reads_trimmed" >> {output.read_count}
+        echo "nucleotides_trimmed\t$num_nucleotides_trimmed" >> {output.read_count}
+        echo "reads_unpaired_trimmed\t$num_reads_unpaired_trimmed" >> {output.read_count}
+        echo "nucleotides_unpaired_trimmed\t$num_nucleotides_unpaired_trimmed" >> {output.read_count}
+        """
+
+rule generate_spectrum:
+    input:
+        R1_paired   = scratchdir + "reads/{sample}_trimmed_paired_R1.fastq",
+        R2_paired   = scratchdir + "reads/{sample}_trimmed_paired_R2.fastq"
+    output:
+        histo = scratchdir + "output/{sample}_k{thisk}.histo",
+        jf = scratchdir + temp("output/{sample}_k{thisk}.jf")
+    group:
+        "group1"
+    params:
+        sample = lambda wildcards: wildcards.sample,
+        thisk = lambda wildcards: wildcards.thisk,
+    threads: workflow.cores
+    log: "logs/jellyfish/jellyfish_{sample}_k{thisk}.log"
+    shell:
+        """
+        jellyfish count -C -m {params.thisk} -s 1000000000 -t {threads} \
+          -o {output.jf} \
+          {input.R1_paired} {input.R2_paired} \
+          2> {log}
+
+        jellyfish histo -t {threads} {output.jf} > {output.histo}
+        """
+
+rule generate_freqxcov_histo:
+    input:
+        histo = scratchdir + "output/{sample}_k{thisk}.histo"
+    output:
+        freqxcov = scratchdir + "output/{sample}_k{thisk}.freqxcov"
+    params:
+        sample = lambda wildcards: wildcards.sample,
+        thisk = lambda wildcards: wildcards.thisk,
+    threads: 1
+    shell:
+        """
+        awk '{{print($1, $1*$2)}}' {input.histo} > {output.freqxcov}
+        """
+
+rule generate_kmer_spectrum:
+    input:
+        histo = scratchdir + "output/{sample}_k{thisk}.histo"
+    output:
+        pdf   = scratchdir + "output/{sample}_k{thisk}.histo.pdf"
+    params:
+        sample = lambda wildcards: wildcards.sample,
+        thisk = lambda wildcards: wildcards.thisk,
+    threads: 1
+    shell:
+        """
+        cat {input.histo} | python plot_uniq_c.py -x 15 -X 400 -d -s \
+          --xlab 'coverage' --ylab 'frequency' \
+          --title '{params.sample} k-{params.thisk} spectrum' \
+          -o {output.pdf}
+        """
+
+rule generate_freqcov_spectrum:
+    input:
+        freqxcov = scratchdir + "output/{sample}_k{thisk}.freqxcov"
+    output:
+        pdf = scratchdir + "output/{sample}_k{thisk}.freqxcov.pdf"
+    params:
+        sample = lambda wildcards: wildcards.sample,
+        thisk = lambda wildcards: wildcards.thisk,
+    threads: 1
+    shell:
+        """
+        cat {input.freqxcov} | python plot_uniq_c.py -x 0 -X 30 -d -s \
+          --xlab 'coverage' --ylab 'frequency * coverage' \
+          --title '{params.sample} k-{params.thisk} spectrum' \
+          -o {output.pdf}
+        """
+
+rule run_genomescope2:
+    """
+    Just runs genomescope on the output of the last file
+    """
+    priority: 10 
+    input:
+        histo = scratchdir + "output/{sample}_k{thisk}.histo"
+    output:
+        plot = scratchdir + "output/{sample}_k{thisk}_linear_plot.png",
+        summary = scratchdir + "output/{sample}_k{thisk}_summary.txt"
+    params:
+        sample = lambda wildcards: wildcards.sample,
+        thisk = lambda wildcards: wildcards.thisk,
+	scr = scratchdir + "output/"
+    threads: 1
+    log: "logs/genomescope2/genomescope2_{sample}_k{thisk}.log"
+    shell:
+        """
+        genomescope2 -i {input.histo} -o {params.sample}_k{params.thisk} \
+          -k {params.thisk} -n {params.sample}_k{params.thisk} 2> {log}
+        mv {params.sample}_k{params.thisk}/* {params.scr}
+        rm -r {params.sample}_k{params.thisk}/
+        """
+
+rule final_report:
+    input:
+        counts = expand(scratchdir + "output/{sample}.count", sample=config["sample"]),
+        results = expand(scratchdir + "output/{sample}_k{thisk}_summary.txt", sample=config["sample"], thisk=target_kmers)
+    output:
+        report = scratchdir + "output/genome_report.tsv"
+    run:
+        import pandas as pd
+
+        # Read the existing results
+        list_of_results = []
+        for this_sample in config["sample"]:
+            for this_kmer in target_kmers:
+                targetfile = scratchdir + "output/{}_k{}_summary.txt".format(this_sample, this_kmer)
+                with open(targetfile, "r") as f:
+                    dict_of_vals = {}
+                    dict_of_vals["sample"] = this_sample
+                    dict_of_vals["k"] = this_kmer
+                    start_count = False
+                    counter = 0
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            splitd = line.split()
+                            if splitd[0] == "property":
+                                start_count = True
+                            if start_count:
+                                if counter == 1:
+                                    dict_of_vals["min_hom"] = float(splitd[2].strip("%"))
+                                    dict_of_vals["max_hom"] = float(splitd[3].strip("%"))
+                                elif counter == 2:
+                                    dict_of_vals["min_het"] = float(splitd[2].strip("%"))
+                                    dict_of_vals["max_het"] = float(splitd[3].strip("%"))
+                                elif counter == 3:
+                                    dict_of_vals["min_hap_len"] =  splitd[3].replace("," , "")
+                                    dict_of_vals["max_hap_len"] =  splitd[5].replace("," , "")
+                                elif counter == 4:
+                                    dict_of_vals["min_rep_len"] =  splitd[3].replace("," , "")
+                                    dict_of_vals["max_rep_len"] =  splitd[5].replace("," , "")
+                                elif counter == 5:
+                                    dict_of_vals["min_uniq_len"] = splitd[3].replace("," , "")
+                                    dict_of_vals["max_uniq_len"] = splitd[5].replace("," , "")
+                                elif counter == 6:
+                                    dict_of_vals["min_model_fit"] = float(splitd[2].strip("%"))
+                                    dict_of_vals["max_model_fit"] = float(splitd[3].strip("%"))
+                                elif counter == 7:
+                                    dict_of_vals["min_read_error_rate"] = float(splitd[3].strip("%"))
+                                    dict_of_vals["max_read_error_rate"] = float(splitd[4].strip("%"))
+                                counter += 1
+                    list_of_results.append(dict_of_vals)
+
+        # Read the counts data
+        list_of_counts = []
+        for this_sample in config["sample"]:
+            count_file = scratchdir + "output/{}.count".format(this_sample)
+            with open(count_file, "r") as f:
+                dict_of_counts = {}
+                for line in f:
+                    key, value = line.strip().split("\t")
+                    dict_of_counts[key] = int(value)
+                list_of_counts.append(dict_of_counts)
+
+        # Merge results with counts data
+        for result, counts in zip(list_of_results, list_of_counts):
+            result.update(counts)
+
+        # Create DataFrame and write to the report file
+        df = pd.DataFrame(list_of_results)
+        df.to_csv(output.report, sep="\t", index=False)

@@ -73,11 +73,11 @@ transinat <- st_as_sf(inat,coords=c("longitude","latitude"),crs=4326)
 itran <- st_transform(transinat,robinson)
 
 g1 <- ggplot(data=world2) + geom_sf(fill = "light gray", colour = NA) +
-  geom_point(data=itran,aes(geometry=geometry), size = 0.5, color = "red", alpha=0.7,pch=16 ,stat="sf_coordinates") + 
-  geom_point(data=dtran,aes(geometry=geometry, size = n), color = "blue", alpha=0.7,pch=16 ,stat="sf_coordinates") + 
+  geom_point(data=itran,aes(geometry=geometry), size = 1, color = "orangered3", alpha=0.7,pch=16 ,stat="sf_coordinates") + 
+  geom_point(data=dtran,aes(geometry=geometry, size = n), color = "royalblue2", alpha=0.7,pch=16 ,stat="sf_coordinates") + 
   #theme(legend.position = "none") +
   ggtitle(paste0(sum(si$n)," total samples")) + 
-  scale_size(range = c(2,8),breaks=c(1,round(max(si$n)/2,0),15,max(si$n))) + 
+  scale_size(range = c(3,8),breaks=c(1,round(max(si$n)/2,0),15,max(si$n))) + 
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
@@ -107,11 +107,10 @@ print(g2)
 dev.off()
 ```
 
-
 ```{r cov}
-dir <- "../results/all_samples/"
-name <- "main_run"
-bam_list <- paste0(dir,"subset_bam.filelist")
+dir <- "../results/strict/"
+name <- "strict"
+bam_list <- paste0(dir,"strict_bam.filelist")
 
 PC_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
   apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
@@ -126,29 +125,38 @@ e_vectors <- e$vectors[,1:n_vectors]
 colnames(e_vectors) <- paste0("PC",seq(1:n_vectors))
 PC_info <- bind_cols(PC_info,e_vectors)
 
-png(paste0("../figures/panels/cov_",name,".png"),width=600,height=400)
-plot(e$values[0:n_vectors],ylab="eigenvalues",xlab="k",pch=16,cex=1)
+eigen_plot <- ggplot(data.frame(eigenvalues = e$values, 
+                      k = seq(1:length(e$values))),
+                aes(y = eigenvalues, x = k)) + 
+  geom_vline(xintercept = 5, linetype="dashed") + 
+  geom_point() + 
+  scale_x_continuous(limits = c(0,30),breaks=c(0,1,2,3,4,5,10,20,30))
+
+png(paste0("../figures/panels/cov_",name,".png"),width=1200,height=800,res=300)
+print(eigen_plot)
 dev.off()
 ```
 
 ```{r PCA}
 g4 <- ggplot(PC_info,aes(y=PC2,x=-1*PC1,label=ID)) +
-  geom_point(size=2.5,alpha=0.5,pch=16,color="blue") + 
-  geom_vline(xintercept=0, linetype="dotted") +
-  geom_hline(yintercept=0, linetype="dotted") +
+  geom_vline(xintercept=0, linetype="dotted", color="dark gray") +
+  geom_hline(yintercept=0, linetype="dotted", color="dark gray") +
+  geom_point(size=2.5,alpha=0.5,pch=16,color="royalblue2") + 
   ylab(paste0("PC2 : ",exp_var[2])) + 
   xlab(paste0("PC1 : ",exp_var[1])) + 
   theme(legend.position="none") 
 
 g6 <- ggplot(PC_info,aes(y=PC3,x=-1*PC1,label=ID)) +
-  geom_point(size=2.5,alpha=0.5,pch=16,color="blue") + 
-  geom_vline(xintercept=0, linetype="dotted") +
-  geom_hline(yintercept=0, linetype="dotted") +
+  geom_vline(xintercept=0, linetype="dotted", color="dark gray") +
+  geom_hline(yintercept=0, linetype="dotted", color="dark gray") +
+  geom_point(size=2.5,alpha=0.5,pch=16,color="royalblue2") + 
   ylab(paste0("PC3 : ",exp_var[3])) + 
   xlab(paste0("PC1 : ",exp_var[1])) + 
   theme(legend.position="none") 
   
 g7 <- ggplot(PC_info,aes(y=PC1,x=PC2,label=ID,color=ocean)) + #color=lubridate::mdy(date_collected))) + 
+  geom_vline(xintercept=0, linetype="dotted", color="dark gray") +
+  geom_hline(yintercept=0, linetype="dotted", color="dark gray") +
   geom_point(size=2.5,alpha=0.75,pch=16) + 
   ylab(paste0("pcangsd PC1 : ",exp_var[1])) + 
   xlab(paste0("pcangsd PC2 : ",exp_var[2])) + 
@@ -156,6 +164,8 @@ g7 <- ggplot(PC_info,aes(y=PC1,x=PC2,label=ID,color=ocean)) + #color=lubridate::
   scale_color_manual(values = colors)
 
 g8 <- ggplot(PC_info,aes(y=PC1,x=PC3,label=ID,color=ocean)) + #color=lubridate::mdy(date_collected))) + 
+  geom_vline(xintercept=0, linetype="dotted", color="dark gray") +
+  geom_hline(yintercept=0, linetype="dotted", color="dark gray") +
   geom_point(size=2.5,alpha=0.75,pch=16) + 
   ylab(paste0("pcangsd PC1 : ",exp_var[1])) + 
   xlab(paste0("pcangsd PC3 : ",exp_var[3])) + 

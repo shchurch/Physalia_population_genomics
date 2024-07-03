@@ -37,23 +37,19 @@ no_legend <- theme(legend.position="none")
 
 ```{r setup}
 metadata <- read.delim("../data/metadata.tsv",header=T,stringsAsFactors=F) %>% filter(status %in% c("sequenced","sequenced elsewhere"))
+
 sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
   mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
   separate(lat_long,into=c("lat","long"),sep=", ")
 
-bam_list <- data.frame(ID = read.table("../results/all_samples/bam.filelist",head=F) %>% 
-  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
-  left_join(.,sample_info,by="ID")
-
 cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
 names(cols) <- c("A","B1","B2","C1","C2")
 
-pops <- read.delim("../data/pop.txt",sep="\t",header=F)
-colnames(pops) <- c("ID","pop")
-sample_info <- left_join(sample_info,pops,by="ID")
+assignments <- read.delim("../data/pop.txt",header=F,sep=" ")
+names(assignments) <- c("ID","cluster")
+sample_info <- left_join(sample_info,assignments,by="ID")
 
 jitter = position_jitter(width=0,seed=123)
-
 ```     
 
 # mapping
@@ -71,18 +67,18 @@ flagstat_reads <- data.frame(ID = metadata$ID,
   flag_total = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "in total") %>% pull(reads)})),
   mapped = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "mapped") %>% pull(reads)})),
   properly_paired = as.numeric(sapply(flagstat,function(x){x %>% filter(category == "properly paired") %>% pull(reads)}))) %>%
-  left_join(.,sample_info %>% select(ID,ocean,pop),by="ID")
+  left_join(.,sample_info %>% select(ID,ocean,cluster),by="ID")
 
-fr <- flagstat_reads %>% mutate(mapped_rate = mapped / flag_total, paired_rate = properly_paired / flag_total) %>% filter(!is.na(pop))
+fr <- flagstat_reads %>% mutate(mapped_rate = mapped / flag_total, paired_rate = properly_paired / flag_total) %>% filter(!is.na(cluster))
 
-g1 <- ggplot(fr,aes(x = mapped_rate, y = pop, color = pop) ) + 
+g1 <- ggplot(fr,aes(x = mapped_rate, y = cluster, color = cluster) ) + 
 	geom_point(position = jitter) + 
 	scale_color_manual(values = cols) + 
 	xlab("fraction mapped against cluster A reference") + ylab("cluster") + 
 	no_legend + 
 	scale_x_continuous(limits = c(0,1))
 
-g2 <- ggplot(fr,aes(x = paired_rate, y = pop, color = pop) ) + 
+g2 <- ggplot(fr,aes(x = paired_rate, y = cluster, color = cluster) ) + 
 	geom_point(position = jitter) + 
 	scale_color_manual(values = cols) + 
 	xlab("fraction properly paired against cluster A reference") + ylab("cluster") + 
@@ -104,7 +100,7 @@ Fst is a measure of genetic differentiation between populations. Fst is related 
 
 ```{r dxy}
 
-dir <- "../results/pixy/pop/"
+dir <- "../results/pixy/strict/"
 
 dxy <- read.delim(paste0(dir,"pixy_dxy.txt"))
 fst <- read.delim(paste0(dir,"pixy_fst.txt"))
@@ -169,18 +165,50 @@ We estimate genome size from kmer distributions for a subset of deeply sequenced
 Samples with large ranges likely have a poor model fit, and are therefore less reliable.
 
 ```{r kmer}
-kmer <- read.delim("../results/physalia_kmer/genome_report.tsv",sep="\t",header=T) %>% rename(ID = "sample") %>% left_join(.,pops,by="ID")
+kmer <- read.delim("../results/physalia_kmer/genome_report_quality.tsv",sep="\t",header=T) %>% 
+	rename(ID = "sample") %>%
+	mutate(max_rep_perc = max_rep_len / max_hap_len * 100,
+	min_rep_perc = min_rep_len / min_hap_len * 100)
+	
+kmer <- bind_rows(kmer %>% select(ID,starts_with("max")) %>% 
+	pivot_longer(cols = -ID,names_to="measure") %>% 
+	mutate(measure = gsub("max_","",measure),type="max"),
+	kmer %>% select(ID,starts_with("min")) %>% 
+	pivot_longer(cols = -ID,names_to="measure") %>% 
+	mutate(measure = gsub("min_","",measure),type="min"))
 
+kmer <- left_join(kmer,sample_info,by="ID")
+	
+km <- kmer %>% filter(measure=="het")
+g1 <- ggplot(km,aes(x = value,y = factor(ID, levels = km %>% arrange(cluster,ID) %>% pull(ID) %>% unique), color = cluster, group=ID)) + 
+	geom_point()  + 
+	geom_line() + 
+	scale_x_continuous(limits = c(0,4)) + 
+	scale_color_manual(values = cols) + 
+	xlab("estimated percent heterozygosity") + ylab("") + 
+	no_legend
 
-km <-  bind_rows(kmer %>% select(ID,pop,min_het) %>% rename(het = "min_het") %>% mutate(type = "min"),kmer %>% select(ID,pop,max_het) %>% rename(het = "max_het") %>% mutate(type = "max"))
+km <- kmer %>% filter(measure=="hap_len")
+g2 <- ggplot(km,aes(x = value / 1e9,y = factor(ID, levels = km %>% arrange(cluster,ID) %>% pull(ID) %>% unique), color = cluster, group=ID)) + 
+	geom_point()  + 
+	geom_line() + 
+	scale_x_continuous(limits = c(1.5,2)) + 
+	scale_color_manual(values = cols) + 
+	xlab("estimated genome size Gb") + ylab("") + 
+	no_legend
 
-
-ggplot(km,aes(x = het,y = factor(ID, levels = km %>% arrange(pop,ID) %>% pull(ID) %>% unique), shape =type, color = pop, group=ID)) + 
+km <- kmer %>% filter(measure=="rep_perc")
+g3 <- ggplot(km,aes(x = value,y = factor(ID, levels = km %>% arrange(cluster,ID) %>% pull(ID) %>% unique), color = cluster, group=ID)) + 
 	geom_point()  + 
 	geom_line() + 
 	scale_color_manual(values = cols) + 
-	xlab("estimated heterozygosity") + ylab("sample") + 
+	scale_x_continuous(limits = c(50,75)) + 
+	xlab("estimated percent repeats") + ylab("") + 
 	no_legend
+
+pdf("../figures/panels/genome_size_stats.pdf",width=8,height=6,useDingbats=F)
+grid.arrange(g2,g3,g1,nrow=2)
+dev.off()
 ```
 
 

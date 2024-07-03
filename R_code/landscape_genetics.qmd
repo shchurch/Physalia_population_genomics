@@ -74,13 +74,13 @@ set.seed(123)
 #    ylims <- c(-4630816,4186408)
 #    k <- 3
 
-    dir <- "../results/borealis_results/"
-    name <- "borealis"
-    bam_list <- paste0(dir,"borealis.filelist")
-    LeftBound = 100 # utriculus 65, # physalis -40 # megalista 150
-    xlims <- c(-14596597,13899112)
-    ylims <- c(-4230816,3986408)
-    k <- 4
+#    dir <- "../results/B2_results/"
+#    name <- "B2"
+#    bam_list <- paste0(dir,"B2.filelist")
+#    LeftBound = 100 # utriculus 65, # physalis -40 # megalista 150
+#    xlims <- c(-14596597,13899112)
+#    ylims <- c(-4230816,3986408)
+#    k <- 4
 
 #  dir <- "../results/megalista_results/"
 #  name <- "megalista"
@@ -90,13 +90,14 @@ set.seed(123)
 #   ylims <- c(-7635085,0)
 #   k <- 2
 
-#  dir <- "../results/C2_results/"
-#  name <- "C2"
-#  bam_list <- paste0(dir,"C2.filelist")
-#  LeftBound = 150 # utriculus 65, # physalis -40 # megalista 150
-#   xlims <- c(-10718930,12576348)
-#   ylims <- c(-7635085,0)
-#   k <- 2
+  dir <- "../results/C2_results/"
+  name <- "C2"
+  bam_list <- paste0(dir,"C2.filelist")
+  LeftBound = 150 # utriculus 65, # physalis -40 # megalista 150
+   xlims <- c(-2718930,3576348)
+   ylims <- c(-5635085,-3000000)
+   k <- 2
+   a <- -1; b <- 1
 
 PC_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
   apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
@@ -147,17 +148,17 @@ dev.off()
 ```{r pca-curves}
 shapes <- c(15,16,17,25,22,23,8,3,
             23,8,4,15,3,16,17,25,22,
-            7,12,
-            10,9)
+            7,12,10,
+            10,5)
 names(shapes) <- c("Texas","Florida","Bermuda","Northeast US","Azores","Canary Islands","Spain","Ireland",
   "Hawai'i","NW Hawaiian Islands","Guam","Japan","Queensland","New South Wales","Western Australia","South Africa","Uruguay",
-  "Chile","Tasmania",
-  "Mexico","Breaker Bay")
+  "Chile","Tasmania","Tasman Sea",
+  "Mexico","New Zealand")
 
-g1 <- ggplot(PC_info,aes(x = 1*PC1, y = -1*PC2, color = ocean, shape = location)) + 
+g1 <- ggplot(PC_info,aes(x = a*PC1, y = b*PC2, color = ocean, shape = location)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 2.5,alpha=0.75) + 
+  geom_point(size = 3,alpha=0.75) + 
   scale_shape_manual(values = shapes) + 
   scale_color_manual(values = colors) + 
   xlab(paste0("PC1 : ",exp_var[1])) +
@@ -168,12 +169,12 @@ pdf(paste0("../figures/panels/",name,"_PCA.pdf"),width=3.5,height=2,useDingbats=
 print(g1)
 dev.off()
 
-g2 <- ggplot(PC_info %>% mutate(date = lubridate::mdy(date_collected)),aes(x = 1*PC1, y = -1*PC2, color = date, shape=location)) + 
+g2 <- ggplot(PC_info %>% mutate(date = lubridate::mdy(date_collected)),aes(x = a*PC1, y = b*PC2, color = date, shape=location)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 2.5, alpha=1, fill="white") + 
+  geom_point(size = 3, alpha=1, fill="white") + 
   scale_shape_manual(values = shapes) + 
-  scale_color_viridis(option ="G", trans="date", limits=as.Date(c("01/01/2013","12/31/2023"),format="%m/%d/%Y")) + 
+  scale_color_viridis(option ="G", trans="date", limits=as.Date(c("01/01/2013","12/31/2024"),format="%m/%d/%Y")) + 
   xlab(paste0("PC1 : ",exp_var[1])) +
   ylab(paste0("PC2 : ",exp_var[2])) +
   theme(legend.position="none")
@@ -182,10 +183,10 @@ pdf(paste0("../figures/panels/",name,"_PCA_date.pdf"),width=3.5,height=2,useDing
 print(g2)
 dev.off()
 
-g3 <- ggplot(PC_info,aes(x = 1*PC1, y = -1*PC2, color = kmeans_cluster, shape = location, label=ID)) + 
+g3 <- ggplot(PC_info,aes(x = a*PC1, y = b*PC2, color = kmeans_cluster, shape = location, label=ID)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 2.5,alpha=0.75) + 
+  geom_point(size = 3,alpha=0.75) + 
   scale_shape_manual(values = shapes) + 
   scale_color_brewer(palette = "Dark2") + 
   xlab(paste0("PC1 : ",exp_var[1])) +
@@ -218,7 +219,7 @@ g2 <- ggplot() +
   geom_sf(data = world3, fill = "#dbdbdb", colour = NA) + 
   coord_sf(xlim = xlims, ylim = ylims) +
   geom_point(data = tsi, aes(x = long, y = lat, color = ocean, shape = location),
-        fill = "white", size = 3) + 
+        fill = "white", size = 5) + 
   scale_shape_manual(values = shapes) + 
   scale_color_manual(values = colors) + 
   xlab("") + ylab("") + theme(legend.position="none") #+

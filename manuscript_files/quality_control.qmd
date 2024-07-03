@@ -70,11 +70,11 @@ sample_info <- left_join(sample_info,pops,by="ID")
 
 We used `Kraken2` to classify reads (based on k-mers) against a standard database of known contaminants. `Kraken2` identified several samples as having a large percentage of "classified" reads, largely as Vibrionales bacteria. Based on these, we excluded the following samples as potentially highly contaminated:
 
-* YPM-IZ-110432
-* YPM-IZ-110973
-* YPM-IZ-110632
+* YPM IZ 110432
+* YPM IZ 110973
+* YPM IZ 110632
 
-Sample YPM-IZ-110694-dry was a resequenced sample from dried tissue. For main analyses we will use the other sample, YPM-IZ-110694, and not the dried specimen.
+Sample YPM IZ 110694-dry was a resequenced sample from dried tissue. For main analyses we will use the other sample, YPM IZ 110694, and not the dried specimen.
 
 ```{r kraken}
 #| fig-height: 6
@@ -105,21 +105,21 @@ grid.arrange(kraken_unclass,kraken_vibrio,nrow=2)
 
 ## Cross-contamination and duplicated samples
 
-In addition to YPM-IZ-110694-dry, we sequenced one biological replicate (YPM-IZ-110474-2, a repeated extraction and library preparation of YPM-IZ-110474) and we generated two technical replicates (YPM-IZ-110269-A and -B, subsampled reads from YPM-110269). We used these replicates as quality control for library preparation and sequencing, and as a reference for identifying duplicated samples. 
+In addition to YPM IZ 110694-dry, we sequenced one biological replicate (YPM IZ 110474-2, a repeated extraction and library preparation of YPM IZ 110474) and we generated two technical replicates (YPM IZ 110269-A and -B, subsampled reads from YPM-110269). We used these replicates as quality control for library preparation and sequencing, and as a reference for identifying duplicated samples. 
 
 We assesses similarity by calculating relatedness scores using the King-robust metric in `PLINK2`. Using a cutoff of 0.35 to detect potential duplicate samples, we identified the following pairs:
 
-* YPM-IZ-106941 and YPM-IZ-106944
-* YPM-IZ-110878 and YPM-IZ-110879
-* YPM-IZ-111013 and YPM-IZ-111015
-* YPM-IZ-111018 and YPM-IZ-111019
+* YPM IZ 106941 and YPM IZ 106944
+* YPM IZ 110878 and YPM IZ 110879
+* YPM IZ 111013 and YPM IZ 111015
+* YPM IZ 111018 and YPM IZ 111019
 
 Sample collection location did not differ between samples in these pairs. The latter sample in each pair was subsequently excluded.
 
 We also identified two pairs of samples that had moderately high relatedness (0.07 and 0.13, respectively) with samples from improbably long distances. In both cases, DNA was extracted in the same batch, suggested cross contamination.
 
-* YPM-IZ-110826 (Chile) with sample FM16644 (Canary Islands)
-* YPM-IZ-110827 (Chile) with samples YPM-IZ-110878 and YPM-IZ-110879 (Gulf of California).
+* YPM IZ 110826 (Chile) with sample FM16644 (Canary Islands)
+* YPM IZ 110827 (Chile) with samples YPM IZ 110878 and YPM IZ 110879 (Gulf of California).
 
 The former in each pair was subsequently excluded.
 
@@ -170,7 +170,7 @@ excluded_samples <- c(
 
 We examined sample quality by mapping to our assembled genome. Samples with low mapping percentages indicate potential contamination or low quality. We counted the number of total reads, reads that mapped to the reference genome, and reads that were properly paired. From this we detected a significantly lower mapping percentage for the sample:
 
-* YPM-IZ-110574
+* YPM IZ 110574
 
 Tests using _in silico_ PCR to extract 18S from this sample further indicated contamination from arthropod DNA. This sample will likewise be excluded.
 
@@ -322,11 +322,11 @@ grid.arrange(total_coverage,paired_coverage)
 
 We used `ANGSD` to estimate realized depth across samples and sites using a subset of genomic regions. We categorized samples into those with poor coverage distributions, those with low coverage (between 2 and 10x), moderate coverage (11 and 20x) and high coverage (>20x). Poor coverage samples, excluded from the strict analyses in the paper,  were the following:
 
-* KM5633
-* KM5634
-* KM5635
-* YPM-IZ-110277
-* YPM-IZ-110268
+* TMAG K5633
+* TMAG K5634
+* TMAG K5635
+* YPM IZ 110277
+* YPM IZ 110268
 
 ```{r depth}
 #| fig-height: 12
