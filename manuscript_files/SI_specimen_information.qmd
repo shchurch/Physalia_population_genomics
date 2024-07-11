@@ -1,5 +1,5 @@
 ---
-title: "Supplementary Material: Specimen collection information"
+title: "Supplementary material: specimen collection information"
 format:
   pdf:
     toc: false
@@ -21,17 +21,25 @@ library(kableExtra)
 
 ```{r specimen-info}
 
+assignments <- read.delim("../data/pop.txt",header=F,sep=" ")
+names(assignments) <- c("ID","cluster")
+
 sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) %>%
+  left_join(.,assignments,by="ID") %>% 
   mutate(year = gsub(".*/(.*)","\\1",date_collected), month = as.numeric(gsub("(.*)/.*/.*","\\1",date_collected))) %>% 
   separate(lat_long,into=c("lat","long"),sep=", ") %>% 
-  select(ID,ocean,location,lat,long,date_collected,status,permit) %>% filter(status != "excluded") %>% arrange(ID)
-colnames(sample_info) <- c("ID","ocean region","location","latitude","longitude","date collected","quality status","permit")
+  select(ID,cluster,ocean,location,lat,long,date_collected,status,permit) %>% filter(status != "excluded") %>% arrange(ID) %>%
+  mutate(ID = gsub("YPM-IZ-111211","NIWA-173304",ID)) %>% mutate(ID = gsub("YPM-IZ-111212","NIWA 173305",ID)) %>% 
+  mutate(ID = gsub("-"," ",ID)) %>% 
+  mutate(ID = gsub("^KM","TMAG K",ID))
+colnames(sample_info) <- c("ID","cluster","ocean region","location","latitude","longitude","date collected","quality status","permit")
 
 sample_info %>%
   kable("latex",caption = "Specimen data.",booktabs=T,longtable=T) %>%
   kable_styling(bootstrap_options = "striped", position="center",font_size=6,latex_options=c("hold_status","repeat_header")) %>% 
   landscape() %>% 
-  column_spec(8, width = "2in")
+  column_spec(9, width = "2in")
+
 ```
 
 # Specimen photos
