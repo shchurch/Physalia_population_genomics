@@ -13,8 +13,8 @@ wildcard_constraints:
 rule all:
     input:
 #        multiext(scratchdir + "angsd/subsample", ".arg", ".beagle.gz", ".depthSample", ".depthGlobal", ".mafs.gz"),
-        scratchdir + "angsd/strict.beagle.gz",
-        multiext(scratchdir + "pcangsd/strict", ".args", ".cov")
+        scratchdir + "angsd/subset.beagle.gz",
+        scratchdir + "pcangsd/subset.cov"
 
 rule angsd_subsample:
     priority: 10
@@ -64,7 +64,7 @@ rule join_likes:
     input:
         expand( scratchdir + "angsd/split_likes/{region}.beagle.gz", region=config["regions"] )
     output:
-        scratchdir + "angsd/strict.beagle.gz"
+        scratchdir + "angsd/subset.beagle.gz"
     params:
         FIRST = scratchdir + "angsd/split_likes/aaaa.beagle.gz",
         DIR = scratchdir + "angsd/split_likes/"
@@ -78,17 +78,20 @@ rule join_likes:
 
 rule pcangsd:
     input: 
-        scratchdir + "angsd/strict.beagle.gz"
+        scratchdir + "angsd/subset.beagle.gz"
     params:
-        PRE = scratchdir + "pcangsd/strict"
+        PRE = scratchdir + "pcangsd/subset"
     output: 
-        multiext(scratchdir + "pcangsd/strict", ".args", ".cov")
+        scratchdir + "pcangsd/subset.cov"
     threads: 
         workflow.cores 
     log:
         "logs/pcangsd/pcangsd.log"
     shell:
         """
+        pcangsd -b {input} -o {params.PRE} --threads {threads} -e 3 --admix --admix_alpha 50 &> {log}
+        pcangsd -b {input} -o {params.PRE} --threads {threads} -e 4 --admix --admix_alpha 50 &> {log}
+        pcangsd -b {input} -o {params.PRE} --threads {threads} -e 5 --admix --admix_alpha 50 &> {log}
         pcangsd -b {input} -o {params.PRE} --threads {threads} --admix --admix_alpha 50 &> {log}
         """
 

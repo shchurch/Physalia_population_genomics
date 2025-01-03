@@ -14,38 +14,63 @@ wildcard_constraints:
 # Rule to generate all the required output files
 rule all:
     input:
-        scratchdir + "regions.tsv", # genomic regions of interest
-        expand(scratchdir + "fastqc/{sample}_R1", sample=config["sample"]), # fastQC report per sample
+        expand("reads_checked/{sample}.checked", sample=config["sample"]),
+        expand(scratchdir + "fastqc/{sample}", sample=config["sample"]), # fastQC report per sample
         expand(scratchdir + "mapped_sorted/{sample}_pic.bam", sample=config["sample"]), # mapped, sorted, and deduplicated reads per sample
         expand(scratchdir + "mapped_sorted/{sample}_stat.txt", sample=config["sample"]), # mapping stats per sample
         scratchdir + "mapped_sorted/bam.filelist", # bam file list for ANGSD analysis
-        expand(scratchdir + "calls/{sample}_raw.bcf", sample=config["sample"]) # variants called per sample
+        expand(scratchdir + "calls/{sample}_raw.bcf", sample=config["sample"]), # variants called per sample
+        scratchdir + "regions.tsv" # genomic regions of interest
 
+# Rule to check that R1 and R2 reads have the same number of lines
+rule check_reads:
+    input:
+        R1=lambda wildcards: config['sample'][wildcards.sample]['reads']['R1_reads'],
+        R2=lambda wildcards: config['sample'][wildcards.sample]['reads']['R2_reads']
+    output:
+        "reads_checked/{sample}.checked"
+    shell:
+        """
+        # Count the lines in all R1 and R2 reads (assuming gzipped fastq format)
+        R1_count=$(zcat {input.R1} | wc -l)
+        R2_count=$(zcat {input.R2} | wc -l)
+
+        # Check if line counts are equal
+        if [ "$R1_count" -eq "$R2_count" ]; then
+            echo "Line counts match: $R1_count lines" > {output}
+        else
+            echo "Error: Line counts do not match! R1: $R1_count lines, R2: $R2_count lines" > {output}
+            exit 1
+        fi
+        """
+        
 # Rule to perform FastQC analysis on the input reads
 rule fastqc:
     input:
-        lambda wildcards: config["sample"][wildcards.sample]["reads"][0]
+        R1=lambda wildcards: config["sample"][wildcards.sample]["reads"]["R1_reads"],
+        R2=lambda wildcards: config["sample"][wildcards.sample]["reads"]["R2_reads"]
     output:
-        directory(scratchdir + "fastqc/{sample}_R1")
+        directory(scratchdir + "fastqc/{sample}")
     log:
         "logs/fastqc/{sample}.log"
     shell:
         """
-        mkdir {output}
-        fastqc {input} --outdir {output} 2> {log}
-        """ 
+        mkdir -p {output}  # Create the output directory
+        fastqc {input.R1} {input.R2} --outdir {output} 2> {log}
+        """
 
 # Rule to perform read trimming using Trimmomatic with standard Illumina adapters
 rule trimmomatic_pe:
-    priority: 1
     input:
-        READ1 = lambda wildcards: config["sample"][wildcards.sample]["reads"][0],
-        READ2 = lambda wildcards: config["sample"][wildcards.sample]["reads"][1]
+        R1=lambda wildcards: config["sample"][wildcards.sample]["reads"]["R1_reads"],
+        R2=lambda wildcards: config["sample"][wildcards.sample]["reads"]["R2_reads"]
     output:
         TRIM1P = temp(scratchdir + "trimmed/{sample}.R1.trimmed.fastq"),
         TRIM1U = temp(scratchdir + "trimmed/{sample}.R1.unpaired.trimmed.fastq"),
         TRIM2P = temp(scratchdir + "trimmed/{sample}.R2.trimmed.fastq"),
         TRIM2U = temp(scratchdir + "trimmed/{sample}.R2.unpaired_trimmed.fastq")
+    envmodules:
+        "Trimmomatic"
     log:
         "logs/trimmomatic/{sample}.log"
     threads: workflow.cores - 2
@@ -53,8 +78,8 @@ rule trimmomatic_pe:
         """
         echo ">PrefixPE/1\nTACACTCTTTCCCTACACGACGCTCTTCCGATCT\n>PrefixPE/2\nGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT" > TruSeq3-PE.fa
         java -jar $EBROOTTRIMMOMATIC/trimmomatic-0.39.jar PE -threads $SLURM_CPUS_PER_TASK \
-            {input.READ1} \
-            {input.READ2} \
+            <(zcat {input.R1}) \
+            <(zcat {input.R2}) \
             {output.TRIM1P} \
             {output.TRIM1U} \
             {output.TRIM2P} \
@@ -106,9 +131,11 @@ rule bwa_map:
         READ2 = scratchdir + "trimmed/{sample}.R2.trimmed.fastq"
     output:
         temp(scratchdir + "mapped_reads/{sample}.bam")
+    envmodules:
+        "BWA"
     log:
         "logs/bwa_mem/{sample}.log"
-    threads: workflow.cores -2
+    threads: workflow.cores - 2 
     shell:
         """
         (bwa mem -t {threads} {input.ASSEM} {input.READ1} {input.READ2} | \
