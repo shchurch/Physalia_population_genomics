@@ -18,11 +18,11 @@ Coalescent based phylogeny with `SVDQuartets`
 
 # strict
 
-Population genomic analysis on strict (high quality) 133 samples
+Population genomic analysis on strict (high quality) 141 samples
 
-# all_samples
+# subset
 
-Population genomic analysis on all (high and moderate quality) 123 samples
+Population genomic analysis on all (high and moderate quality) 151 samples
 
 # physalis_results
 

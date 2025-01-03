@@ -1233,7 +1233,7 @@ catttgttt---------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->FM16644 CO1 product 0 length 684 kmer count stats mean 29.30 median 29 min 17 max 43
+>FM-16644 CO1 product 0 length 684 kmer count stats mean 29.65 median 29 min 18 max 43
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1252,45 +1252,45 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->KM5632 CO1 product 0 length 684 kmer count stats mean 69.24 median 71 min 48 max 84
-aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
-cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
-ctttacaatgtcatagtaactgctcatgcctttgtcatgatctttttccttgttatgcca
-gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
-gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
-ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
-tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
-gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
-gcccctggtatgactatggataaattaccactgtttgtttggtcggttttgataactgcc
-ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
-aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
-catttgttctggttttttggtcat------------------------------------
-------------------------------------------------------------
-------------------------------------------------------------
-------------------------------------------------------------
-------------------------------------------------------------
-------------------------------------------------------------
-----------------------------
->KM5635 CO1 product 0 length 684 kmer count stats mean 7.30 median 7 min 4 max 12
-aaagacataggaacattatatctagtttttggtttattttcaggtatggtaggaactgcc
-cttagtatgttaatcagattagagttgtcaggacctggtaccatgtttggagatgatcat
-ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
-gttctaattggaggatttggtaactgattcgtacccctgtttataggtgctccggatatg
-gcctttcctaggttgaataacctaagtttttggttactaccccctgctctattattatta
+>NIWA-173304 CO1 product 0 length 684 kmer count stats mean 46.78 median 48 min 29 max 63
+aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
+cttagtatgttaatcagattagaattgtcaggacctggtactatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
+gttctaattggaggatttggtaactgattcgtacccctatttataggtgctccggatatg
+gcctttcctaggttgaataacctaagtttttggttactgccccctgctctattattatta
 ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
 tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
-gcaggtgcctcatcaatcatgggtgccattaactttataactaccatatttaatatgaga
-gctcccggtatgactatggataaactaccactatttgtttgatccgttttaataactgcc
+gcaggtgcctcatcaatcatgggtgccattaactttataaccactatatttaatatgaga
+gctcccggtatgactatggataaactaccactatttgtttgatccgttttgataactgcc
 tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
-aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttataccaa
-catttattttggttttttggtcat------------------------------------
+aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
+catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->OA-190531-1 CO1 product 0 length 684 kmer count stats mean 18.54 median 18 min 8 max 31
+>NIWA-173305 CO1 product 0 length 684 kmer count stats mean 11.13 median 9 min 6 max 22
+aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
+cttagtatgttaatcagattggaattgtcaggacctggtaccatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
+gttctaattggaggatttggtaactgattcgtacccctgtttataggtgctccggatatg
+gcctttcctaggttgaataacctaagtttttggttactgccccctgctctattattatta
+ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
+tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
+gcaggtgcctcatcaatcatgggtgccattaactttataaccactatatttaatatgaga
+gctcccggtatgactatggataaactaccactatttgtttgatccgttttgataactgcc
+tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
+aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
+catttattttggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>OA-190531-1 CO1 product 0 length 684 kmer count stats mean 18.71 median 18 min 8 max 31
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1328,7 +1328,64 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ88480 CO1 product 0 length 684 kmer count stats mean 45.54 median 45 min 35 max 61
+>TMAG-K5632 CO1 product 0 length 684 kmer count stats mean 57.21 median 58 min 41 max 73
+aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
+ctttacaatgtcatagtaactgctcatgcctttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccactgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>TMAG-K5633 CO1 product 0 length 684 kmer count stats mean 8.60 median 9 min 3 max 16
+aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
+cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
+gttctaattggaggatttggtaactgattcgtacccctgtttataggtgctccggatatg
+gcctttcctaggttgaataacctaagtttttggttactgccccctgctctattattatta
+ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
+tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
+gcaggtgcctcatcaatcatgggtgccattaactttataaccactatatttaatatgaga
+gctcccggtatgactatggataaattaccactatttgtttgatccgttttgataactgcc
+tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
+aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
+catttattttggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>TMAG-K5635 CO1 product 0 length 684 kmer count stats mean 7.30 median 7 min 4 max 12
+aaagacataggaacattatatctagtttttggtttattttcaggtatggtaggaactgcc
+cttagtatgttaatcagattagagttgtcaggacctggtaccatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
+gttctaattggaggatttggtaactgattcgtacccctgtttataggtgctccggatatg
+gcctttcctaggttgaataacctaagtttttggttactaccccctgctctattattatta
+ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
+tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
+gcaggtgcctcatcaatcatgggtgccattaactttataactaccatatttaatatgaga
+gctcccggtatgactatggataaactaccactatttgtttgatccgttttaataactgcc
+tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
+aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttataccaa
+catttattttggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>WAM-Z88480 CO1 product 0 length 684 kmer count stats mean 46.18 median 45.5 min 35 max 62
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcctttgtcatgatctttttccttgttatgcca
@@ -1347,7 +1404,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97900 CO1 product 0 length 684 kmer count stats mean 32.16 median 32 min 19 max 46
+>WAM-Z97900 CO1 product 0 length 684 kmer count stats mean 32.47 median 32 min 19 max 47
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -1366,7 +1423,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97901 CO1 product 0 length 684 kmer count stats mean 34.06 median 35 min 20 max 44
+>WAM-Z97901 CO1 product 0 length 684 kmer count stats mean 34.57 median 36 min 21 max 44
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -1385,7 +1442,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97902 CO1 product 0 length 684 kmer count stats mean 302.89 median 300 min 269 max 346
+>WAM-Z97902 CO1 product 0 length 684 kmer count stats mean 24.77 median 26 min 11 max 41
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1404,7 +1461,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97903 CO1 product 0 length 684 kmer count stats mean 34.06 median 34 min 23 max 45
+>WAM-Z97903 CO1 product 0 length 684 kmer count stats mean 34.21 median 35 min 23 max 44
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -1423,7 +1480,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97906 CO1 product 0 length 684 kmer count stats mean 69.52 median 67 min 52 max 95
+>WAM-Z97906 CO1 product 0 length 684 kmer count stats mean 70.05 median 68 min 54 max 95
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -1442,7 +1499,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97907 CO1 product 0 length 684 kmer count stats mean 551.50 median 553 min 497 max 603
+>WAM-Z97907 CO1 product 0 length 684 kmer count stats mean 56.59 median 57 min 37 max 76
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgtcatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1461,7 +1518,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97908 CO1 product 0 length 684 kmer count stats mean 61.97 median 62 min 47 max 77
+>WAM-Z97908 CO1 product 0 length 684 kmer count stats mean 60.26 median 60 min 46 max 74
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1480,7 +1537,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97910 CO1 product 0 length 684 kmer count stats mean 313.76 median 304 min 247 max 397
+>WAM-Z97910 CO1 product 0 length 684 kmer count stats mean 24.47 median 24 min 19 max 33
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1499,7 +1556,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97911 CO1 product 0 length 684 kmer count stats mean 268.82 median 268 min 237 max 302
+>WAM-Z97911 CO1 product 0 length 684 kmer count stats mean 29.10 median 28 min 18 max 47
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1518,7 +1575,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97914 CO1 product 0 length 684 kmer count stats mean 53.38 median 51.5 min 36 max 74
+>WAM-Z97914 CO1 product 0 length 684 kmer count stats mean 53.63 median 53 min 36 max 67
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1537,7 +1594,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97916 CO1 product 0 length 684 kmer count stats mean 44.93 median 45 min 29 max 58
+>WAM-Z97916 CO1 product 0 length 684 kmer count stats mean 44.86 median 45 min 29 max 58
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1556,7 +1613,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97917 CO1 product 0 length 684 kmer count stats mean 34.38 median 33 min 22 max 52
+>WAM-Z97917 CO1 product 0 length 684 kmer count stats mean 34.69 median 34 min 22 max 51
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1575,7 +1632,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97920 CO1 product 0 length 684 kmer count stats mean 34.80 median 36 min 21 max 50
+>WAM-Z97920 CO1 product 0 length 684 kmer count stats mean 35.09 median 36 min 21 max 51
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcatttgtcatgatctttttccttgttatgcca
@@ -1594,7 +1651,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97921 CO1 product 0 length 684 kmer count stats mean 15.42 median 14 min 9 max 24
+>WAM-Z97921 CO1 product 0 length 684 kmer count stats mean 15.88 median 15 min 10 max 23
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1613,7 +1670,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->WAMZ97923 CO1 product 0 length 684 kmer count stats mean 23.51 median 23 min 16 max 35
+>WAM-Z97923 CO1 product 0 length 684 kmer count stats mean 23.98 median 23 min 16 max 37
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1632,7 +1689,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-104460 CO1 product 0 length 684 kmer count stats mean 33.68 median 33 min 22 max 47
+>YPM-IZ-104460 CO1 product 0 length 684 kmer count stats mean 33.65 median 33 min 22 max 47
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1651,7 +1708,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-104461 CO1 product 0 length 684 kmer count stats mean 32.86 median 33 min 24 max 41
+>YPM-IZ-104461 CO1 product 0 length 684 kmer count stats mean 32.85 median 33 min 24 max 40
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1670,7 +1727,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-104464 CO1 product 0 length 684 kmer count stats mean 22.08 median 21 min 12 max 34
+>YPM-IZ-104464 CO1 product 0 length 684 kmer count stats mean 22.34 median 21 min 12 max 36
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1689,7 +1746,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-104465 CO1 product 0 length 684 kmer count stats mean 24.69 median 25 min 13 max 33
+>YPM-IZ-104465 CO1 product 0 length 684 kmer count stats mean 24.93 median 25 min 13 max 34
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1708,7 +1765,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106919 CO1 product 0 length 684 kmer count stats mean 27.46 median 28 min 20 max 37
+>YPM-IZ-106919 CO1 product 0 length 684 kmer count stats mean 27.44 median 28 min 20 max 37
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1727,7 +1784,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106920 CO1 product 0 length 684 kmer count stats mean 23.55 median 24 min 14 max 32
+>YPM-IZ-106920 CO1 product 0 length 684 kmer count stats mean 24.12 median 24 min 15 max 33
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1746,7 +1803,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106923 CO1 product 0 length 684 kmer count stats mean 30.30 median 29 min 18 max 44
+>YPM-IZ-106923 CO1 product 0 length 684 kmer count stats mean 30.45 median 29 min 18 max 44
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1765,7 +1822,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106935 CO1 product 0 length 684 kmer count stats mean 11.42 median 10 min 4 max 21
+>YPM-IZ-106935 CO1 product 0 length 684 kmer count stats mean 11.41 median 10 min 4 max 21
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttagtcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1803,7 +1860,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106937 CO1 product 0 length 684 kmer count stats mean 19.85 median 19 min 9 max 32
+>YPM-IZ-106937 CO1 product 0 length 684 kmer count stats mean 19.84 median 19 min 9 max 32
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1841,7 +1898,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106943 CO1 product 0 length 684 kmer count stats mean 11.12 median 11 min 6 max 19
+>YPM-IZ-106943 CO1 product 0 length 684 kmer count stats mean 11.28 median 11 min 6 max 20
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1860,7 +1917,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-106954 CO1 product 0 length 684 kmer count stats mean 24.40 median 24 min 11 max 35
+>YPM-IZ-106954 CO1 product 0 length 684 kmer count stats mean 24.44 median 24 min 12 max 35
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1898,7 +1955,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110251 CO1 product 0 length 684 kmer count stats mean 12.51 median 12 min 6 max 22
+>YPM-IZ-110251 CO1 product 0 length 684 kmer count stats mean 12.50 median 12 min 6 max 22
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaattagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1917,7 +1974,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110254 CO1 product 0 length 684 kmer count stats mean 15.99 median 16 min 9 max 23
+>YPM-IZ-110254 CO1 product 0 length 684 kmer count stats mean 15.98 median 16 min 9 max 23
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -1936,7 +1993,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110264 CO1 product 0 length 684 kmer count stats mean 27.84 median 28 min 13 max 39
+>YPM-IZ-110264 CO1 product 0 length 684 kmer count stats mean 27.82 median 28 min 13 max 39
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgtcatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1955,7 +2012,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110268 CO1 product 0 length 684 kmer count stats mean 74.02 median 74 min 50 max 103
+>YPM-IZ-110268 CO1 product 0 length 684 kmer count stats mean 74.16 median 74 min 50 max 103
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1974,7 +2031,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110269 CO1 product 0 length 684 kmer count stats mean 45.17 median 44 min 32 max 60
+>YPM-IZ-110269 CO1 product 0 length 684 kmer count stats mean 45.14 median 44 min 32 max 60
 aaagatataggaacgttatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -1993,7 +2050,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110276 CO1 product 0 length 684 kmer count stats mean 62.34 median 60 min 45 max 92
+>YPM-IZ-110276 CO1 product 0 length 684 kmer count stats mean 62.31 median 60 min 45 max 92
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcagattagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2012,7 +2069,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110277 CO1 product 0 length 684 kmer count stats mean 111.91 median 111.5 min 88 max 134
+>YPM-IZ-110277 CO1 product 0 length 684 kmer count stats mean 111.80 median 111 min 88 max 134
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgtcatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2031,7 +2088,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110278 CO1 product 0 length 684 kmer count stats mean 75.54 median 74 min 54 max 106
+>YPM-IZ-110278 CO1 product 0 length 684 kmer count stats mean 75.50 median 74 min 54 max 106
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttcctcgtaatgcca
@@ -2050,7 +2107,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110433 CO1 product 0 length 684 kmer count stats mean 50.80 median 50 min 39 max 70
+>YPM-IZ-110433 CO1 product 0 length 684 kmer count stats mean 50.72 median 50 min 39 max 70
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2069,7 +2126,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110438 CO1 product 0 length 684 kmer count stats mean 83.40 median 87 min 51 max 106
+>YPM-IZ-110434 CO1 product 0 length 684 kmer count stats mean 64.97 median 67 min 43 max 82
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2088,7 +2145,45 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110443 CO1 product 0 length 684 kmer count stats mean 26.89 median 27 min 18 max 36
+>YPM-IZ-110436 CO1 product 0 length 684 kmer count stats mean 16.02 median 16 min 8 max 25
+aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
+cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
+ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
+gtcctaatcgggggtttcggtaactgatttgtacctttgtttataggtgctccggatatg
+gccttccctaggttaaacaacctaagtttttgattattgccacctgctttgctattatta
+ctagggtcatccctaatagagcaaggtgcaggaactggttgaactgtttatcctccttta
+tctggcccccaaacccattctgggggatcagttgatatggccattttcagtttgcactgt
+gcgggtgcctcctcaattatgggtgctattaacttcataaccactatatttaatatgagg
+gcccctggtatgactatggataaactaccactgtttgtttggtcagttttaataactgct
+ttccttttactactatcattaccagtattggccggtgccataactatgttacttactgat
+aggaattttaatactactttcttcgaccccgcaggaggtggtgacccagttctctatcaa
+catttattctgattttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-110438 CO1 product 0 length 684 kmer count stats mean 83.53 median 87 min 52 max 105
+aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
+cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
+ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
+gtcctaatcgggggtttcggtaactgatttgtacctttgtttataggtgctccggatatg
+gccttccctaggttaaacaacctaagtttttgattattgccacctgctttgctattatta
+ctagggtcatccctaatagagcaaggtgcaggaactggttgaactgtttatcctccttta
+tctggcccccaaacccattctgggggatcagttgatatggccattttcagtttacactgt
+gcgggtgcctcctcaattatgggtgctattaacttcataaccactatatttaatatgagg
+gcccctggtatgactatggataaactaccactgtttgtttggtcagttttaataactgct
+ttccttttactactatcattaccagtattggccggtgccataactatgttacttactgat
+aggaattttaatactactttcttcgaccccgcaggaggtggtgacccagttctctatcaa
+catttattctgattttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-110443 CO1 product 0 length 684 kmer count stats mean 26.97 median 27 min 18 max 36
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2107,7 +2202,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110460 CO1 product 0 length 684 kmer count stats mean 28.16 median 28 min 18 max 41
+>YPM-IZ-110460 CO1 product 0 length 684 kmer count stats mean 28.09 median 28 min 18 max 41
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2126,7 +2221,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110467 CO1 product 1 length 684 kmer count stats mean 39.34 median 39 min 23 max 52
+>YPM-IZ-110467 CO1 product 1 length 684 kmer count stats mean 39.83 median 40 min 23 max 53
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -2145,7 +2240,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110468 CO1 product 0 length 684 kmer count stats mean 55.23 median 55 min 40 max 71
+>YPM-IZ-110468 CO1 product 0 length 684 kmer count stats mean 55.51 median 55 min 40 max 73
 aaagacataggaacattatatctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -2164,7 +2259,7 @@ catttattttggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110469 CO1 product 0 length 684 kmer count stats mean 40.57 median 42 min 22 max 54
+>YPM-IZ-110469 CO1 product 0 length 684 kmer count stats mean 40.53 median 42 min 22 max 54
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
@@ -2183,7 +2278,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110470 CO1 product 0 length 684 kmer count stats mean 111.81 median 113 min 87 max 136
+>YPM-IZ-110470 CO1 product 0 length 684 kmer count stats mean 112.00 median 114 min 87 max 136
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -2202,7 +2297,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110471 CO1 product 0 length 684 kmer count stats mean 76.47 median 77 min 56 max 95
+>YPM-IZ-110471 CO1 product 0 length 684 kmer count stats mean 76.58 median 77 min 57 max 95
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2221,7 +2316,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110473 CO1 product 0 length 684 kmer count stats mean 88.98 median 89 min 66 max 113
+>YPM-IZ-110473 CO1 product 0 length 684 kmer count stats mean 88.91 median 89 min 66 max 113
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2240,7 +2335,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110474 CO1 product 0 length 684 kmer count stats mean 111.43 median 112 min 88 max 130
+>YPM-IZ-110474 CO1 product 0 length 684 kmer count stats mean 111.45 median 112 min 88 max 130
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2259,7 +2354,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110480 CO1 product 0 length 684 kmer count stats mean 50.52 median 51 min 35 max 69
+>YPM-IZ-110480 CO1 product 0 length 684 kmer count stats mean 50.67 median 51 min 35 max 69
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2278,7 +2373,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110515 CO1 product 0 length 684 kmer count stats mean 28.52 median 29 min 12 max 42
+>YPM-IZ-110515 CO1 product 0 length 684 kmer count stats mean 28.69 median 30 min 12 max 42
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2297,7 +2392,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110520 CO1 product 0 length 684 kmer count stats mean 20.63 median 21 min 12 max 29
+>YPM-IZ-110520 CO1 product 0 length 684 kmer count stats mean 20.59 median 21 min 12 max 29
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2316,7 +2411,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110526 CO1 product 0 length 684 kmer count stats mean 26.63 median 27 min 19 max 35
+>YPM-IZ-110526 CO1 product 0 length 684 kmer count stats mean 26.61 median 27 min 19 max 35
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatttttttccttgtaatgcca
@@ -2335,7 +2430,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110556 CO1 product 0 length 684 kmer count stats mean 28.81 median 29 min 22 max 38
+>YPM-IZ-110556 CO1 product 0 length 684 kmer count stats mean 33.57 median 33 min 22 max 46
 aaagacatagggacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -2354,7 +2449,7 @@ catttattttggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110557 CO1 product 0 length 684 kmer count stats mean 61.13 median 60 min 49 max 79
+>YPM-IZ-110557 CO1 product 0 length 684 kmer count stats mean 61.08 median 60 min 49 max 79
 aaagacataggaacattatatctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -2373,7 +2468,7 @@ catttattttggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110558 CO1 product 0 length 684 kmer count stats mean 38.28 median 38 min 30 max 47
+>YPM-IZ-110558 CO1 product 0 length 684 kmer count stats mean 38.75 median 39 min 30 max 48
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
@@ -2392,7 +2487,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110566 CO1 product 0 length 684 kmer count stats mean 42.24 median 42 min 33 max 53
+>YPM-IZ-110566 CO1 product 0 length 684 kmer count stats mean 42.21 median 42 min 33 max 53
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2411,7 +2506,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110569 CO1 product 0 length 684 kmer count stats mean 88.30 median 88 min 65 max 109
+>YPM-IZ-110569 CO1 product 0 length 684 kmer count stats mean 88.58 median 88.5 min 65 max 109
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2430,7 +2525,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110600 CO1 product 0 length 684 kmer count stats mean 28.78 median 28 min 19 max 41
+>YPM-IZ-110600 CO1 product 0 length 684 kmer count stats mean 28.76 median 28 min 19 max 41
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2449,7 +2544,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110602 CO1 product 0 length 684 kmer count stats mean 33.60 median 35 min 19 max 46
+>YPM-IZ-110602 CO1 product 0 length 684 kmer count stats mean 33.59 median 35 min 18 max 46
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2468,7 +2563,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110605 CO1 product 0 length 684 kmer count stats mean 19.63 median 20 min 14 max 26
+>YPM-IZ-110605 CO1 product 0 length 684 kmer count stats mean 19.60 median 20 min 14 max 26
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2487,7 +2582,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110612 CO1 product 0 length 684 kmer count stats mean 64.44 median 64 min 43 max 80
+>YPM-IZ-110612 CO1 product 0 length 684 kmer count stats mean 64.63 median 65 min 43 max 80
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2506,7 +2601,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110613 CO1 product 0 length 684 kmer count stats mean 28.85 median 29 min 19 max 39
+>YPM-IZ-110613 CO1 product 0 length 684 kmer count stats mean 28.82 median 29 min 18 max 39
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2525,7 +2620,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110616 CO1 product 0 length 684 kmer count stats mean 48.33 median 49 min 31 max 62
+>YPM-IZ-110616 CO1 product 0 length 684 kmer count stats mean 48.25 median 49 min 31 max 62
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2544,7 +2639,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110631 CO1 product 0 length 684 kmer count stats mean 56.13 median 57 min 35 max 76
+>YPM-IZ-110631 CO1 product 0 length 684 kmer count stats mean 57.03 median 58 min 37 max 76
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2563,7 +2658,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110633 CO1 product 0 length 684 kmer count stats mean 27.41 median 27 min 13 max 41
+>YPM-IZ-110633 CO1 product 0 length 684 kmer count stats mean 27.59 median 27 min 14 max 42
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2582,7 +2677,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110667 CO1 product 0 length 684 kmer count stats mean 25.27 median 24.5 min 9 max 40
+>YPM-IZ-110667 CO1 product 0 length 684 kmer count stats mean 25.47 median 25 min 9 max 41
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcaggttggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2601,7 +2696,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110694 CO1 product 0 length 684 kmer count stats mean 31.98 median 32.5 min 15 max 52
+>YPM-IZ-110694 CO1 product 0 length 684 kmer count stats mean 32.11 median 32 min 14 max 52
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcaggttggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2620,7 +2715,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110716 CO1 product 0 length 684 kmer count stats mean 36.38 median 36 min 26 max 48
+>YPM-IZ-110716 CO1 product 0 length 684 kmer count stats mean 36.90 median 37 min 26 max 47
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttctttcttgtaatgcca
@@ -2639,7 +2734,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110726 CO1 product 0 length 684 kmer count stats mean 40.82 median 41 min 26 max 61
+>YPM-IZ-110726 CO1 product 0 length 684 kmer count stats mean 40.97 median 41 min 26 max 61
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2658,7 +2753,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110738 CO1 product 0 length 684 kmer count stats mean 41.25 median 40 min 28 max 57
+>YPM-IZ-110738 CO1 product 0 length 684 kmer count stats mean 42.06 median 42 min 28 max 59
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2677,7 +2772,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110777 CO1 product 0 length 684 kmer count stats mean 42.27 median 42 min 30 max 60
+>YPM-IZ-110777 CO1 product 0 length 684 kmer count stats mean 42.48 median 42 min 30 max 60
 aaagatataggaacgttatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2696,7 +2791,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110780 CO1 product 0 length 684 kmer count stats mean 26.06 median 25 min 17 max 40
+>YPM-IZ-110780 CO1 product 0 length 684 kmer count stats mean 26.80 median 25 min 17 max 43
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2715,7 +2810,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110785 CO1 product 0 length 684 kmer count stats mean 28.91 median 29 min 18 max 41
+>YPM-IZ-110785 CO1 product 0 length 684 kmer count stats mean 29.05 median 29 min 18 max 41
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2734,7 +2829,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110786 CO1 product 0 length 684 kmer count stats mean 40.13 median 40 min 22 max 55
+>YPM-IZ-110786 CO1 product 0 length 684 kmer count stats mean 40.86 median 41 min 23 max 57
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2753,7 +2848,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110829 CO1 product 0 length 684 kmer count stats mean 34.10 median 34 min 22 max 47
+>YPM-IZ-110829 CO1 product 0 length 684 kmer count stats mean 34.65 median 35 min 22 max 47
 aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggaattatcaggacccggtactatgtttggagatgatcac
 ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -2772,7 +2867,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110842 CO1 product 0 length 684 kmer count stats mean 18.59 median 18 min 13 max 24
+>YPM-IZ-110842 CO1 product 0 length 684 kmer count stats mean 20.39 median 20 min 11 max 32
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2791,7 +2886,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110843 CO1 product 0 length 684 kmer count stats mean 26.72 median 25 min 17 max 40
+>YPM-IZ-110843 CO1 product 0 length 684 kmer count stats mean 26.74 median 25 min 18 max 39
 aaagatatagggacattatatctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2810,7 +2905,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110844 CO1 product 0 length 684 kmer count stats mean 17.98 median 17 min 7 max 31
+>YPM-IZ-110844 CO1 product 0 length 684 kmer count stats mean 18.39 median 18 min 7 max 31
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2829,7 +2924,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110845 CO1 product 0 length 684 kmer count stats mean 29.98 median 30 min 18 max 43
+>YPM-IZ-110845 CO1 product 0 length 684 kmer count stats mean 30.27 median 30 min 18 max 43
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2848,7 +2943,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110847 CO1 product 0 length 684 kmer count stats mean 26.93 median 28 min 17 max 40
+>YPM-IZ-110847 CO1 product 0 length 684 kmer count stats mean 27.05 median 28 min 17 max 40
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2867,7 +2962,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110876 CO1 product 0 length 684 kmer count stats mean 192.03 median 190 min 170 max 218
+>YPM-IZ-110876 CO1 product 0 length 684 kmer count stats mean 192.21 median 191 min 170 max 218
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -2886,7 +2981,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110878 CO1 product 0 length 684 kmer count stats mean 33.09 median 34 min 16 max 51
+>YPM-IZ-110878 CO1 product 0 length 684 kmer count stats mean 32.91 median 33 min 15 max 50
 aaagatataggaacgttatacctagtctttggtttattttcaggtatggtgggaactgct
 cttagtatgttaatcagattggagttatcaggacccggtactatgtttggagacgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2905,7 +3000,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110881 CO1 product 0 length 684 kmer count stats mean 201.91 median 202 min 172 max 230
+>YPM-IZ-110881 CO1 product 0 length 684 kmer count stats mean 202.95 median 203 min 174 max 230
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2924,7 +3019,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110882 CO1 product 0 length 684 kmer count stats mean 60.72 median 60 min 48 max 77
+>YPM-IZ-110882 CO1 product 0 length 684 kmer count stats mean 60.88 median 60 min 48 max 77
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2943,7 +3038,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110883 CO1 product 0 length 684 kmer count stats mean 230.76 median 231 min 172 max 294
+>YPM-IZ-110883 CO1 product 0 length 684 kmer count stats mean 231.60 median 232 min 172 max 292
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2962,7 +3057,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110906 CO1 product 0 length 684 kmer count stats mean 57.50 median 58 min 39 max 70
+>YPM-IZ-110906 CO1 product 0 length 684 kmer count stats mean 57.97 median 59 min 40 max 70
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -2981,7 +3076,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110907 CO1 product 0 length 684 kmer count stats mean 55.50 median 56 min 43 max 71
+>YPM-IZ-110907 CO1 product 0 length 684 kmer count stats mean 55.45 median 55 min 43 max 71
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaattaggttagagttgtcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3000,7 +3095,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110925 CO1 product 0 length 684 kmer count stats mean 29.23 median 28 min 20 max 43
+>YPM-IZ-110925 CO1 product 0 length 684 kmer count stats mean 29.54 median 28 min 20 max 43
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3019,7 +3114,7 @@ catttattctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110926 CO1 product 0 length 684 kmer count stats mean 28.65 median 29 min 15 max 41
+>YPM-IZ-110926 CO1 product 0 length 684 kmer count stats mean 28.75 median 29 min 15 max 42
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3038,7 +3133,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110930 CO1 product 0 length 684 kmer count stats mean 70.33 median 70 min 53 max 88
+>YPM-IZ-110930 CO1 product 0 length 684 kmer count stats mean 70.90 median 71 min 54 max 88
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3057,7 +3152,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110931 CO1 product 0 length 684 kmer count stats mean 58.02 median 56 min 47 max 79
+>YPM-IZ-110931 CO1 product 0 length 684 kmer count stats mean 58.21 median 56 min 47 max 80
 aaagatataggaacgttatacctagtctttggtttattttcaggtatggtgggaactgct
 cttagtatgttaatcagattggagttatcaggacccggtactatgtttggagacgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3076,7 +3171,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110933 CO1 product 0 length 684 kmer count stats mean 22.47 median 22 min 13 max 36
+>YPM-IZ-110933 CO1 product 0 length 684 kmer count stats mean 23.23 median 24 min 13 max 36
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3095,7 +3190,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110937 CO1 product 0 length 684 kmer count stats mean 40.85 median 41 min 29 max 54
+>YPM-IZ-110937 CO1 product 0 length 684 kmer count stats mean 40.84 median 41 min 29 max 54
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3114,7 +3209,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110938 CO1 product 0 length 684 kmer count stats mean 31.83 median 31 min 24 max 42
+>YPM-IZ-110938 CO1 product 0 length 684 kmer count stats mean 32.20 median 31 min 24 max 42
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcagattagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3133,7 +3228,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110943 CO1 product 0 length 684 kmer count stats mean 28.79 median 28 min 17 max 38
+>YPM-IZ-110943 CO1 product 0 length 684 kmer count stats mean 28.96 median 28 min 17 max 38
 aaagatataggaacgttatacctagtctttggtttattttcaggtatggtgggaactgct
 cttagtatgttaatcagattagagttatcaggacccggtactatgtttggagacgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3152,7 +3247,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-110972 CO1 product 0 length 684 kmer count stats mean 60.20 median 56 min 40 max 90
+>YPM-IZ-110972 CO1 product 0 length 684 kmer count stats mean 60.36 median 56 min 40 max 90
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3171,7 +3266,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111006 CO1 product 0 length 684 kmer count stats mean 22.39 median 22 min 14 max 34
+>YPM-IZ-111006 CO1 product 0 length 684 kmer count stats mean 23.04 median 22 min 15 max 35
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtgatgcca
@@ -3190,7 +3285,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111007 CO1 product 0 length 684 kmer count stats mean 43.77 median 43 min 33 max 60
+>YPM-IZ-111007 CO1 product 0 length 684 kmer count stats mean 43.75 median 43 min 32 max 60
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3209,7 +3304,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111008 CO1 product 0 length 684 kmer count stats mean 33.47 median 33 min 21 max 48
+>YPM-IZ-111008 CO1 product 0 length 684 kmer count stats mean 33.62 median 33 min 21 max 48
 aaagatatagggacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3228,7 +3323,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111009 CO1 product 0 length 684 kmer count stats mean 16.25 median 16 min 9 max 24
+>YPM-IZ-111009 CO1 product 0 length 684 kmer count stats mean 16.22 median 16 min 9 max 24
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgctaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3247,7 +3342,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111010 CO1 product 0 length 684 kmer count stats mean 36.67 median 38 min 20 max 49
+>YPM-IZ-111010 CO1 product 0 length 684 kmer count stats mean 36.60 median 38 min 20 max 49
 aaggacataggaacattatacttagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggagttgtcagggcccggtactatgtttggggatgatcac
 ctttacaatgtgatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -3266,7 +3361,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111012 CO1 product 0 length 684 kmer count stats mean 20.32 median 20 min 11 max 30
+>YPM-IZ-111012 CO1 product 0 length 684 kmer count stats mean 20.95 median 21 min 11 max 30
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3285,7 +3380,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111013 CO1 product 0 length 684 kmer count stats mean 18.56 median 18 min 11 max 26
+>YPM-IZ-111013 CO1 product 0 length 684 kmer count stats mean 19.03 median 18 min 12 max 27
 aaagatatagggacattatacctagtctttggcttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3304,7 +3399,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111014 CO1 product 0 length 684 kmer count stats mean 24.00 median 26 min 12 max 32
+>YPM-IZ-111014 CO1 product 0 length 684 kmer count stats mean 23.89 median 26 min 12 max 32
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3323,7 +3418,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111016 CO1 product 0 length 684 kmer count stats mean 25.79 median 28 min 17 max 33
+>YPM-IZ-111016 CO1 product 0 length 684 kmer count stats mean 26.20 median 28 min 17 max 33
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3342,7 +3437,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111017 CO1 product 0 length 684 kmer count stats mean 18.59 median 18.5 min 10 max 30
+>YPM-IZ-111017 CO1 product 0 length 684 kmer count stats mean 18.55 median 18 min 10 max 30
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3361,7 +3456,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111018 CO1 product 0 length 684 kmer count stats mean 12.50 median 12 min 6 max 19
+>YPM-IZ-111018 CO1 product 0 length 684 kmer count stats mean 12.44 median 12 min 6 max 19
 aaagatatagggacattatacctagtctttggtttattttcgggtatggtagggactgct
 cttagtatgttaatcagattggagttatcagggcccggtactatgtttggggacgatcac
 ctttataatgttatagtaactgctcatgcttttgtcatgatcttcttccttgtaatgcca
@@ -3380,7 +3475,7 @@ catttattctgattttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111156 CO1 product 0 length 684 kmer count stats mean 14.81 median 15 min 8 max 20
+>YPM-IZ-111156 CO1 product 0 length 684 kmer count stats mean 14.89 median 15 min 8 max 21
 aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
 ctttacaatgtcatagtaactgctcatgcctttgtcatgatctttttccttgttatgcca
@@ -3399,7 +3494,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111158 CO1 product 0 length 684 kmer count stats mean 20.03 median 20 min 10 max 31
+>YPM-IZ-111158 CO1 product 0 length 684 kmer count stats mean 20.02 median 20 min 10 max 31
 aaagacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcagattggaattatcagggcccggtactatgtttggagatgatcac
 ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -3418,7 +3513,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111159 CO1 product 0 length 684 kmer count stats mean 21.86 median 21 min 12 max 33
+>YPM-IZ-111159 CO1 product 0 length 684 kmer count stats mean 22.17 median 22 min 12 max 33
 aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
 ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -3437,7 +3532,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111160 CO1 product 0 length 684 kmer count stats mean 22.00 median 22 min 11 max 38
+>YPM-IZ-111160 CO1 product 0 length 684 kmer count stats mean 22.77 median 22 min 13 max 39
 aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
 ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
@@ -3456,7 +3551,7 @@ catttgttctggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111163 CO1 product 0 length 684 kmer count stats mean 30.80 median 30 min 20 max 44
+>YPM-IZ-111163 CO1 product 0 length 684 kmer count stats mean 31.30 median 31 min 20 max 45
 aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
 cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
 ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
@@ -3475,7 +3570,7 @@ catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111207 CO1 product 0 length 684 kmer count stats mean 46.49 median 42 min 31 max 72
+>YPM-IZ-111207 CO1 product 0 length 684 kmer count stats mean 47.20 median 48 min 30 max 59
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -3494,7 +3589,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111208 CO1 product 0 length 684 kmer count stats mean 33.05 median 33 min 17 max 45
+>YPM-IZ-111208 CO1 product 0 length 684 kmer count stats mean 28.66 median 28 min 18 max 43
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -3513,7 +3608,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111209 CO1 product 0 length 684 kmer count stats mean 18.06 median 16 min 9 max 34
+>YPM-IZ-111209 CO1 product 0 length 684 kmer count stats mean 18.05 median 16 min 9 max 34
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -3532,7 +3627,7 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111210 CO1 product 0 length 684 kmer count stats mean 50.36 median 49 min 30 max 72
+>YPM-IZ-111210 CO1 product 0 length 684 kmer count stats mean 45.42 median 43 min 35 max 59
 aaagacataggaacattatatctagtttttggtttattttcaggtatggtaggaactgcc
 cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
 ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
@@ -3551,29 +3646,29 @@ catttattttggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111211 CO1 product 0 length 684 kmer count stats mean 52.51 median 54 min 34 max 78
+>YPM-IZ-111241 CO1 product 0 length 684 kmer count stats mean 19.35 median 19 min 11 max 27
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
-cttagtatgttaatcagattagaattgtcaggacctggtactatgtttggagatgatcat
-ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
-gttctaattggaggatttggtaactgattcgtacccctatttataggtgctccggatatg
-gcctttcctaggttgaataacctaagtttttggttactgccccctgctctattattatta
+cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
+gttctaattggagggtttggtaactgattcgtacccctgtttataggtgctccggatatg
+gcctttcctaggttgaataacctaagtttttggttactaccccctgctctattattatta
 ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
 tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
 gcaggtgcctcatcaatcatgggtgccattaactttataaccactatatttaatatgaga
-gctcccggtatgactatggataaactaccactatttgtttgatccgttttgataactgcc
+gctcccggtatgactatggataaactaccactatttgtttgatccgttttaataactgcc
 tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
-aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
-catttattttggttttttggtcac------------------------------------
+aggaattttaatactactttcttcgaccccgcaggagggggtgacccagtcttataccaa
+catttgttttggttttttggtcat------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ----------------------------
->YPM-IZ-111212 CO1 product 0 length 684 kmer count stats mean 11.16 median 9 min 6 max 22
+>YPM-IZ-111243 CO1 product 0 length 684 kmer count stats mean 22.72 median 22 min 12 max 35
 aaagacataggaacattatacctagtttttggtttattttcaggtatggtaggaactgcc
-cttagtatgttaatcagattggaattgtcaggacctggtaccatgtttggagatgatcat
-ctctataatgttatagtaactgctcatgcatttgttatgatcttcttccttgtaatgcca
+cttagtatgttaatcagattagaattgtcaggacctggtaccatgtttggagatgatcat
+ctctataatgttatagtaactgctcatgcatttgttatgatctttttccttgtaatgcca
 gttctaattggaggatttggtaactgattcgtacccctgtttataggtgctccggatatg
 gcctttcctaggttgaataacctaagtttttggttactgccccctgctctattattatta
 ctagggtcatctctgatagaacaaggtgcaggtactggttgaactgtttaccctcctttg
@@ -3581,8 +3676,274 @@ tctggcccccaaactcattccggaggatcagttgatatggctatcttcagtttacactgt
 gcaggtgcctcatcaatcatgggtgccattaactttataaccactatatttaatatgaga
 gctcccggtatgactatggataaactaccactatttgtttgatccgttttgataactgcc
 tttctcttattactgtcactacctgtattagccggagctattactatgttacttactgat
-aggaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
+agaaattttaatactactttcttcgaccccgcaggaggaggtgacccagtcttgtaccaa
 catttattttggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111495 CO1 product 0 length 684 kmer count stats mean 57.55 median 58 min 44 max 67
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggtttcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttaccctcctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccag
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111513 CO1 product 0 length 684 kmer count stats mean 56.57 median 56 min 41 max 81
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111514 CO1 product 1 length 684 kmer count stats mean 18.30 median 19 min 10 max 25
+aaagacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggacaaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111517 CO1 product 0 length 684 kmer count stats mean 49.02 median 50 min 31 max 63
+aaagacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcaggacccggtactatgtttggagatgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttgctaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactgcccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111518 CO1 product 0 length 684 kmer count stats mean 22.57 median 22 min 9 max 41
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtaatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111519 CO1 product 0 length 684 kmer count stats mean 28.21 median 24 min 13 max 52
+aaagacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttacactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggacaaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111520 CO1 product 0 length 684 kmer count stats mean 29.52 median 27 min 17 max 48
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtaatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttaataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgatccagtcctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111521 CO1 product 0 length 684 kmer count stats mean 36.97 median 37 min 26 max 47
+aaagacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagatgatcac
+ctttacaatgtaatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctagattaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttacactgc
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagttctctaccaa
+catttgttctggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111529 CO1 product 0 length 684 kmer count stats mean 33.54 median 34 min 18 max 45
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111530 CO1 product 0 length 684 kmer count stats mean 12.26 median 13 min 6 max 17
+aaggacataggaacactatatctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggattcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttacccccctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcattacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccaa
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111539 CO1 product 0 length 684 kmer count stats mean 21.80 median 21 min 13 max 34
+aaggacataggaacactatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttggaattatcagggcccggtactatgtttggagacgatcac
+ctttacaatgtcatagtaactgctcatgcgtttgtcatgatctttttccttgttatgcca
+gtcctaatcggaggtttcggtaattgatttatacccctcttcataggtgccccagatatg
+gctttccctaggttaaacaacttaagtttttggttactaccccctgctctattactatta
+ttagggtcgtctctgatagaacaaggcgcagggactgggtgaaccgtttaccctcctttg
+tctggcccccaaactcattctgggggttcagttgatatggccattttcagtttgcactgt
+gcaggtgcttcctctattatgggtgctataaactttataaccactatatttaatatgaga
+gcccctggtatgactatggataaattaccgctgtttgtttggtcggttttgataactgcc
+ttcctcctgttactatcactacccgtactggctggggctataaccatgttacttactgat
+aggaattttaatactactttctttgaccccgcagggggtggtgacccagtcctctaccag
+catttgttctggttttttggtcat------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111547 CO1 product 0 length 684 kmer count stats mean 15.79 median 15 min 6 max 28
+aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
+ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
+gtcctaatcggaggcttcggtaactggttcgtacccctatttataggtgctccggatatg
+gccttccctaggttgaacaacctaagtttttgattattaccccctgctttattactacta
+ttagggtcatccttgatagaacaaggtgcaggaactggttgaactgtttaccctcctttg
+tctggcccccaaactcattctgggggatcagttgatatggctattttcagtttacactgt
+gcgggtgcctcctcaattatgggtgctattaacttcataaccactatatttaatatgagg
+gcccctggtatgactatggataagttaccattatttgtctgatcagttttgataactgcc
+ttcctcttattactatcattacccgtgttggccggagctataactatgttacttactgat
+agaaattttaatactactttcttcgaccctgcgggaggtggtgatccagttctctatcaa
+catttgttctggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111839 CO1 product 0 length 684 kmer count stats mean 17.28 median 17 min 10 max 24
+aaagatataggaacgttatacctagtctttggtttattttcaggtatggtgggaactgct
+cttagtatgttaatcagattggagttatcaggacccggtactatgtttggagacgatcac
+ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
+gttctaattggaggcttcggtaactggttcgtacccctgtttataggtgctccggatatg
+gccttccctaggttaaacaacctaagcttttgattactacctcccgctttattattatta
+ttagggtcatccttaatagaacaaggtgcaggaactggttgaactgtttaccctccttta
+tctggcccccaaactcattctggggggtcggttgatatggccattttcagtttgcactgt
+gcgggtgcctcctcgattatgggtgctattaacttcataaccactatatttaatatgaga
+gcccctggcatgactatggataagttaccattatttgtttgatcagttttgataactgcc
+ttcctcttactactatcattacccgtgttggccggagctataactatgttacttactgat
+aggaattttaatactactttcttcgaccctgcaggaggtggtgatccggttctctatcaa
+catttgttctggttttttggtcac------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+----------------------------
+>YPM-IZ-111840 CO1 product 0 length 684 kmer count stats mean 10.66 median 11 min 3 max 18
+aaagatataggaacattatacctagtctttggtttattttcaggtatggtaggaactgct
+cttagtatgttaatcaggttagagttatcaggacccggtactatgtttggagatgatcac
+ctttataatgttatagtaactgctcatgcctttgtcatgatctttttccttgtaatgcca
+gtcctaatcggaggcttcggtaactggttcgtacctctatttataggtgctccggatatg
+gccttccctaggttgaacaacctaagtttttgattattaccccctgctttattactacta
+ttagggtcatccttaatagaacaaggtgcaggaactggttgaactgtttaccctccttta
+tctggcccccaaactcattctgggggatcagttgatatggctattttcagtttacactgt
+gcgggtgcctcctcaattatgggtgctattaacttcataaccactatatttaatatgagg
+gcccctggtatgactatggataagttaccattatttgtctgatcagttttaataactgcc
+ttcctcttattactatcattacccgtgttggccggagctataactatgttacttactgat
+agaaattttaatactactttcttcgaccctgcgggaggtggcgatccagttctctatcaa
+catttgttctggttttttggtcac------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------
 ------------------------------------------------------------

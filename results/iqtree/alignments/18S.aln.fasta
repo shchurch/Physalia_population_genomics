@@ -126,7 +126,7 @@ cgctgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatggtt
 tagtgagatcttcggattggcgtcgtcgcgtcctcacggatgtgacgatgccgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttcc------------
 ---------------------------
->FM16644 18S product 0 length 1790 kmer count stats mean 70.75 median 71 min 43 max 94
+>FM-16644 18S product 0 length 1790 kmer count stats mean 71.56 median 72 min 46 max 94
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -158,39 +158,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->KM5632 18S product 0 length 1790 kmer count stats mean 167.22 median 165 min 128 max 242
-------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
-atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
-tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
-gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
-ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
-ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
-atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
-gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
-agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
-taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
-cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
-gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
-ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
-agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
-gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
-cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
-atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
-taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
-accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
-aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
-tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
-gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
-tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
-atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
-aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
-agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
-gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
-cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
-tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
-gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
-gc------------------------g
->KM5633 18S product 0 length 1790 kmer count stats mean 94.43 median 90 min 61 max 137
+>NIWA-173304 18S product 0 length 1790 kmer count stats mean 94.98 median 95 min 72 max 122
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -222,7 +190,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->KM5634 18S product 0 length 1790 kmer count stats mean 127.46 median 122 min 78 max 212
+>NIWA-173305 18S product 0 length 1790 kmer count stats mean 70.45 median 68.5 min 36 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -254,7 +222,103 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->KM5635 18S product 0 length 1790 kmer count stats mean 254.44 median 241 min 165 max 369
+>OA-190531-1 18S product 0 length 1790 kmer count stats mean 36.45 median 38 min 14 max 53
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>OA-Bluebottle 18S product 0 length 1790 kmer count stats mean 27.51 median 26 min 9 max 46
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>TMAG-K5632 18S product 0 length 1790 kmer count stats mean 151.55 median 152 min 100 max 181
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>TMAG-K5633 18S product 0 length 1790 kmer count stats mean 89.66 median 90 min 62 max 121
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -286,7 +350,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->KM5636 18S product 0 length 1790 kmer count stats mean 151.66 median 145.5 min 104 max 233
+>TMAG-K5634 18S product 0 length 1790 kmer count stats mean 130.37 median 125 min 78 max 217
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -318,7 +382,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->OA-190531-1 18S product 0 length 1790 kmer count stats mean 36.39 median 37 min 14 max 53
+>TMAG-K5635 18S product 0 length 1790 kmer count stats mean 255.37 median 241.5 min 165 max 370
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -330,7 +394,7 @@ gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
 agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
 taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
 cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
-gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
 ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
 agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
 gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
@@ -341,16 +405,16 @@ accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
 aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
 tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
 gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
-tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattcccga
 atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
 aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
 agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
 gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
 cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
-tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->OA-Bluebottle 18S product 0 length 1790 kmer count stats mean 27.46 median 26 min 9 max 46
+>TMAG-K5636 18S product 0 length 1790 kmer count stats mean 151.81 median 146 min 104 max 233
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -362,7 +426,7 @@ gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
 agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
 taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
 cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
-gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
 ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
 agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
 gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
@@ -373,16 +437,16 @@ accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
 aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
 tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
 gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
-tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattcccga
 atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
 aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
 agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
 gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
 cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
-tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ88480 18S product 0 length 1790 kmer count stats mean 79.46 median 78 min 48 max 110
+>WAM-Z88480 18S product 0 length 1790 kmer count stats mean 79.74 median 78 min 49 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -414,7 +478,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97900 18S product 0 length 1790 kmer count stats mean 78.23 median 76.5 min 54 max 104
+>WAM-Z97900 18S product 0 length 1790 kmer count stats mean 79.18 median 78 min 57 max 104
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -446,7 +510,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97901 18S product 0 length 1790 kmer count stats mean 86.25 median 85 min 60 max 116
+>WAM-Z97901 18S product 0 length 1790 kmer count stats mean 86.58 median 86 min 61 max 116
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -478,7 +542,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97902 18S product 0 length 1790 kmer count stats mean 663.75 median 661 min 593 max 750
+>WAM-Z97902 18S product 0 length 1790 kmer count stats mean 66.63 median 66 min 45 max 96
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -510,7 +574,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97903 18S product 0 length 1790 kmer count stats mean 54.24 median 55 min 32 max 75
+>WAM-Z97903 18S product 0 length 1790 kmer count stats mean 54.62 median 55 min 32 max 76
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -542,7 +606,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97906 18S product 0 length 1790 kmer count stats mean 34.92 median 35 min 16 max 51
+>WAM-Z97906 18S product 0 length 1790 kmer count stats mean 34.97 median 35 min 16 max 51
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -574,7 +638,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97907 18S product 0 length 1790 kmer count stats mean 724.22 median 724 min 624 max 834
+>WAM-Z97907 18S product 0 length 1790 kmer count stats mean 72.37 median 73 min 53 max 91
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -606,7 +670,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97908 18S product 0 length 1790 kmer count stats mean 83.80 median 83 min 64 max 106
+>WAM-Z97908 18S product 0 length 1790 kmer count stats mean 80.60 median 80 min 58 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -638,7 +702,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97910 18S product 0 length 1790 kmer count stats mean 722.53 median 731 min 607 max 798
+>WAM-Z97910 18S product 0 length 1790 kmer count stats mean 71.88 median 72 min 46 max 101
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -670,7 +734,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97911 18S product 0 length 1790 kmer count stats mean 1070.05 median 1077 min 923 max 1172
+>WAM-Z97911 18S product 0 length 1790 kmer count stats mean 107.90 median 108 min 78 max 136
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -702,7 +766,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97914 18S product 0 length 1790 kmer count stats mean 56.83 median 56 min 34 max 82
+>WAM-Z97914 18S product 0 length 1790 kmer count stats mean 53.40 median 53 min 34 max 70
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -734,7 +798,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97916 18S product 0 length 1790 kmer count stats mean 31.60 median 32 min 17 max 45
+>WAM-Z97916 18S product 0 length 1790 kmer count stats mean 31.74 median 31 min 18 max 45
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -766,7 +830,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97917 18S product 0 length 1790 kmer count stats mean 111.89 median 112 min 76 max 140
+>WAM-Z97917 18S product 0 length 1790 kmer count stats mean 112.26 median 112 min 77 max 141
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -798,7 +862,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97920 18S product 0 length 1790 kmer count stats mean 119.43 median 121 min 74 max 156
+>WAM-Z97920 18S product 0 length 1790 kmer count stats mean 120.23 median 121 min 76 max 157
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -830,7 +894,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97921 18S product 0 length 1790 kmer count stats mean 92.37 median 90 min 66 max 127
+>WAM-Z97921 18S product 0 length 1790 kmer count stats mean 92.89 median 90 min 67 max 127
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -862,7 +926,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->WAMZ97923 18S product 0 length 1790 kmer count stats mean 17.14 median 16 min 7 max 33
+>WAM-Z97923 18S product 0 length 1790 kmer count stats mean 17.17 median 16 min 7 max 33
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -894,7 +958,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-104460 18S product 0 length 1790 kmer count stats mean 22.40 median 22 min 13 max 37
+>YPM-IZ-104460 18S product 0 length 1790 kmer count stats mean 22.39 median 22 min 13 max 37
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -926,7 +990,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-104461 18S product 0 length 1790 kmer count stats mean 103.08 median 104 min 71 max 132
+>YPM-IZ-104461 18S product 0 length 1790 kmer count stats mean 102.96 median 103 min 71 max 132
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -958,7 +1022,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-104464 18S product 0 length 1790 kmer count stats mean 62.35 median 63 min 36 max 82
+>YPM-IZ-104464 18S product 0 length 1790 kmer count stats mean 62.74 median 64 min 36 max 83
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -990,7 +1054,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-104465 18S product 0 length 1790 kmer count stats mean 19.00 median 19 min 7 max 31
+>YPM-IZ-104465 18S product 0 length 1790 kmer count stats mean 19.15 median 19 min 7 max 31
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1022,7 +1086,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106919 18S product 0 length 1790 kmer count stats mean 29.33 median 29 min 12 max 52
+>YPM-IZ-106919 18S product 0 length 1790 kmer count stats mean 29.32 median 29 min 12 max 52
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1054,7 +1118,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106920 18S product 0 length 1790 kmer count stats mean 68.68 median 69 min 50 max 89
+>YPM-IZ-106920 18S product 0 length 1790 kmer count stats mean 69.30 median 69 min 49 max 89
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1086,7 +1150,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106923 18S product 0 length 1790 kmer count stats mean 42.72 median 42 min 29 max 70
+>YPM-IZ-106923 18S product 0 length 1790 kmer count stats mean 43.26 median 43 min 29 max 69
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1118,7 +1182,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106935 18S product 0 length 1790 kmer count stats mean 36.93 median 36 min 19 max 56
+>YPM-IZ-106935 18S product 0 length 1790 kmer count stats mean 36.91 median 36 min 19 max 56
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1150,7 +1214,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106936 18S product 0 length 1790 kmer count stats mean 96.49 median 99 min 40 max 134
+>YPM-IZ-106936 18S product 0 length 1790 kmer count stats mean 96.57 median 99 min 40 max 134
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1182,7 +1246,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106937 18S product 0 length 1790 kmer count stats mean 46.91 median 48 min 29 max 62
+>YPM-IZ-106937 18S product 0 length 1790 kmer count stats mean 46.89 median 48 min 29 max 62
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1214,7 +1278,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106941 18S product 0 length 1790 kmer count stats mean 188.14 median 186 min 119 max 238
+>YPM-IZ-106941 18S product 0 length 1790 kmer count stats mean 188.15 median 186 min 120 max 238
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1246,7 +1310,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106943 18S product 0 length 1790 kmer count stats mean 80.89 median 81 min 62 max 106
+>YPM-IZ-106943 18S product 0 length 1790 kmer count stats mean 82.17 median 83 min 63 max 106
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1278,7 +1342,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106954 18S product 0 length 1790 kmer count stats mean 78.58 median 78 min 61 max 109
+>YPM-IZ-106954 18S product 0 length 1790 kmer count stats mean 79.33 median 79 min 63 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1310,7 +1374,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-106958 18S product 0 length 1790 kmer count stats mean 61.66 median 63 min 32 max 92
+>YPM-IZ-106958 18S product 0 length 1790 kmer count stats mean 61.67 median 63 min 32 max 92
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1342,7 +1406,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110251 18S product 0 length 1790 kmer count stats mean 79.02 median 78 min 58 max 117
+>YPM-IZ-110251 18S product 0 length 1790 kmer count stats mean 79.64 median 79 min 57 max 119
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1374,7 +1438,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110254 18S product 0 length 1790 kmer count stats mean 61.99 median 60 min 43 max 86
+>YPM-IZ-110254 18S product 0 length 1790 kmer count stats mean 62.70 median 61 min 43 max 86
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1406,7 +1470,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110264 18S product 0 length 1790 kmer count stats mean 43.47 median 43 min 21 max 63
+>YPM-IZ-110264 18S product 0 length 1790 kmer count stats mean 43.45 median 43 min 21 max 63
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1438,7 +1502,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110268 18S product 0 length 1790 kmer count stats mean 245.48 median 251 min 171 max 291
+>YPM-IZ-110268 18S product 0 length 1790 kmer count stats mean 245.39 median 251 min 171 max 291
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1470,7 +1534,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110269 18S product 0 length 1790 kmer count stats mean 57.35 median 56 min 37 max 81
+>YPM-IZ-110269 18S product 0 length 1790 kmer count stats mean 57.24 median 56 min 37 max 81
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1502,7 +1566,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110276 18S product 0 length 1790 kmer count stats mean 141.72 median 143 min 93 max 179
+>YPM-IZ-110276 18S product 0 length 1790 kmer count stats mean 141.80 median 143 min 93 max 178
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1534,7 +1598,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110277 18S product 0 length 1790 kmer count stats mean 167.17 median 171 min 106 max 202
+>YPM-IZ-110277 18S product 0 length 1790 kmer count stats mean 167.27 median 171 min 106 max 202
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1566,7 +1630,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110278 18S product 0 length 1790 kmer count stats mean 136.03 median 137 min 92 max 167
+>YPM-IZ-110278 18S product 0 length 1790 kmer count stats mean 135.95 median 137 min 90 max 167
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1598,7 +1662,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110433 18S product 0 length 1790 kmer count stats mean 88.55 median 89 min 60 max 113
+>YPM-IZ-110433 18S product 0 length 1790 kmer count stats mean 88.59 median 89 min 60 max 113
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1630,7 +1694,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110438 18S product 0 length 1790 kmer count stats mean 46.43 median 47 min 23 max 69
+>YPM-IZ-110434 18S product 0 length 1790 kmer count stats mean 95.31 median 92 min 64 max 138
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1662,7 +1726,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110443 18S product 0 length 1790 kmer count stats mean 70.25 median 70 min 48 max 111
+>YPM-IZ-110436 18S product 0 length 1790 kmer count stats mean 74.75 median 75 min 44 max 100
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1694,7 +1758,71 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110460 18S product 0 length 1790 kmer count stats mean 60.57 median 59 min 46 max 87
+>YPM-IZ-110438 18S product 0 length 1790 kmer count stats mean 46.46 median 47 min 23 max 69
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-110443 18S product 0 length 1790 kmer count stats mean 70.74 median 71 min 48 max 113
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-110460 18S product 0 length 1790 kmer count stats mean 60.57 median 59 min 46 max 86
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1726,7 +1854,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110467 18S product 0 length 1790 kmer count stats mean 121.11 median 123 min 75 max 153
+>YPM-IZ-110467 18S product 0 length 1790 kmer count stats mean 121.52 median 124 min 74 max 153
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1758,7 +1886,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110468 18S product 0 length 1790 kmer count stats mean 136.64 median 140 min 92 max 161
+>YPM-IZ-110468 18S product 0 length 1790 kmer count stats mean 136.69 median 140 min 92 max 161
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1790,7 +1918,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110469 18S product 0 length 1790 kmer count stats mean 115.84 median 116 min 64 max 154
+>YPM-IZ-110469 18S product 0 length 1790 kmer count stats mean 116.14 median 116 min 65 max 155
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1822,7 +1950,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110470 18S product 0 length 1790 kmer count stats mean 122.86 median 121 min 90 max 156
+>YPM-IZ-110470 18S product 0 length 1790 kmer count stats mean 123.02 median 122 min 90 max 156
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1854,7 +1982,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110471 18S product 0 length 1790 kmer count stats mean 41.74 median 42 min 26 max 57
+>YPM-IZ-110471 18S product 0 length 1790 kmer count stats mean 42.18 median 42 min 27 max 58
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1886,7 +2014,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110473 18S product 0 length 1790 kmer count stats mean 72.67 median 69 min 50 max 112
+>YPM-IZ-110473 18S product 0 length 1790 kmer count stats mean 72.62 median 69 min 50 max 112
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1918,7 +2046,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110474 18S product 0 length 1790 kmer count stats mean 74.18 median 75 min 46 max 110
+>YPM-IZ-110474 18S product 0 length 1790 kmer count stats mean 74.20 median 75 min 46 max 111
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1950,7 +2078,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110480 18S product 0 length 1790 kmer count stats mean 49.99 median 50 min 31 max 74
+>YPM-IZ-110480 18S product 0 length 1790 kmer count stats mean 50.19 median 50 min 31 max 74
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -1982,7 +2110,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110515 18S product 0 length 1790 kmer count stats mean 74.69 median 75 min 46 max 98
+>YPM-IZ-110515 18S product 0 length 1790 kmer count stats mean 74.76 median 75 min 46 max 99
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2014,7 +2142,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110520 18S product 0 length 1790 kmer count stats mean 37.83 median 36 min 23 max 58
+>YPM-IZ-110520 18S product 0 length 1790 kmer count stats mean 37.92 median 37 min 23 max 58
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2046,7 +2174,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110526 18S product 0 length 1790 kmer count stats mean 50.56 median 50 min 34 max 71
+>YPM-IZ-110526 18S product 0 length 1790 kmer count stats mean 50.60 median 50 min 34 max 71
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2078,7 +2206,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110556 18S product 1 length 1790 kmer count stats mean 127.88 median 128 min 80 max 161
+>YPM-IZ-110556 18S product 0 length 1790 kmer count stats mean 119.55 median 122 min 77 max 148
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2110,7 +2238,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110557 18S product 0 length 1790 kmer count stats mean 173.30 median 176 min 120 max 224
+>YPM-IZ-110557 18S product 0 length 1790 kmer count stats mean 173.53 median 176 min 120 max 225
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2142,7 +2270,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110558 18S product 0 length 1790 kmer count stats mean 71.09 median 71 min 39 max 96
+>YPM-IZ-110558 18S product 0 length 1790 kmer count stats mean 71.07 median 71.5 min 39 max 96
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2174,7 +2302,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110566 18S product 0 length 1790 kmer count stats mean 72.79 median 73 min 55 max 93
+>YPM-IZ-110566 18S product 0 length 1790 kmer count stats mean 72.80 median 73 min 55 max 93
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2206,7 +2334,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110569 18S product 0 length 1790 kmer count stats mean 48.34 median 47 min 33 max 77
+>YPM-IZ-110569 18S product 0 length 1790 kmer count stats mean 48.49 median 47 min 34 max 77
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2238,7 +2366,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110600 18S product 0 length 1790 kmer count stats mean 102.05 median 102 min 71 max 133
+>YPM-IZ-110600 18S product 0 length 1790 kmer count stats mean 102.15 median 102 min 71 max 133
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2270,7 +2398,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110602 18S product 0 length 1790 kmer count stats mean 60.65 median 61 min 34 max 79
+>YPM-IZ-110602 18S product 0 length 1790 kmer count stats mean 60.74 median 61 min 34 max 80
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2302,7 +2430,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110605 18S product 0 length 1790 kmer count stats mean 55.96 median 55 min 37 max 81
+>YPM-IZ-110605 18S product 0 length 1790 kmer count stats mean 56.20 median 55 min 38 max 82
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2334,7 +2462,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110612 18S product 0 length 1790 kmer count stats mean 94.81 median 95 min 76 max 117
+>YPM-IZ-110612 18S product 0 length 1790 kmer count stats mean 94.86 median 94 min 77 max 118
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2366,7 +2494,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110613 18S product 0 length 1790 kmer count stats mean 74.44 median 73 min 44 max 106
+>YPM-IZ-110613 18S product 0 length 1790 kmer count stats mean 74.39 median 73 min 44 max 106
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2398,7 +2526,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110616 18S product 0 length 1790 kmer count stats mean 22.99 median 23 min 11 max 35
+>YPM-IZ-110616 18S product 0 length 1790 kmer count stats mean 23.02 median 23 min 11 max 35
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2430,7 +2558,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110631 18S product 0 length 1790 kmer count stats mean 81.19 median 81 min 55 max 104
+>YPM-IZ-110631 18S product 0 length 1790 kmer count stats mean 81.76 median 81 min 55 max 105
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2462,7 +2590,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110633 18S product 0 length 1790 kmer count stats mean 62.22 median 63 min 34 max 83
+>YPM-IZ-110633 18S product 0 length 1790 kmer count stats mean 63.40 median 64 min 34 max 83
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2494,7 +2622,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110667 18S product 0 length 1790 kmer count stats mean 63.01 median 64 min 40 max 87
+>YPM-IZ-110667 18S product 0 length 1790 kmer count stats mean 64.29 median 65 min 40 max 88
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2526,7 +2654,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110694 18S product 0 length 1790 kmer count stats mean 58.86 median 59 min 36 max 79
+>YPM-IZ-110694 18S product 0 length 1790 kmer count stats mean 59.39 median 59 min 37 max 80
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2558,7 +2686,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110716 18S product 0 length 1790 kmer count stats mean 37.46 median 38 min 15 max 61
+>YPM-IZ-110716 18S product 0 length 1790 kmer count stats mean 37.53 median 38 min 15 max 61
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2590,7 +2718,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110726 18S product 0 length 1790 kmer count stats mean 97.22 median 97 min 66 max 120
+>YPM-IZ-110726 18S product 0 length 1790 kmer count stats mean 97.77 median 98 min 66 max 121
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2622,7 +2750,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110738 18S product 0 length 1790 kmer count stats mean 43.72 median 43 min 27 max 62
+>YPM-IZ-110738 18S product 0 length 1790 kmer count stats mean 43.98 median 44 min 27 max 62
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2654,7 +2782,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110777 18S product 0 length 1790 kmer count stats mean 109.21 median 109 min 77 max 136
+>YPM-IZ-110777 18S product 0 length 1790 kmer count stats mean 110.28 median 110 min 80 max 140
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2686,7 +2814,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110780 18S product 0 length 1790 kmer count stats mean 39.13 median 39 min 27 max 55
+>YPM-IZ-110780 18S product 0 length 1790 kmer count stats mean 39.61 median 39 min 28 max 55
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2718,7 +2846,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110785 18S product 0 length 1790 kmer count stats mean 69.09 median 69 min 49 max 86
+>YPM-IZ-110785 18S product 0 length 1790 kmer count stats mean 69.62 median 69 min 51 max 86
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2750,7 +2878,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110786 18S product 0 length 1790 kmer count stats mean 41.61 median 42 min 25 max 58
+>YPM-IZ-110786 18S product 0 length 1790 kmer count stats mean 42.37 median 42 min 25 max 59
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2782,7 +2910,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110828 18S product 0 length 1790 kmer count stats mean 64.45 median 64 min 45 max 87
+>YPM-IZ-110828 18S product 0 length 1790 kmer count stats mean 69.09 median 68 min 49 max 91
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2814,7 +2942,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110829 18S product 0 length 1790 kmer count stats mean 81.83 median 80 min 51 max 128
+>YPM-IZ-110829 18S product 0 length 1790 kmer count stats mean 81.95 median 80 min 53 max 128
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2846,7 +2974,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110830 18S product 0 length 1790 kmer count stats mean 40.03 median 39 min 27 max 59
+>YPM-IZ-110830 18S product 0 length 1790 kmer count stats mean 41.29 median 41 min 28 max 59
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2878,7 +3006,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110842 18S product 0 length 1790 kmer count stats mean 91.52 median 91 min 62 max 121
+>YPM-IZ-110842 18S product 0 length 1790 kmer count stats mean 89.88 median 90 min 62 max 116
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2910,7 +3038,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110843 18S product 0 length 1790 kmer count stats mean 36.11 median 37 min 19 max 54
+>YPM-IZ-110843 18S product 0 length 1790 kmer count stats mean 36.49 median 38 min 19 max 53
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2942,7 +3070,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110844 18S product 0 length 1790 kmer count stats mean 66.54 median 66 min 42 max 87
+>YPM-IZ-110844 18S product 0 length 1790 kmer count stats mean 67.23 median 67 min 42 max 89
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -2974,7 +3102,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110845 18S product 0 length 1790 kmer count stats mean 73.25 median 73 min 55 max 92
+>YPM-IZ-110845 18S product 0 length 1790 kmer count stats mean 73.47 median 73 min 55 max 92
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3006,7 +3134,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110846 18S product 0 length 1790 kmer count stats mean 57.12 median 56 min 40 max 83
+>YPM-IZ-110846 18S product 0 length 1790 kmer count stats mean 57.80 median 57 min 40 max 83
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3038,7 +3166,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110847 18S product 0 length 1790 kmer count stats mean 87.64 median 88 min 63 max 112
+>YPM-IZ-110847 18S product 0 length 1790 kmer count stats mean 88.50 median 89 min 63 max 112
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3070,7 +3198,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110876 18S product 0 length 1790 kmer count stats mean 48.01 median 49 min 21 max 72
+>YPM-IZ-110876 18S product 0 length 1790 kmer count stats mean 48.18 median 49 min 21 max 72
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3102,7 +3230,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110877 18S product 0 length 1790 kmer count stats mean 45.46 median 45 min 15 max 71
+>YPM-IZ-110877 18S product 0 length 1790 kmer count stats mean 45.42 median 45 min 15 max 71
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3166,7 +3294,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110880 18S product 0 length 1790 kmer count stats mean 66.44 median 67 min 41 max 87
+>YPM-IZ-110880 18S product 0 length 1790 kmer count stats mean 67.15 median 68 min 41 max 88
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3198,7 +3326,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110881 18S product 0 length 1790 kmer count stats mean 71.74 median 73 min 54 max 97
+>YPM-IZ-110881 18S product 0 length 1790 kmer count stats mean 72.00 median 73 min 54 max 98
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3230,7 +3358,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110882 18S product 0 length 1790 kmer count stats mean 63.71 median 62 min 48 max 85
+>YPM-IZ-110882 18S product 0 length 1790 kmer count stats mean 63.76 median 63 min 48 max 85
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3262,7 +3390,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110883 18S product 0 length 1790 kmer count stats mean 66.99 median 66 min 39 max 98
+>YPM-IZ-110883 18S product 0 length 1790 kmer count stats mean 67.05 median 66 min 39 max 98
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3294,7 +3422,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110906 18S product 0 length 1790 kmer count stats mean 66.42 median 66 min 46 max 87
+>YPM-IZ-110906 18S product 0 length 1790 kmer count stats mean 66.61 median 66 min 46 max 88
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3326,7 +3454,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110907 18S product 0 length 1790 kmer count stats mean 66.89 median 65 min 44 max 93
+>YPM-IZ-110907 18S product 0 length 1790 kmer count stats mean 67.10 median 65 min 44 max 93
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3358,7 +3486,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110925 18S product 0 length 1790 kmer count stats mean 53.56 median 53 min 37 max 72
+>YPM-IZ-110925 18S product 0 length 1790 kmer count stats mean 53.98 median 54 min 37 max 73
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3390,7 +3518,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110926 18S product 0 length 1790 kmer count stats mean 38.03 median 37 min 23 max 54
+>YPM-IZ-110926 18S product 0 length 1790 kmer count stats mean 38.19 median 37 min 24 max 54
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3422,7 +3550,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110930 18S product 0 length 1790 kmer count stats mean 68.75 median 69 min 47 max 91
+>YPM-IZ-110930 18S product 0 length 1790 kmer count stats mean 69.24 median 70 min 48 max 91
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3454,7 +3582,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110931 18S product 0 length 1790 kmer count stats mean 100.90 median 102 min 70 max 131
+>YPM-IZ-110931 18S product 0 length 1790 kmer count stats mean 101.47 median 102 min 71 max 132
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3486,7 +3614,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110933 18S product 0 length 1790 kmer count stats mean 36.81 median 36 min 19 max 53
+>YPM-IZ-110933 18S product 0 length 1790 kmer count stats mean 36.81 median 37 min 19 max 52
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3518,7 +3646,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110937 18S product 0 length 1790 kmer count stats mean 77.91 median 77 min 50 max 106
+>YPM-IZ-110937 18S product 0 length 1790 kmer count stats mean 77.80 median 77 min 50 max 106
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3550,7 +3678,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110938 18S product 0 length 1790 kmer count stats mean 9.73 median 9 min 5 max 16
+>YPM-IZ-110938 18S product 0 length 1790 kmer count stats mean 9.71 median 9 min 5 max 16
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3582,7 +3710,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110943 18S product 0 length 1790 kmer count stats mean 92.31 median 92 min 57 max 120
+>YPM-IZ-110943 18S product 0 length 1790 kmer count stats mean 93.23 median 93 min 57 max 120
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3614,7 +3742,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-110972 18S product 3 length 1790 kmer count stats mean 90.59 median 90.5 min 53 max 132
+>YPM-IZ-110972 18S product 3 length 1790 kmer count stats mean 90.50 median 91 min 53 max 132
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3646,7 +3774,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111006 18S product 0 length 1790 kmer count stats mean 47.17 median 45 min 26 max 71
+>YPM-IZ-111006 18S product 0 length 1790 kmer count stats mean 47.55 median 45 min 30 max 73
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3678,7 +3806,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111007 18S product 0 length 1790 kmer count stats mean 38.57 median 38 min 26 max 60
+>YPM-IZ-111007 18S product 0 length 1790 kmer count stats mean 38.53 median 38 min 26 max 60
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3710,7 +3838,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111008 18S product 0 length 1790 kmer count stats mean 75.24 median 76 min 57 max 96
+>YPM-IZ-111008 18S product 0 length 1790 kmer count stats mean 75.47 median 76 min 58 max 95
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3742,7 +3870,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111009 18S product 0 length 1790 kmer count stats mean 53.76 median 53 min 27 max 78
+>YPM-IZ-111009 18S product 0 length 1790 kmer count stats mean 53.86 median 53 min 27 max 78
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3774,7 +3902,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111010 18S product 0 length 1790 kmer count stats mean 54.66 median 54 min 37 max 79
+>YPM-IZ-111010 18S product 0 length 1790 kmer count stats mean 54.82 median 54 min 38 max 80
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3806,7 +3934,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111012 18S product 0 length 1790 kmer count stats mean 88.21 median 87 min 66 max 124
+>YPM-IZ-111012 18S product 0 length 1790 kmer count stats mean 90.94 median 90 min 67 max 129
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3838,7 +3966,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111013 18S product 0 length 1790 kmer count stats mean 75.36 median 75 min 56 max 93
+>YPM-IZ-111013 18S product 0 length 1790 kmer count stats mean 76.94 median 77 min 59 max 98
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3870,7 +3998,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111014 18S product 0 length 1790 kmer count stats mean 50.59 median 51 min 30 max 68
+>YPM-IZ-111014 18S product 0 length 1790 kmer count stats mean 50.73 median 51 min 30 max 69
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3902,7 +4030,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111016 18S product 0 length 1790 kmer count stats mean 77.68 median 78 min 53 max 101
+>YPM-IZ-111016 18S product 0 length 1790 kmer count stats mean 78.52 median 78 min 53 max 102
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3934,7 +4062,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111017 18S product 0 length 1790 kmer count stats mean 46.31 median 46 min 27 max 67
+>YPM-IZ-111017 18S product 0 length 1790 kmer count stats mean 46.46 median 47 min 27 max 67
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3966,7 +4094,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111018 18S product 0 length 1790 kmer count stats mean 56.10 median 57 min 32 max 72
+>YPM-IZ-111018 18S product 0 length 1790 kmer count stats mean 56.40 median 57 min 33 max 73
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -3998,7 +4126,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111156 18S product 1 length 1790 kmer count stats mean 40.93 median 41 min 18 max 60
+>YPM-IZ-111156 18S product 1 length 1790 kmer count stats mean 41.23 median 41 min 18 max 60
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4030,7 +4158,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111157 18S product 0 length 1790 kmer count stats mean 81.56 median 83 min 44 max 110
+>YPM-IZ-111157 18S product 0 length 1790 kmer count stats mean 82.79 median 84 min 46 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4062,7 +4190,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111158 18S product 0 length 1790 kmer count stats mean 56.70 median 54 min 35 max 84
+>YPM-IZ-111158 18S product 0 length 1790 kmer count stats mean 57.52 median 55 min 35 max 85
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4094,7 +4222,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111159 18S product 0 length 1790 kmer count stats mean 63.49 median 66 min 36 max 87
+>YPM-IZ-111159 18S product 0 length 1790 kmer count stats mean 63.69 median 66 min 36 max 88
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4126,7 +4254,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111160 18S product 0 length 1790 kmer count stats mean 53.27 median 52 min 34 max 80
+>YPM-IZ-111160 18S product 0 length 1790 kmer count stats mean 53.85 median 52.5 min 35 max 82
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4158,7 +4286,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111163 18S product 0 length 1790 kmer count stats mean 59.67 median 59 min 44 max 81
+>YPM-IZ-111163 18S product 0 length 1790 kmer count stats mean 59.87 median 60 min 44 max 81
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4190,39 +4318,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111207 18S product 0 length 1790 kmer count stats mean 90.06 median 90 min 66 max 123
-------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
-atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
-tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
-gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
-ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
-ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
-atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
-gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
-agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
-taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
-cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
-gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
-ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
-agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
-gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
-cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
-atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
-taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
-accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
-aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
-tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
-gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
-tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattcccga
-atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
-aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
-agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
-gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
-cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
-tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
-gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
-gc------------------------g
->YPM-IZ-111208 18S product 0 length 1790 kmer count stats mean 107.80 median 107 min 82 max 136
+>YPM-IZ-111207 18S product 0 length 1790 kmer count stats mean 96.64 median 98 min 66 max 119
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4254,7 +4350,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111209 18S product 0 length 1790 kmer count stats mean 79.67 median 80 min 49 max 110
+>YPM-IZ-111208 18S product 0 length 1790 kmer count stats mean 108.27 median 110 min 73 max 134
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4286,7 +4382,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111210 18S product 0 length 1790 kmer count stats mean 83.54 median 83 min 60 max 111
+>YPM-IZ-111209 18S product 0 length 1790 kmer count stats mean 80.09 median 80 min 50 max 110
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4318,7 +4414,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111211 18S product 0 length 1790 kmer count stats mean 95.84 median 96 min 73 max 118
+>YPM-IZ-111210 18S product 0 length 1790 kmer count stats mean 74.25 median 74 min 50 max 101
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4350,7 +4446,7 @@ cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g
->YPM-IZ-111212 18S product 0 length 1790 kmer count stats mean 70.25 median 68 min 37 max 110
+>YPM-IZ-111241 18S product 0 length 1790 kmer count stats mean 74.30 median 74 min 48 max 100
 ------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
 atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
 tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
@@ -4380,5 +4476,485 @@ agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
 gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
 cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
 tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111243 18S product 0 length 1790 kmer count stats mean 132.47 median 133 min 95 max 170
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattcccga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111495 18S product 0 length 1790 kmer count stats mean 145.47 median 149 min 104 max 185
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111513 18S product 0 length 1790 kmer count stats mean 89.30 median 89 min 55 max 121
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111514 18S product 0 length 1790 kmer count stats mean 36.52 median 37 min 21 max 50
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111517 18S product 0 length 1790 kmer count stats mean 50.14 median 49 min 34 max 74
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111518 18S product 0 length 1790 kmer count stats mean 100.35 median 97 min 61 max 146
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111519 18S product 1 length 1790 kmer count stats mean 51.15 median 51 min 22 max 78
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111520 18S product 0 length 1790 kmer count stats mean 110.70 median 113 min 84 max 143
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111521 18S product 0 length 1790 kmer count stats mean 95.21 median 94 min 69 max 130
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111529 18S product 0 length 1790 kmer count stats mean 203.57 median 203 min 169 max 237
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111530 18S product 0 length 1790 kmer count stats mean 90.56 median 90 min 60 max 120
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111539 18S product 0 length 1790 kmer count stats mean 86.07 median 87 min 64 max 121
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcaaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcgcggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111547 18S product 0 length 1790 kmer count stats mean 52.36 median 51 min 34 max 79
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111839 18S product 0 length 1790 kmer count stats mean 150.22 median 152 min 113 max 179
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
+gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
+gc------------------------g
+>YPM-IZ-111840 18S product 0 length 1790 kmer count stats mean 30.51 median 31 min 15 max 43
+------------gttgatcctgccagtagtcatatgcttgtctcaaagattaagccatgc
+atgtctaagtataagcacttgtactgtgaaactgcgaatggctcattaaatcagttatcg
+tttatttgattgtacttttactacatggatacctgtggtaattctagagctaatacatgc
+gaaaaatcccgacttctggaagggatgtatttattagattaaaaaccaatgcgggttctc
+ttttgagctcgttttcttggtgattcatgataacttttcgaatcgcatggcctttgcgcc
+ggcgatgtttcattcaaatttctgccctatcaactgtcgatggtaaggtagtggcttacc
+atggttgtaacgggtgacggagaattagggttcgattccggagagggagcctgagaaacg
+gctaccacatctaaggaaggcagcaggcacgaaaattacccaatcccgactcggggaggt
+agtgacaagaaataacgatacggggtcttaataggtctcgcaattggaatgagtacaatt
+taaatcctttaacgaggatcaattggagggcaagtctggtgccagcagccgcggtaattc
+cagctccaatagcgtatattaaagttgttgcagttaaaaagctcgtagttggatttcgga
+gtgggccagtcggtccgccgcgaggtgtg-tactgattggtctgctcttcttcgcaaaga
+ctccgcgtgcgcttcgctgtgtgtgcgtaggatttgcgacgtttactttgaaaaaattag
+agtgttcaaagcaggctatcgcttgaatacatgagcatggaataatggaataggactttg
+gtcccattttgttggtttctaggaccgaagtaatgattaagagggacaattgggggcatc
+cgtatttcgttgtcagaggtgaaattcttggatttacgaaagacgaacaactgcgaaagc
+atttgccaagagtgttttcattaatcaagaacgaaagttagaggatcgaagacgatcaga
+taccgtcctagttctaaccataaacgatgtcgactagggatcagcgggcgttattgtacg
+accccgttggcaccttacgggaaaccaaagtttttggattccgggggaagtatggttgca
+aaattgaaacttaaaggaattgacggaagggcaccaccaggagtggagcctgtggctcaa
+tttgactcaacacgggaaaacttaccaggtccagacatagtaaggattgacaggttgaga
+gccctttcttgattctatgggtggtggtgcatggccgttcttagttggtggagtgatttg
+tctggttaattccgttaacgaacgagaccttaaccggctaaatagtcatgcgattctcga
+atcgtaattgacttcttagagggactgttggtgtttaatcaaagtcaggaaggcaataac
+aggtctgtgatgcccttagatgttctgggccgcacgcgcgctacactgtcggattcaacg
+agtcttaaccttaaccgaaaggtttgggtaatcttttgaaagtccgacgtgatggggatt
+gatcattgcaattattgatcatgaacgaggaattcctagtaagcgcgagtcatcagctcg
+cgttgattacgtccctgccctttgtacacaccgcccgtcgctactaccgattgaatgatt
+tagtgagatcttcggattggtatcgtcgcgtcttcacggatgcgacgaggctgaaaagtt
 gctcaaacttgatcatttagaggaagtaaaagtcgtaacaaggtttccgtaggtgaacct
 gc------------------------g

@@ -1,0 +1,9 @@
+PCAngsd v1.11
+Time: 19/12/2024 10:42:24
+Directory: /vast/palmer/pi/dunn/sc2962/20240918_Physalia_PopGen_chrom/B2_analysis
+Options:
+	-beagle /gpfs/gibbs/pi/dunn/sc2962/20240918_Physalia_PopGen_chrom/B2_results/angsd/B2.beagle.gz
+	-threads 32
+	-out /gpfs/gibbs/pi/dunn/sc2962/20240918_Physalia_PopGen_chrom/B2_results/pcangsd/B2
+	-admix
+	-admix_alpha 50.0
