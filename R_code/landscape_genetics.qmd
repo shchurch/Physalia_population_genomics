@@ -42,12 +42,21 @@ sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) 
   separate(lat_long,into=c("lat","long"),sep=", ")
 locations <- sample_info %>% pull(location) %>% unique()
 
-colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#DAA520","#DC143C","#FC8D62","#452a00","#686f80","#66C2A5","#B3B3B3")
 names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
 
 ocean_levels <- c("Gulf of Mexico","NW Atlantic","NE Atlantic","SW Atlantic","W Indian","E Indian","SW Pacific","NW Pacific","Central Pacific","Gulf of California","SE Pacific")
 sample_info$ocean <- factor(sample_info$ocean,levels=ocean_levels)
 
+shapes <- c(15,16,17,25,22,23,8,3,
+            10,23,8,4,15,3,16,17,25,22,
+            7,12,10,
+            10,5)
+names(shapes) <- c("Texas","Florida","Bermuda","Northeast US","Azores","Canary Islands","Spain","Ireland",
+  "Central Pacific","Hawai'i","NW Hawaiian Islands","Guam","Japan","Queensland","New South Wales","Western Australia","South Africa","Uruguay",
+  "Chile","Tasmania","Tasman Sea",
+  "Mexico","New Zealand")
+  
 # set up the globe and projection
 LeftBound = -90
 world <- ne_countries(scale = "medium", returnclass = "sf") %>% st_set_crs(4326)
@@ -58,46 +67,50 @@ world2 = world %>% st_break_antimeridian(lon_0 = LeftBound) %>% st_transform(crs
 ```{r setup-pc}
 set.seed(123)
 
-#   dir <- "../results/physalis_results/"
-#   name <- "physalis"
-#   bam_list <- paste0(dir,"physalis.filelist")
-#   LeftBound = -40 # utriculus 65, # physalis -40 # megalista 150
-#   xlims <- c(-5531246,4988384)
-#   ylims <- c(1752559,6526207)
-#   k <- 2
+   dir <- "../results/physalis_results/"
+   name <- "physalis"
+   bam_list <- paste0(dir,"physalis.filelist")
+   LeftBound = -40 
+   xlims <- c(-5531246,4988384)
+   ylims <- c(1752559,6526207)
+   k <- 2
+   a <- -1; b <- 1
 
 #    dir <- "../results/utriculus_results/"
 #    name <- "utriculus"
 #    bam_list <- paste0(dir,"utriculus.filelist")
-#    LeftBound = 65 # utriculus 65, # physalis -40 # megalista 150
+#    LeftBound = 65 
 #    xlims <- c(-10596597,12899112)
 #    ylims <- c(-4630816,4186408)
 #    k <- 3
+#    a <- 1; b <- 1
 
 #    dir <- "../results/B2_results/"
 #    name <- "B2"
 #    bam_list <- paste0(dir,"B2.filelist")
-#    LeftBound = 100 # utriculus 65, # physalis -40 # megalista 150
+#    LeftBound = 100 
 #    xlims <- c(-14596597,13899112)
 #    ylims <- c(-4230816,3986408)
-#    k <- 4
+#    k <- 2
+#    a <- 1; b <- -1
 
-#  dir <- "../results/megalista_results/"
-#  name <- "megalista"
-#  bam_list <- paste0(dir,"megalista.filelist")
-#  LeftBound = 150 # utriculus 65, # physalis -40 # megalista 150
-#   xlims <- c(-10718930,12576348)
-#   ylims <- c(-7635085,0)
-#   k <- 2
+#     dir <- "../results/megalista_results/"
+#     name <- "megalista"
+#     bam_list <- paste0(dir,"megalista.filelist")
+#     LeftBound = 150 
+#     xlims <- c(-10718930,12576348)
+#     ylims <- c(-7635085,0)
+#     k <- 2
+#     a <- 1; b <- 1
 
-  dir <- "../results/C2_results/"
-  name <- "C2"
-  bam_list <- paste0(dir,"C2.filelist")
-  LeftBound = 150 # utriculus 65, # physalis -40 # megalista 150
-   xlims <- c(-2718930,3576348)
-   ylims <- c(-5635085,-3000000)
-   k <- 2
-   a <- -1; b <- 1
+#      dir <- "../results/C2_results/"
+#      name <- "C2"
+#      bam_list <- paste0(dir,"C2.filelist")
+#      LeftBound = 150 
+#      xlims <- c(-2718930,3576348)
+#      ylims <- c(-5635085,-3000000)
+#      k <- 2
+#      a <- 1; b <- 1
 
 PC_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
   apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
@@ -107,17 +120,130 @@ cov <- as.matrix(read.table(paste0(dir,name,".cov")))
 e<-eigen(cov)
 exp_var <- paste0(round(e$values / sum(e$values) *100,1),"%")
 
-kmeans_result <- kmeans(cov, centers = k)
-
 n_vectors <- ncol(e$vectors)
 e_vectors <- e$vectors[,1:n_vectors]
 colnames(e_vectors) <- paste0("PC",seq(1:n_vectors))
-PC_info <- bind_cols(PC_info,e_vectors) %>% mutate(kmeans_cluster = paste0(name,"_",kmeans_result$cluster))
 
 pdf(paste0("../figures/panels/",name,"_cov.pdf"),width=4,height=3,useDingbats=F)
-plot(e$values[0:n_vectors],ylab="eigenvalues",xlab="k",pch=16,cex=0.5)
+plot(e$values[0:n_vectors],ylab="eigenvalues",xlab="k",pch=16,cex=0.5,cex.lab=0.75)
 abline(v=k,lty="dotted")
 dev.off()
+
+write.table(file=paste0("../data/",name,"_locations.tsv"),sep="\t",PC_info %>% select(ID,ocean),row.names=F,quote=F)
+```
+
+
+```{r admix-assignments}
+admix_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
+  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+  left_join(.,sample_info,by="ID")
+
+q <- read.delim(paste0(dir,name,".admix.",k,".Q"),header=F,sep=" ")  %>% 
+    mutate(ID = admix_info$ID, 
+      location = admix_info$location, 
+      ocean = admix_info$ocean,
+      label = paste(location,ID,sep=":")) %>% 
+    tidyr::pivot_longer(cols=starts_with("V"),names_to="PC") %>%
+    group_by(label) %>% 
+    mutate(likely_assignment = paste0(name,":",PC[which.max(value)]),
+           assignment_prob = max(value))
+    
+assignments <- q %>% distinct(ID,likely_assignment)
+
+PC_info <- left_join(PC_info,assignments,by="ID") 
+
+write.table(file=paste0("../data/",name,"_admix_assignments.tsv"),sep="\t",assignments,row.names=F,quote=F)
+```
+
+```{r admix-map}
+# set up the globe and projection
+world <- ne_countries(scale = "medium", returnclass = "sf") %>% st_set_crs(4326)
+robinson = paste("+proj=robin +lon_0=",LeftBound," +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs",sep="")
+world2 = world %>% st_break_antimeridian(lon_0 = LeftBound) %>% st_transform(crs = robinson)
+
+si <- sample_info %>% filter(ID %in% assignments$ID) %>% 
+  mutate(lat = as.numeric(lat), lon = as.numeric(long)) %>% 
+  left_join(.,assignments,by="ID") %>% 
+  mutate(lat = round(lat,0), lon = round(lon,0)) %>% group_by(lat,lon,likely_assignment,location) %>% tally()
+
+transpoint = st_as_sf(si,coords=c("lon","lat"),crs=4326)
+dtran = st_transform(transpoint,robinson)
+
+g1 <- ggplot(data=world2) + geom_sf(fill = "light gray", colour = NA) +
+  coord_sf(xlim = xlims, ylim = ylims) +
+  geom_label_repel(data=dtran,aes(geometry=geometry,label= likely_assignment,fill=likely_assignment),stat="sf_coordinates",color="white",
+    size=4.5,max.overlaps=100,box.padding=0.3,segment.color="dark gray",segment.size=0.5)  + 
+  geom_point(data=dtran,aes(geometry=geometry,color=likely_assignment,shape=location),
+        size=5,alpha=0.75,fill="white",stat="sf_coordinates") + 
+  theme(legend.position = "none") +
+  scale_fill_brewer(palette = "Dark2") +
+  scale_color_brewer(palette = "Dark2") +
+  scale_shape_manual(values = shapes) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+pdf(paste0(file="../figures/panels/",name,"_",k,"_map_assignments.pdf"),height=6,width=10,useDingbats=F)
+print(g1)
+dev.off()
+```
+
+```{r admix-assigments}
+read_q <- function(n,dir,name){
+  admix_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
+  apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
+  left_join(.,sample_info,by="ID")
+
+  q <- read.delim(paste0(dir,name,".admix.",k,".Q"),header=F,sep=" ")  %>% 
+    mutate(ID = admix_info$ID, 
+      location = admix_info$location, 
+      ocean = admix_info$ocean,
+      label = paste(location,ID,sep=":")) %>% 
+    tidyr::pivot_longer(cols=starts_with("V"),names_to="PC") %>%
+    group_by(label) %>% 
+    mutate(likely_assignment = PC[which.max(value)],
+           assignment_prob = max(value)) %>% 
+    arrange(likely_assignment, desc(assignment_prob)) %>% 
+    ungroup()
+
+  #assign_order <- q %>% arrange(match(label,label_order)) %>%
+  #  pull(likely_assignment) %>% unique
+
+  q <- q %>% mutate(fct_label = forcats::fct_inorder(factor(label)),
+          #fct_label = factor(label,levels=q %>% arrange(ocean) %>% pull(label) %>% unique),
+          fct_assign = factor(likely_assignment),#levels=assign_order),
+          fct_PC = factor(PC))#,levels=assign_order)) 
+
+  g <- ggplot(q, aes(fct_label, value, fill=fct_PC)) +
+    #ggplot(q, aes(fct_label, value, fill = ocean)) +
+    geom_col(width=0.95) +
+    facet_grid(~fct_assign, scales = 'free', space = 'free') + 
+    theme(strip.background = element_blank(),strip.text.x = element_blank()) +
+    xlab("") + ylab("") +
+    theme(legend.position="none",axis.text=element_text(size=3),
+      axis.text.x = element_text(angle = 45, hjust=1),
+      axis.ticks.x = element_blank()) 
+
+   return(g)
+}
+
+fct_cols <- RColorBrewer::brewer.pal(name="Dark2",n=8)
+
+admix <- read_q(5,dir,name)
+pdf(paste0("../figures/panels/",name,"_",k,"_admixture.pdf"),height=8,width=35)
+print(admix + scale_fill_manual(values = fct_cols))
+dev.off()
+```
+
+```{r kmeans}
+kmeans_result <- kmeans(cov, centers = k)
+
+PC_info <- bind_cols(PC_info,e_vectors) %>% mutate(kmeans_cluster = paste0(name,"_",kmeans_result$cluster))
+
+write.table(file=paste0("../data/",name,"_kmeans_assignments.tsv"),sep="\t",PC_info %>% select(ID,kmeans_cluster),row.names=F,quote=F)
 ``` 
 
 ```{r dist}
@@ -139,31 +265,22 @@ compare_geo_pc_distances <- sapply(pcds,function(x){
   summary(lm(pc_dist ~ geo_dist, data = p))$adj.r.squared
 })
 
-pdf(paste0("../figures/panels/",name,"_regress_geo_PC.pdf"),width=8,height=4,useDingbats=F)
+pdf(paste0("../figures/panels/",name,"_",k,"_regress_geo_PC.pdf"),width=8,height=4,useDingbats=F)
 plot(compare_geo_pc_distances,pch=16,xlab="Num. PCs",ylab="R2 of regression PC vs geo. distance",cex=2)
 dev.off()
 ```
 
 
 ```{r pca-curves}
-shapes <- c(15,16,17,25,22,23,8,3,
-            23,8,4,15,3,16,17,25,22,
-            7,12,10,
-            10,5)
-names(shapes) <- c("Texas","Florida","Bermuda","Northeast US","Azores","Canary Islands","Spain","Ireland",
-  "Hawai'i","NW Hawaiian Islands","Guam","Japan","Queensland","New South Wales","Western Australia","South Africa","Uruguay",
-  "Chile","Tasmania","Tasman Sea",
-  "Mexico","New Zealand")
-
 g1 <- ggplot(PC_info,aes(x = a*PC1, y = b*PC2, color = ocean, shape = location)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 3,alpha=0.75) + 
+  geom_point(size = 2.25, stroke = 1, alpha=0.75) + 
   scale_shape_manual(values = shapes) + 
   scale_color_manual(values = colors) + 
   xlab(paste0("PC1 : ",exp_var[1])) +
   ylab(paste0("PC2 : ",exp_var[2])) + 
-  theme(legend.position="none")
+  theme(legend.position="none",axis.title = element_text(size = 8))
 
 pdf(paste0("../figures/panels/",name,"_PCA.pdf"),width=3.5,height=2,useDingbats=F)
 print(g1)
@@ -172,12 +289,12 @@ dev.off()
 g2 <- ggplot(PC_info %>% mutate(date = lubridate::mdy(date_collected)),aes(x = a*PC1, y = b*PC2, color = date, shape=location)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 3, alpha=1, fill="white") + 
+  geom_point(size = 2.25, stroke = 1, alpha=1, fill="white") + 
   scale_shape_manual(values = shapes) + 
   scale_color_viridis(option ="G", trans="date", limits=as.Date(c("01/01/2013","12/31/2024"),format="%m/%d/%Y")) + 
   xlab(paste0("PC1 : ",exp_var[1])) +
   ylab(paste0("PC2 : ",exp_var[2])) +
-  theme(legend.position="none")
+  theme(legend.position="none",axis.title = element_text(size = 8))
 
 pdf(paste0("../figures/panels/",name,"_PCA_date.pdf"),width=3.5,height=2,useDingbats=F)
 print(g2)
@@ -186,19 +303,30 @@ dev.off()
 g3 <- ggplot(PC_info,aes(x = a*PC1, y = b*PC2, color = kmeans_cluster, shape = location, label=ID)) + 
   geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
   geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
-  geom_point(size = 3,alpha=0.75) + 
+  geom_point(size = 2.25, stroke = 1, alpha=0.75) + 
   scale_shape_manual(values = shapes) + 
   scale_color_brewer(palette = "Dark2") + 
   xlab(paste0("PC1 : ",exp_var[1])) +
   ylab(paste0("PC2 : ",exp_var[2])) + 
-  theme(legend.position="none")
+  theme(legend.position="none",axis.title = element_text(size = 8))
 
 pdf(paste0("../figures/panels/",name,"_PCA_kmeans.pdf"),width=3.5,height=2,useDingbats=F)
 print(g3)
 dev.off()
 
-write.table(file=paste0("../data/",name,"_kmeans_assignments.tsv"),sep="\t",PC_info %>% select(ID,kmeans_cluster),row.names=F,quote=F)
-write.table(file=paste0("../data/",name,"_locations.tsv"),sep="\t",PC_info %>% select(ID,ocean),row.names=F,quote=F)
+g4 <- ggplot(PC_info,aes(x = a*PC1, y = b*PC2, color = likely_assignment, shape = location, label=ID)) + 
+  geom_vline(xintercept=0, linetype="dotted", alpha=0.2) +
+  geom_hline(yintercept=0, linetype="dotted", alpha=0.2) +
+  geom_point(size = 3,alpha=0.75) + 
+  scale_shape_manual(values = shapes) + 
+  scale_color_brewer(palette = "Dark2") + 
+  xlab(paste0("PC1 : ",exp_var[1])) +
+  ylab(paste0("PC2 : ",exp_var[2])) + 
+  theme(legend.position="none",axis.title = element_text(size = 8))
+
+pdf(paste0("../figures/panels/",name,"_PCA_admix_assignments.pdf"),width=3.5,height=2,useDingbats=F)
+print(g4)
+dev.off()
 ```
 
 
@@ -219,7 +347,7 @@ g2 <- ggplot() +
   geom_sf(data = world3, fill = "#dbdbdb", colour = NA) + 
   coord_sf(xlim = xlims, ylim = ylims) +
   geom_point(data = tsi, aes(x = long, y = lat, color = ocean, shape = location),
-        fill = "white", size = 5) + 
+        fill = "white", size = 2.25) + 
   scale_shape_manual(values = shapes) + 
   scale_color_manual(values = colors) + 
   xlab("") + ylab("") + theme(legend.position="none") #+
@@ -229,3 +357,6 @@ pdf(paste0("../figures/panels/",name,"_map.pdf"),width=5,height=3,useDingbats=F)
 print(g2)
 dev.off()
 ```
+
+
+

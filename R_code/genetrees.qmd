@@ -37,10 +37,10 @@ sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) 
 cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
 names(cols) <- c("A","B1","B2","C1","C2")
 
-colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#A6D854","#DC143C","#FC8D62","#452a00","#8DA0CB","#66C2A5","#B3B3B3")
+colors <- c("#E78AC3","#00008B","#800000","#DAA520","#006400","#DAA520","#DC143C","#FC8D62","#452a00","#686f80","#66C2A5","#B3B3B3")
 names(colors) <- c("Central Pacific","E Indian","Gulf of California","Gulf of Mexico","NE Atlantic","NW Atlantic","NW Pacific","SE Pacific","SW Atlantic","SW Pacific","W Indian")
 
-assignments <- read.delim("../data/pop.txt",header=F,sep=" ")
+assignments <- read.delim("../data/subset.txt",header=F,sep=" ")
 names(assignments) <- c("ID","cluster")
 sample_info <- left_join(sample_info,assignments,by="ID")
 ```
@@ -49,7 +49,7 @@ sample_info <- left_join(sample_info,assignments,by="ID")
 ```{r mito}
 
 # read in tree, update tip labels
-mito_tree <- read.tree("../results/iqtree/go_mito_aligned.fasta.treefile")
+mito_tree <- read.tree("../results/iqtree/mito.aln.fa.treefile")
 mito_tree$tip.label <- gsub("(.*)_mito_path1","\\1",mito_tree$tip.label)
 mito_tree$tip.label <- gsub("_R_(.*)","\\1",mito_tree$tip.label)
 mito_tree$tip.label <- gsub("(.*)\\.1","\\1",mito_tree$tip.label)
@@ -138,10 +138,8 @@ si <- sample_info %>%
         select(seq,label2,ocean,COI_clan)     
 
 NCBI_data <- rbind(NCBI_data,si) %>% 
-    mutate(label2 = gsub("^KM563","TMAG-K563",label2)) %>%
-    mutate(label2 = gsub("YPM-IZ-111211","NIWA-173304",label2)) %>%
-    mutate(label2 = gsub("YPM-IZ-111212","NIWA-173305",label2))
-
+    mutate(label2 = gsub("–","  ",label2))
+    
 cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6","red","blue","magenta","cyan")
 names(cols) <- c("A","B1","B2","C1","C2","clan_2","clan_1","clan_3","clan_Atlantic")
 

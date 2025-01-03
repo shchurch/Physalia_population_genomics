@@ -168,7 +168,7 @@ Samples with large ranges likely have a poor model fit, and are therefore less r
 kmer <- read.delim("../results/physalia_kmer/genome_report_quality.tsv",sep="\t",header=T) %>% 
 	rename(ID = "sample") %>%
 	mutate(max_rep_perc = max_rep_len / max_hap_len * 100,
-	min_rep_perc = min_rep_len / min_hap_len * 100)
+	min_rep_perc = min_rep_len / min_hap_len * 100) 
 	
 kmer <- bind_rows(kmer %>% select(ID,starts_with("max")) %>% 
 	pivot_longer(cols = -ID,names_to="measure") %>% 
@@ -177,7 +177,9 @@ kmer <- bind_rows(kmer %>% select(ID,starts_with("max")) %>%
 	pivot_longer(cols = -ID,names_to="measure") %>% 
 	mutate(measure = gsub("min_","",measure),type="min"))
 
-kmer <- left_join(kmer,sample_info,by="ID")
+kmer <- left_join(kmer,sample_info,by="ID") %>%
+    mutate(ID = gsub("^YPM-IZ-","YPM IZ ",ID)) %>%
+    mutate(ID = gsub("^WAM","WAM ",ID)) 
 	
 km <- kmer %>% filter(measure=="het")
 g1 <- ggplot(km,aes(x = value,y = factor(ID, levels = km %>% arrange(cluster,ID) %>% pull(ID) %>% unique), color = cluster, group=ID)) + 

@@ -12,7 +12,9 @@ Initiated: October, 2023
 
 ```{r Libraries}
 library(dplyr)
+library(tidyr)
 library(ggplot2)
+library(gridExtra)
 library(maps)
 library(dggridR)
 library(sf)
@@ -149,6 +151,13 @@ C2_outliers_exclude <- list(
 )
 C2_checked <- C2_subset %>% filter(!id %in% C2_outliers_exclude)
 
+all_checked <- bind_rows(
+	physalis_checked %>% mutate(assignment = "A"),
+	utriculus_checked %>% mutate(assignment = "B1"),
+	megalista_checked %>% mutate(assignment = "C1"),
+	C2_checked %>% mutate(assignment = "C2"))
+
+write.table(all_checked,file="../data/inaturalist_assignments.tsv",row.names=F,quote=T,sep="\t")
 ```
 
 ```{r plot checked}
@@ -212,7 +221,7 @@ generate_tiled_map <- function(subset,LeftBound){
 
 	tiled_map <- ggplot(data=world2) + geom_sf(fill = "#ededed", colour = NA) + 
     	geom_sf(data=transformed_grid, aes(fill=records), color=alpha("white", 0.1)) +
-    	scale_fill_gradient(low="#636363", high = "red", 
+    	scale_fill_gradient(low="dodgerblue2", high = "black", 
 			trans="log",limits = c(1,50),breaks=c(1,5,10,20,40)) + 
     	xlab("") + ylab("") #+ 
     	#theme(legend.position = "none")

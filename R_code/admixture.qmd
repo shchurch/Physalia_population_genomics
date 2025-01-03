@@ -22,6 +22,7 @@ library(kableExtra)
 library(tidyr)
 library(ggtree)
 library(ggrepel)
+library(ggnewscale)
 library(maps)
 library(ape)
 library(phytools)
@@ -42,7 +43,7 @@ sample_info <- read.delim("../data/sample_ids.tsv",header=T,stringsAsFactors=F) 
   separate(lat_long,into=c("lat","long"),sep=", ")
 locations <- sample_info %>% pull(location) %>% unique()
 
-cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6","dark blue","dodgerblue2")
 names(cols) <- c("A","B1","B2","C1","C2")
 
 anchor_samples <- data.frame(cluster = c("C2","C1","B2","B1","A"), 
@@ -51,7 +52,7 @@ anchor_samples <- data.frame(cluster = c("C2","C1","B2","B1","A"),
 ```
 
 ```{r admix-assignments}
-dir <- "../results/all_samples/"
+dir <- "../results/subset/"
 name <- "subset"
 bam_list <- paste0(dir,"subset_bam.filelist")
 
@@ -73,7 +74,7 @@ q <- read.delim(paste0(dir,name,".admix.",n,".Q"),header=F,sep=" ")  %>%
     
 cluster_IDs <- left_join(anchor_samples,q %>% distinct(ID,likely_assignment),by="ID") %>% select(cluster,likely_assignment)
 q <- left_join(q,cluster_IDs,by="likely_assignment") %>% 
-  arrange(match(cluster,c("A","B1","B2","C2","C1")), desc(assignment_prob)) %>% 
+  arrange(match(cluster,c("A","B1","B2","C1","C2")), desc(assignment_prob)) %>% 
   ungroup()
 
 label_order <- levels(q %>% mutate(id = forcats::fct_inorder(factor(label))) %>% pull(id))
@@ -114,7 +115,7 @@ print(g1)
 dev.off()
 ```
 
-```{r admix-assigmnets}
+```{r admix-assigments}
 read_q <- function(n,dir,name){
   admix_info <- data.frame(ID = read.table(bam_list,head=F) %>% 
   apply(.,1,function(x){gsub(".*sorted/(.*)_pic.bam","\\1",x)})) %>% 
@@ -153,10 +154,10 @@ read_q <- function(n,dir,name){
    return(g)
 }
 
-fct_cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6")
+fct_cols <- c("dark cyan","dark orange","dark red","#9B59B6","#6DCFF6","dark blue","dodgerblue2")
 names(fct_cols) <- cluster_IDs %>% arrange(match(cluster,names(cols))) %>% pull(likely_assignment)
 
-admix <- read_q(5,dir,name)
+admix <- read_q(n,dir,name)
 pdf(paste0("../figures/panels/",name,"_admixture.pdf"),height=8,width=35)
 print(admix + scale_fill_manual(values = fct_cols))
 dev.off()
@@ -164,12 +165,10 @@ dev.off()
 
 
 ```{r write_pops}
-#write.table(assignments %>% select(ID,cluster) %>% arrange(ID),file="../data/pop.txt",col.names=F,quote=F,row.names=F)
+#write.table(assignments %>% select(ID,cluster) %>% arrange(ID),file="../data/subset.txt",col.names=F,quote=F,row.names=F)
 ```
 
 ```{r pixy-data}
-# use pops.txt in BCF workflow
-
 dir <- "../results/pixy/subset/"
 name <- "subset"
 
@@ -177,7 +176,7 @@ fst <- read.delim(paste0(dir,"pixy_fst.txt"))
 dxy <- read.delim(paste0(dir,"pixy_dxy.txt")) 
 pi <- read.delim(paste0(dir,"pixy_pi.txt"))
 
-pops <- unique(fst[c("pop1", "pop2")])
+pops <- fst %>% arrange(pop1,pop2) %>% distinct(pop1,pop2)
 
 options(scipen=999)
 ```
@@ -185,14 +184,14 @@ options(scipen=999)
 ```{r plot-fst}
 #   for (p in 1:nrow(pops)){
 #     combo <- pops[p,]
-#     thisPop <- subset(fst, pop1 == combo$pop1[[1]] & pop2 == combo$pop2[[1]]) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_wc_fst,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
+#     thisPop <- strict(fst, pop1 == combo$pop1[[1]] & pop2 == combo$pop2[[1]]) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_wc_fst,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
 #     mutate(value = ifelse(is.na(value),"",value))
 #     write.table(thisPop,file=paste("fst_utr_", combo$pop1[[1]], "_", combo$pop2[[1]],".bedgraph", sep=""),sep="\t",col.names=F,row.names=F,quote=F)
 #   }
 #   
 #   for (p in 1:length(unique(pi$pop))){
 #     pop <- unique(pi$pop)[p]
-#     thisPop <- subset(pi, pop == pop) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_pi,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
+#     thisPop <- strict(pi, pop == pop) %>% mutate(start = window_pos_1 -1, end = window_pos_2-1,value = avg_pi,name=paste0("reg",window_pos_1)) %>% select(chromosome,start,end,value) %>%
 #     mutate(value = ifelse(is.na(value),"",value))
 #     write.table(thisPop,file=paste("pi_", pop,".bedgraph", sep=""),sep="\t",col.names=F,row.names=F,quote=F)
 #   }
@@ -201,7 +200,7 @@ summary_fst <- fst %>%
   left_join(.,assignments %>% distinct(cluster) %>% mutate(pop1 = cluster),by="pop1") %>% 
   left_join(.,assignments %>% distinct(cluster) %>% mutate(pop2 = cluster),by="pop2") %>% 
   group_by(pop1,pop2) %>% summarize(Fst = mean(avg_wc_fst, na.rm=T)) %>% ungroup() %>% 
-  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian") | pop2 %in% c("B1 SW Atlantic","C1 W Indian")))
+  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific") | pop2 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific")))
 
 sym_fst <- bind_rows(summary_fst,summary_fst %>% rename(pop1 = pop2, pop2 = pop1)) %>% arrange(Fst) %>% data.frame
 fst_mat_plot <- ggplot(sym_fst,aes(x = pop1, y = pop2, fill = Fst, label= round(Fst,2))) + 
@@ -209,7 +208,7 @@ fst_mat_plot <- ggplot(sym_fst,aes(x = pop1, y = pop2, fill = Fst, label= round(
   scale_fill_distiller("Ave. Fst", type = "seq", limits = c(-0.1,1),
                         direction = 1,
                         palette = "Greys") +  
-  geom_text(color="black",size=8) + 
+  geom_text(color="black",size=3) + 
   xlab("") + ylab("")
 
 png(paste0("../figures/panels/",name,"_Fst.png"),height=1850,width=2400,res=300)
@@ -225,13 +224,13 @@ summary_dxy <- dxy %>% group_by(pop1,pop2) %>%
   rename(value = dxy) 
 
 sym_dxy <- bind_rows(summary_dxy,summary_dxy %>% rename(pop1 = pop2, pop2 = pop1)) %>% 
-  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian") | pop2 %in% c("B1 SW Atlantic","C1 W Indian")))
+  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific") | pop2 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific")))
 
 summary_pi <- pi %>% group_by(pop) %>% 
   summarize(pi = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% 
   arrange(pi) %>% 
   rename(pop1 = pop, value = pi) %>% mutate(pop2 = pop1) %>%
-  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian") | pop2 %in% c("B1 SW Atlantic","C1 W Indian")))
+  filter(!(pop1 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific") | pop2 %in% c("B1 SW Atlantic","C1 W Indian","B2 Central Pacific")))
 
 Dxy_mat_plot <- ggplot(sym_dxy,aes(x = pop1, y = pop2, fill = value, label= round(value,3))) + 
   geom_tile() + 
@@ -285,6 +284,5 @@ dev.off()
 #  summary_dxy <- dxy %>% group_by(pop1,pop2) %>% summarize(dxy = sum(count_diffs,na.rm=T) / sum(count_comparisons, na.rm=T)) %>% arrange(dxy)
 #  
 #  sym_dxy <- bind_rows(summary_dxy,summary_dxy %>% rename(pop1 = pop2, pop2 = pop1)) #%>% rename(ID = pop1) %>% left_join(.,sample_info,by="ID")
-
 ```
 
